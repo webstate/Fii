@@ -12,4 +12,8 @@ eventCtrl.controller('eventCtrl', function($scope, eventService){
     }, function(err){
         console.log(err);
     })
+    $scope.activeEventImg = '';
+    $scope.openModal = function(path){
+        $scope.activeEventImg = path;
+    }
 })

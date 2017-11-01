@@ -1191,18 +1191,29 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div ng-if="$root.lang === 'ee'" class="event-picture" style="background-image: url({{eventPicturePathEst}})">
-
+                                                <div ng-if="$root.lang === 'ee'" class="event-picture" style="background-image: none;" ng-click="openModal(eventPicturePathEst)" data-toggle="modal" data-target="#myModal">
+                            <img src="{{eventPicturePathEst}}" alt="" style="max-height: 300px; width: auto;">
                         </div>
-                        <div ng-if="$root.lang === 'en'" class="event-picture" style="background-image: url({{eventPicturePathEng}})">
-
+                        <div ng-if="$root.lang === 'en'" class="event-picture" style="background-image: none;" ng-click="openModal(eventPicturePathEng)" data-toggle="modal" data-target="#myModal">
+                            <img src="{{eventPicturePathEng}}" alt="" style="max-height: 300px; width: auto;">
                         </div>
-                        <div ng-if="$root.lang === 'fi'" class="event-picture" style="background-image: url({{eventPicturePathFin}})">
-
+                        <div ng-if="$root.lang === 'fi'" class="event-picture" style="background-image: none;" ng-click="openModal(eventPicturePathFin)" data-toggle="modal" data-target="#myModal">
+                            <img src="{{eventPicturePathFin}}" alt="" style="max-height: 300px; width: auto;">
                         </div>
-                        <div ng-if="$root.lang === 'ru'" class="event-picture" style="background-image: url({{eventPicturePathRus}})">
-
+                        <div ng-if="$root.lang === 'ru'" class="event-picture" style="background-image: none;" ng-click="openModal(eventPicturePathRus)" data-toggle="modal" data-target="#myModal">
+                            <img src="{{eventPicturePathRus}}" alt="" style="max-height: 300px; width: auto;">
                         </div>
+
+
+                        <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body" style="text-align: center;">
+                                        <img src="{{activeEventImg}}" style=" max-height: 85vh; width: auto; max-width: 100%">
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                        </div><!-- /.modal -->
 
                     </div>
                 </div>
