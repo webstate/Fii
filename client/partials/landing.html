@@ -1,0 +1,1839 @@
+<div ng-controller="sliderCtrl" >
+    <div class="sliderTest" ng-hide="slider">
+        <div class="banner-picture" ng-controller="bannerCtrl" style="background-image:url({{bannerImage}})">
+            <div class="col-sm-6 col-xs-6 hidden-lg hidden-md" style="z-index:1;">
+                <img id="logo" style="height:47px;" src="css/img/logo.png" />
+            </div>
+            <div class="langmenu-mobile hidden-lg hidden-md">
+                <span ng-click="openLangMenuMobile();" style="text-transform:uppercase;">{{language}}<i style="margin-left:7px;"class="fa fa-caret-down" aria-hidden="true" ></i></span>
+                <div class="langmenu-content-mobile" ng-show="langmenuMobile.status">
+                    <p ng-click="changeLang('ee')">
+                        EE
+                    </p>
+                    <p ng-click="changeLang('en')">
+                        EN
+                    </p>
+                    <p ng-click="changeLang('fi')">
+                        FI
+                    </p>
+                    <p ng-click="changeLang('ru')">
+                        RU
+                    </p>
+                </div>
+            </div>
+            <div class="hidden-md hidden-lg"ng-controller="modalDemoCtrl">
+
+                <div class="nav_button" ng-click="showLeft($event)">
+                  <div id="burger" ng-class="{true: 'active-sandwich',false: 'bla'}[showSideNav]"><span></span><span></span><span></span><span></span></div>
+                </div>
+                     <menu visible="leftVisible" alignment="left" style="margin-top:-15px;">
+                         <div  ng-click="bronModal()" ng-if="$root.lang ==='ee'" class="bron-btn-modal">
+                             Broneeri laud
+                         </div>
+                         <div  ng-click="bronModal()" ng-if="$root.lang ==='en'" class="bron-btn-modal">
+                             Book a table
+                         </div>
+                         <div  ng-click="bronModal()" ng-if="$root.lang ==='fi'" class="bron-btn-modal">
+                             Varaa pöytä
+                         </div>
+                         <div style="font-family:Roboto"  ng-click="bronModal()" ng-class="{true: 'russian-font'}[$root.lang === 'ru']" ng-if="$root.lang ==='ru'" class="bron-btn-modal">
+                             Заказать столик
+                         </div>
+                         <!--<div class="sidenav-phone-number">
+                                <p class="sideNavNumber">+372 5885 5200</p><img style="margin-left:200px;" class="booking-arrow" src="css/img/phone.png" />
+                         </div>-->
+                         <menu-item scroll-to-bookmark="about" ng-if="$root.lang==='en'" hash="second-page">About</menu-item>
+                         <menu-item scroll-to-bookmark="menu" ng-if="$root.lang==='en'" hash="third-page">Menu</menu-item>
+                         <menu-item scroll-to-bookmark="events" ng-if="$root.lang==='en'" hash="third-page">Events</menu-item>
+                         <menu-item scroll-to-bookmark="contact" ng-if="$root.lang==='en'" hash="third-page">Contact</menu-item>
+                         <menu-item scroll-to-bookmark="contact" ng-if="$root.lang==='en'" hash="third-page" style="margin-top: 50px;"><a class="hamburger-mobile" href="tel:+372 5885 5200">+372 5885 5200</a></menu-item>
+                         <menu-item ng-if="$root.lang==='en'">
+                             <ul class="landing-social" style="list-style:none;">
+                                <li>
+                                    <a href="https://www.facebook.com/fiiresto/?fref=ts" target="_blank">
+                                        <img style="height:25px;" src="css/img/facebook.png"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/fiiresto/" target="_blank">
+                                        <img style="height:25px;" src="css/img/instagram.png"/>
+                                    </a>
+                                </li>
+
+                             </ul>
+                         </menu-item>
+                         <menu-item scroll-to-bookmark="about" ng-if="$root.lang==='ee'" hash="second-page">Restoranist</menu-item>
+                         <menu-item scroll-to-bookmark="menu" ng-if="$root.lang==='ee'" hash="third-page">Menüü</menu-item>
+                         <menu-item scroll-to-bookmark="events" ng-if="$root.lang==='ee'" hash="third-page">Üritused</menu-item>
+                         <menu-item scroll-to-bookmark="contact" ng-if="$root.lang==='ee'" hash="third-page">Kontakt</menu-item>
+                         <menu-item scroll-to-bookmark="contact" ng-if="$root.lang==='ee'" hash="third-page" style="margin-top: 50px;"><a class="hamburger-mobile" href="tel:+372 5885 5200">+372 5885 5200</a></menu-item>
+                         <menu-item ng-if="$root.lang==='ee'">
+                             <ul class="landing-social" style="list-style:none;">
+                                <li>
+                                    <a href="https://www.facebook.com/fiiresto/?fref=ts" target="_blank">
+                                        <img style="height:25px;" src="css/img/facebook.png"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/fiiresto/" target="_blank">
+                                        <img style="height:25px;" src="css/img/instagram.png"/>
+                                    </a>
+                                </li>
+
+                             </ul>
+                         </menu-item>
+
+                         <menu-item scroll-to-bookmark="about" ng-if="$root.lang==='fi'" hash="second-page">Ravintolasta</menu-item>
+                         <menu-item scroll-to-bookmark="menu" ng-if="$root.lang==='fi'" hash="third-page">Menu</menu-item>
+                         <menu-item scroll-to-bookmark="events" ng-if="$root.lang==='fi'" hash="third-page">Tapahtumat</menu-item>
+                         <menu-item scroll-to-bookmark="contact" ng-if="$root.lang==='fi'" hash="third-page">Yhteystiedot</menu-item>
+                         <menu-item scroll-to-bookmark="contact" ng-if="$root.lang==='fi'" hash="third-page" style="margin-top: 50px;"><a class="hamburger-mobile" href="tel:+372 5885 5200">+372 5885 5200</a></menu-item>
+                         <menu-item ng-if="$root.lang==='fi'">
+                             <ul class="landing-social" style="list-style:none;">
+                                <li>
+                                    <a href="https://www.facebook.com/fiiresto/?fref=ts" target="_blank">
+                                        <img style="height:25px;" src="css/img/facebook.png"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/fiiresto/" target="_blank">
+                                        <img style="height:25px;" src="css/img/instagram.png"/>
+                                    </a>
+                                </li>
+
+                             </ul>
+                         </menu-item>
+
+                         <menu-item style="font-family:Roboto !important;" scroll-to-bookmark="about" ng-if="$root.lang==='ru'" hash="second-page">O ресторане</menu-item>
+                         <menu-item style="font-family:Roboto !important;" scroll-to-bookmark="menu" ng-if="$root.lang==='ru'" hash="third-page">Mеню</menu-item>
+                         <menu-item style="font-family:Roboto !important;" scroll-to-bookmark="events" ng-if="$root.lang==='ru'" hash="third-page">Cобытия</menu-item>
+                         <menu-item style="font-family:Roboto !important;" scroll-to-bookmark="contact" ng-if="$root.lang==='ru'" hash="third-page">Kонтакты</menu-item>
+                         <menu-item scroll-to-bookmark="contact" ng-if="$root.lang==='ru'" hash="third-page" style="margin-top: 50px;"><a class="hamburger-mobile" href="tel:+372 5885 5200">+372 5885 5200</a></menu-item>
+                         <menu-item ng-if="$root.lang==='ru'">
+                             <ul class="landing-social" style="list-style:none;">
+                                <li>
+                                    <a href="https://www.facebook.com/fiiresto/?fref=ts" target="_blank">
+                                        <img style="height:25px;" src="css/img/facebook.png"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/fiiresto/" target="_blank">
+                                        <img style="height:25px;" src="css/img/instagram.png"/>
+                                    </a>
+                                </li>
+
+                             </ul>
+                         </menu-item>
+                     </menu>
+             </div>
+            <nav class="navbar-landing">
+
+                  <div class="container">
+                    <div class="navbar-header">
+                       <a class="navbar-brand" href="#"><img id="logo" src="css/img/logo.png" /></a>
+                    </div>
+
+                    <div id="navbar" class="navbar-collapse collapse">
+                      <div class="nav navbar-nav navbar-right">
+                          <ul style="list-style:none;">
+                              <li>
+                                  <div ng-click="bronModal()" class="book-table-btn" ng-if="$root.lang === 'ee'" style="cursor:pointer;">
+                                      <p class="landing-nav-btn">
+                                         Broneeri laud
+                                      </p>
+                                      <img class="booking-arrow" src="css/img/arrow.png" />
+                                  </div>
+                                  <div ng-if="$root.lang === 'en'" ng-click="bronModal()" class="book-table-btn">
+                                      <p class="landing-nav-btn">
+                                          Book a table
+                                      </p>
+                                      <img class="booking-arrow" src="css/img/arrow.png" />
+                                  </div>
+                                  <div ng-if="$root.lang === 'fi'" ng-click="bronModal()" class="book-table-btn">
+                                      <p class="landing-nav-btn">
+                                          Varaa pöytä
+                                      </p>
+                                      <img class="booking-arrow" src="css/img/arrow.png" />
+                                  </div>
+                                  <div ng-if="$root.lang === 'ru'" ng-click="bronModal()" class="book-table-btn">
+                                      <p style="font-family: Roboto"class="landing-nav-btn">
+                                          Заказать столик
+                                      </p>
+                                      <img class="booking-arrow" src="css/img/arrow.png" />
+                                  </div>
+                              </li>
+                              <li>
+                                  <div class="tel-btn" style="cursor:pointer;"><p href="tel:+372 5885 5200" class="landing-nav-btn">+372 5885 5200</p><img class="booking-arrow" src="css/img/phone.png" /></div>
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="nav navbar-nav navbar-right landing-borders">
+                          <ul class="landing-menu" style="list-style:none">
+                              <li ng-if="$root.lang === 'en'">
+                                  <a scroll-to-bookmark="about">About</a>
+                                  <a scroll-to-bookmark="menu">Menu</a>
+                                  <a scroll-to-bookmark="events">Events</a>
+                                  <a scroll-to-bookmark="contact">Contact</a>
+                              </li>
+                              <li ng-if="$root.lang === 'ee'">
+                                  <a scroll-to-bookmark="about">Restoranist</a>
+                                  <a scroll-to-bookmark="menu">Menüü</a>
+                                  <a scroll-to-bookmark="events">Üritused</a>
+                                  <a scroll-to-bookmark="contact">Kontakt</a>
+                              </li>
+                              <li ng-if="$root.lang === 'fi'">
+                                  <a scroll-to-bookmark="about">Ravintolasta</a>
+                                  <a scroll-to-bookmark="menu">Menu</a>
+                                  <a scroll-to-bookmark="events">Tapahtumat</a>
+                                  <a scroll-to-bookmark="contact">Yhteystiedot</a>
+                              </li>
+                              <li ng-if="$root.lang === 'ru'">
+                                  <a style="font-family:Roboto;" scroll-to-bookmark="about">O ресторане</a>
+                                  <a style="font-family:Roboto;" scroll-to-bookmark="menu">Mеню</a>
+                                  <a style="font-family:Roboto;" scroll-to-bookmark="events">Cобытия</a>
+                                  <a style="font-family:Roboto;" scroll-to-bookmark="contact">Kонтакты</a>
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="nav navbar-nav navbar-right">
+                          <ul class="landing-social" style="list-style:none">
+                             <li>
+                                 <a href="https://www.facebook.com/fiiresto/?fref=ts" target="_blank">
+                                     <img style="height:25px;" src="css/img/facebook.png"/>
+                                 </a>
+                             </li>
+                             <li>
+                                 <a href="https://www.instagram.com/fiiresto/" target="_blank">
+                                     <img style="height:25px;" src="css/img/instagram.png"/>
+                                 </a>
+                             </li>
+
+                          </ul>
+                      </div>
+                      <div class="nav navbar-nav navbar-right">
+                          <div class="langmenu">
+                              <span style="text-transform:uppercase;">{{language}}<i style="margin-left:7px;"class="fa fa-caret-down" aria-hidden="true"></i></span>
+                              <div class="langmenu-content">
+                                  <p ng-click="changeLang('ee')">
+                                      EE
+                                  </p>
+                                  <p ng-click="changeLang('en')">
+                                      EN
+                                  </p>
+                                  <p ng-click="changeLang('fi')">
+                                      FI
+                                  </p>
+                                  <p ng-click="changeLang('ru')">
+                                      RU
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </nav>
+
+        </div>
+        <div class="banner-shadow">
+            <div class="row" style="padding-top:220px;">
+                <div class="container">
+                    <div class="col-md-12">
+                        <p  class="event-name-banner" ng-if="$root.lang ==='en' && bannerTitleEng != 'There is nothing yet inserted'">
+                            {{bannerTitleEng}}
+                        </p>
+                        <p class="event-name-banner" ng-if="$root.lang ==='ee' && bannerTitleEst != 'There is nothing yet inserted'">
+                            {{bannerTitleEst}}
+                        </p>
+                        <p class="event-name-banner" ng-if="$root.lang ==='fi' && bannerTitleFin != 'There is nothing yet inserted'">
+                            {{bannerTitleFin}}
+                        </p>
+                        <p style="font-family:Play;" class="event-name-banner" ng-if="$root.lang ==='ru' && bannerTitleRus != 'There is nothing yet inserted'">
+                            {{bannerTitleRus}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" scroll-bookmark="about">
+                <div ng-if="$root.lang === 'en'" class="col-md-12" style="margin-top: 60px;" id="#About">
+                    <span style="height: 1px;
+            width: 40px;
+            background: black;
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 40px;"></span>
+                    <p style="    position: absolute;
+            top: 0px;
+            left: 90px;
+            font-family: spaceMono;">
+                        About
+                    </p>
+                </div>
+                <div ng-if="$root.lang === 'ee'" class="col-md-12" style="margin-top: 60px;">
+                    <span style="height: 1px;
+            width: 40px;
+            background: black;
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 40px;"></span>
+                    <p style="    position: absolute;
+            top: 0px;
+            left: 90px;
+            font-family: spaceMono;">
+                        Restoranist
+                    </p>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 60px;">
+                <div class="col-md-6">
+                    <p ng-if="$root.lang ==='ee'"class="worker-section-title">
+                        {{workerTitle}}
+                    </p>
+                    <p ng-if="$root.lang ==='en'" class="worker-section-title">
+                        {{workerTitleEng}}
+                    </p>
+                    <p ng-if="$root.lang ==='fi' && workerTitleFin != 'There is nothing yet inserted'" class="worker-section-title">
+                        {{workerTitleFin}}
+                    </p>
+                    <p  style="font-family:Play;" ng-if="$root.lang ==='ru' && workerTitleRus != 'There is nothing yet inserted'" class="worker-section-title">
+                        {{workerTitleRus}}
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <p ng-if="$root.lang ==='ee'"class="worker-section-text">
+                        {{workerText}}
+                    </p>
+                    <p ng-if="$root.lang ==='en'" class="worker-section-text">
+                        {{workerTextEng}}
+                    </p>
+                    <p ng-if="$root.lang ==='fi' && workerTextFin != 'There is nothint yet inserted'" class="worker-section-text">
+                        {{workerTextFin}}
+                    </p>
+                    <p  style="font-family:Roboto;" ng-if="$root.lang ==='ru' && workerTextRus != 'There is nothint yet inserted'" class="worker-section-text">
+                        {{workerTextRus}}
+                    </p>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 75px;" ng-controller="workerCtrl">
+                <div ng-repeat="item in workers" ng-if="$root.lang ==='ee'" class="col-md-6">
+                    <div class="worker-img-holder" style="background-image:url({{item.picture}})">
+
+                    </div>
+                    <p class="worker-name">
+                        {{item.name}}
+                    </p>
+                    <p class="worker-occupation">
+                        {{item.position}}
+                    </p>
+                    <p class="worker-info">
+                        {{item.information}}
+                    </p>
+                </div>
+                <div ng-repeat="item in workers" ng-if="$root.lang ==='en' && item.infoEng && item.occupationEng" class="col-md-6">
+                    <div class="worker-img-holder" style="background-image:url({{item.picture}})">
+
+                    </div>
+                    <p class="worker-name">
+                        {{item.name}}
+                    </p>
+                    <p class="worker-occupation">
+                        {{item.occupationEng}}
+                    </p>
+                    <p class="worker-info">
+                        {{item.infoEng}}
+                    </p>
+                </div>
+                <div ng-repeat="item in workers" ng-if="$root.lang ==='fi' && item.infoFin && item.occupationFin" class="col-md-6">
+                    <div class="worker-img-holder" style="background-image:url({{item.picture}})">
+
+                    </div>
+                    <p class="worker-name">
+                        {{item.name}}
+                    </p>
+                    <p class="worker-occupation">
+                        {{item.occupationFin}}
+                    </p>
+                    <p class="worker-info">
+                        {{item.infoFin}}
+                    </p>
+                </div>
+                <div ng-repeat="item in workers" ng-if="$root.lang ==='ru' && item.infoRus && item.occupationRus" class="col-md-6">
+                    <div class="worker-img-holder" style="background-image:url({{item.picture}})">
+
+                    </div>
+                    <p style="font-family: Roboto;"  class="worker-name">
+                        {{item.name}}
+                    </p>
+                    <p  style="font-family: Roboto;" class="worker-occupation">
+                        {{item.occupationRus}}
+                    </p>
+                    <p style="font-family: Roboto;"  class="worker-info">
+                        {{item.infoRus}}
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="row" scroll-bookmark="menu">
+                <div class="menu-bg" ng-controller="menuCtrl">
+                    <div class="container">
+                        <div class="row">
+                            <div ng-if="$root.lang==='en'" class="col-md-12" style="margin-top: 60px;">
+                                <span style="height: 1px;
+                        width: 40px;
+                        background: white;
+                        display: block;
+                        position: absolute;
+                        top: 10px;
+                        left: 40px;"></span>
+                                <p style="    position: absolute;
+                        color:white;
+                        top: 0px;
+                        left: 90px;
+                        font-family: spaceMono;">
+                                    Menu
+                                </p>
+                            </div>
+                            <div ng-if="$root.lang === 'ee'"class="col-md-12" style="margin-top: 60px;">
+                                <span style="height: 1px;
+                        width: 40px;
+                        background: white;
+                        display: block;
+                        position: absolute;
+                        top: 10px;
+                        left: 40px;"></span>
+                                <p style="    position: absolute;
+                        color:white;
+                        top: 0px;
+                        left: 90px;
+                        font-family: spaceMono;">
+                                    Menüü
+                                </p>
+                            </div>
+                            <div ng-if="$root.lang === 'fi'"class="col-md-12" style="margin-top: 60px;">
+                                <span style="height: 1px;
+                        width: 40px;
+                        background: white;
+                        display: block;
+                        position: absolute;
+                        top: 10px;
+                        left: 40px;"></span>
+                                <p style="    position: absolute;
+                        color:white;
+                        top: 0px;
+                        left: 90px;
+                        font-family: spaceMono;">
+                                    Menu
+                                </p>
+                            </div>
+                            <div ng-if="$root.lang === 'ru'"class="col-md-12" style="margin-top: 60px;">
+                                <span style="height: 1px;
+                        width: 40px;
+                        background: white;
+                        display: block;
+                        position: absolute;
+                        top: 10px;
+                        left: 40px;"></span>
+                                <p style="    position: absolute;
+                        color:white;
+                        top: 0px;
+                        left: 90px;
+                        font-family: Roboto;">
+                                    Mеню
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 60px;">
+                            <div class="col-md-6">
+                                <p ng-if="$root.lang ==='ee'" class="menu-section-title">
+                                    {{menuTitle}}
+                                </p>
+                                <p ng-if="$root.lang ==='en'" class="menu-section-title">
+                                    {{menuTitleEng}}
+                                </p>
+                                <p ng-if="$root.lang ==='fi' && menuTitleFin != 'There is nothint yet inserted'" class="menu-section-title">
+                                    {{menuTitleFin}}
+                                </p>
+                                <p style="font-family:Play;" ng-if="$root.lang ==='ru' && menuTitleRus != 'There is nothint yet inserted'" class="menu-section-title">
+                                    {{menuTitleRus}}
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <p ng-if="$root.lang ==='ee'" class="menu-section-text">
+                                    {{menuText}}
+                                </p>
+                                <p ng-if="$root.lang ==='en'" class="menu-section-text">
+                                    {{menuTextEng}}
+                                </p>
+                                <p ng-if="$root.lang ==='fi' && menuTextFin != 'There is nothint yet inserted'" class="menu-section-text">
+                                    {{menuTextFin}}
+                                </p>
+                                <p style="font-family:Roboto;" ng-if="$root.lang ==='ru' && menuTextRus != 'There is nothint yet inserted'" class="menu-section-text">
+                                    {{menuTextRus}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 menu-container-padding">
+                            <div class="menu-holder" ng-controller="foodCtrl">
+                                <p ng-if="$root.lang==='en'" class="menu-box-title">
+                                    STARTERS
+                                </p>
+                                <p ng-if="$root.lang==='ee'"class="menu-box-title">
+                                    EELROAD
+                                </p>
+                                <p ng-if="$root.lang==='fi'"class="menu-box-title">
+                                    ALKURUOKIA
+                                </p>
+                                <p ng-if="$root.lang==='ru'"class="menu-box-title" style="text-transform: uppercase;font-family:Roboto;">
+                                    Закуски
+                                </p>
+                                <p ng-if="starters.length === 0" class="empty-menu">
+                                    There are currently no dishes in this menu
+                                </p>
+                                <table style="width:100%;">
+                                    <tbody>
+                                        <tr ng-repeat="item in starters">
+                                            <td class="menu-padding">
+                                                <p ng-if="$root.lang==='ee'" class="menu-dish">
+                                                    {{item.name}}
+                                                </p>
+                                                <p ng-if="$root.lang==='en' && item.descEng.length != 0" class="menu-dish">
+                                                    {{item.nameEng}}
+                                                </p>
+                                                <p ng-if="$root.lang==='fi' && item.descFin.length != 0" class="menu-dish">
+                                                    {{item.nameFin}}
+                                                </p>
+                                                <p style="font-family:Roboto" ng-if="$root.lang==='ru' && item.descRus.length != 0" class="menu-dish">
+                                                    {{item.nameRus}}
+                                                </p>
+
+                                                <p ng-if="$root.lang==='ee'" class="menu-description">
+                                                    {{item.description}}
+                                                </p>
+                                                <p ng-if="$root.lang==='en' && item.nameEng.length != 0" class="menu-description">
+                                                    {{item.descEng}}
+                                                </p>
+                                                <p ng-if="$root.lang==='fi' && item.nameFin.length != 0" class="menu-description">
+                                                    {{item.descFin}}
+                                                </p>
+                                                <p style="font-family:Roboto" ng-if="$root.lang==='ru' && item.nameRus.length != 0" class="menu-description">
+                                                    {{item.descRus}}
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p ng-if="$root.lang ==='en' && item.descEng.length != 0 && item.nameEng.length != 0" class="menu-price">
+                                                     {{item.price}} €
+                                                </p>
+                                                <p ng-if="$root.lang ==='fi' && item.descFin.length != 0 && item.nameFin.length != 0" class="menu-price">
+                                                     {{item.price}} €
+                                                </p>
+                                                <p ng-if="$root.lang ==='ru' && item.descRus.length != 0 && item.nameRus.length != 0" class="menu-price">
+                                                     {{item.price}} €
+                                                </p>
+                                                <p ng-if="$root.lang ==='ee'" class="menu-price">
+                                                     {{item.price}} €
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="menu-picture-second hidden-sm hidden-xs" style="background-image:url({{secondPicturePath}})">
+
+                            </div>
+                            <div class="menu-drink-holder hidden-sm hidden-xs" ng-controller="drinkCtrl">
+                                <p ng-if="$root.lang ==='en'" class="menu-box-title">
+                                    DRINKS
+                                </p>
+                                <p ng-if="$root.lang ==='ee'" class="menu-box-title">
+                                    JOOGID
+                                </p>
+                                <p ng-if="$root.lang ==='fi'" class="menu-box-title">
+                                    JUOMIA
+                                </p>
+                                <p ng-if="$root.lang ==='ru'" class="menu-box-title" style="text-transform: uppercase; font-family:Roboto;">
+                                    Напитки
+                                </p>
+                                <ul ng-if="$root.lang==='en'" class="drink-menu-tabs">
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'wine']" ng-click="changeDrinks('wine')">WINE AND CHAMPAGNE</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'beer']" ng-click="changeDrinks('beer')">BEER / CIDER</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hardalco']" ng-click="changeDrinks('hardalco')">SPIRITS</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'cocktail']" ng-click="changeDrinks('cocktail')">COCKTAILS</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'nonalco']" ng-click="changeDrinks('nonalco')">SOFT DRINKS</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hotdrink']" ng-click="changeDrinks('hotdrink')">HOT BEVERAGES</li>
+                                </ul>
+                                <ul ng-if="$root.lang==='ee'" class="drink-menu-tabs" style="list-style:none;">
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'wine']" ng-click="changeDrinks('wine')">VEIN JA MULL</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'beer']" ng-click="changeDrinks('beer')">LAHJA</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hardalco']" ng-click="changeDrinks('hardalco')">KANGE</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'cocktail']" ng-click="changeDrinks('cocktail')">KOKTEILID</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'nonalco']" ng-click="changeDrinks('nonalco')">ALKOHOLIVABAD</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hotdrink']" ng-click="changeDrinks('hotdrink')">KUUMAD JOOGID</li>
+                                </ul>
+                                <ul ng-if="$root.lang==='fi'" class="drink-menu-tabs" style="list-style:none;">
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'wine']" ng-click="changeDrinks('wine')">VIINI JA SAMPPANJA</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'beer']" ng-click="changeDrinks('beer')">KEVYTJUOMAT</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hardalco']" ng-click="changeDrinks('hardalco')">VÄKEVÄT ALKOHOLIJUOMAT</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'cocktail']" ng-click="changeDrinks('cocktail')">KOKTEILIT</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'nonalco']" ng-click="changeDrinks('nonalco')">ALKOHOLITTOMAT</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hotdrink']" ng-click="changeDrinks('hotdrink')">KUUMAT JUOMAT</li>
+                                </ul>
+                                <ul ng-if="$root.lang==='ru'" class="drink-menu-tabs" style="list-style:none;">
+                                    <li style="font-family:Roboto; text-transform: uppercase;" ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'wine']" ng-click="changeDrinks('wine')">Вино и шампанское</li>
+                                    <li style="font-family:Roboto; text-transform: uppercase;" ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'beer']" ng-click="changeDrinks('beer')">Легкие алкогольные напитки</li>
+                                    <li style="font-family:Roboto; text-transform: uppercase;" ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hardalco']" ng-click="changeDrinks('hardalco')">Крепкие алкогольные напитки</li>
+                                    <li style="font-family:Roboto; text-transform: uppercase;" ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'cocktail']" ng-click="changeDrinks('cocktail')">Коктейли</li>
+                                    <li style="font-family:Roboto; text-transform: uppercase;" ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'nonalco']" ng-click="changeDrinks('nonalco')">Безалкогольные напитки</li>
+                                    <li style="font-family:Roboto; text-transform: uppercase;" ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hotdrink']" ng-click="changeDrinks('hotdrink')">Горячие напитки</li>
+                                </ul>
+
+
+                                <ul ng-if="$root.lang ==='ee'" class="drink-menu-tabs drink-mobile-padding" ng-show="wineSubEst">
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'white']" ng-click="sortBySub('white')">Valge</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'red']" ng-click="sortBySub('red')">Punane</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'rose']" ng-click="sortBySub('rose')">Roosa</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'champ']" ng-click="sortBySub('champ')">Šampanja</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'prose']" ng-click="sortBySub('prose')">Vahuvein</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'port']" ng-click="sortBySub('port')">Portvein ja šerri</li>
+                                </ul>
+                                <ul ng-if="$root.lang ==='en'" class="drink-menu-tabs drink-mobile-padding" ng-show="wineSubEng">
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'white']" ng-click="sortBySub('white')">White</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'red']" ng-click="sortBySub('red')">Red</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'rose']" ng-click="sortBySub('rose')">Rose</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'champ']" ng-click="sortBySub('champ')">Champagne</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'prose']" ng-click="sortBySub('prose')">Sparkling wine</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'port']" ng-click="sortBySub('port')">Port and sherry</li>
+                                </ul>
+                                <ul style="margin-top: 20px;" ng-if="$root.lang ==='fi'" class="drink-menu-tabs drink-mobile-padding" ng-show="wineSubFin">
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'white']" ng-click="sortBySub('white')">Valkoviinit</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'red']" ng-click="sortBySub('red')">Punaviinit</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'rose']" ng-click="sortBySub('rose')">Roseeviinit</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'champ']" ng-click="sortBySub('champ')">Samppanja</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'prose']" ng-click="sortBySub('prose')">Kuohuviini</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'port']" ng-click="sortBySub('port')">Portviini ja sherry</li>
+                                </ul>
+                                <ul style="margin-top: 20px;" ng-if="$root.lang ==='ru'" class="drink-menu-tabs drink-mobile-padding" ng-show="wineSubRus">
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTab === 'white']" ng-click="sortBySub('white')">Белое вино</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTab === 'red']" ng-click="sortBySub('red')">Красное вино</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTab === 'rose']" ng-click="sortBySub('rose')">Розовое вино</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTab === 'champ']" ng-click="sortBySub('champ')">Шампанское</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTab === 'prose']" ng-click="sortBySub('prose')">Игристое винo</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTab === 'port']" ng-click="sortBySub('port')">Портвейн и херес</li>
+                                </ul>
+                                <ul ng-if="$root.lang==='ee'" class="drink-menu-tabs drink-mobile-padding"  ng-show="spiritSubEst">
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'conac']" ng-click="sortBySubSpirit('conac')">Konjak</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'calv']" ng-click="sortBySubSpirit('calv')">Kalvados</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'brand']" ng-click="sortBySubSpirit('brand')">Brändi</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'whisk']" ng-click="sortBySubSpirit('whisk')">Viski</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'rum']" ng-click="sortBySubSpirit('rum')">Rumm</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'gin']" ng-click="sortBySubSpirit('gin')">Džinn</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'vod']" ng-click="sortBySubSpirit('vod')">Viin</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'teq']" ng-click="sortBySubSpirit('teq')">Tekiila</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'liq']" ng-click="sortBySubSpirit('liq')">Liköör</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'ver']" ng-click="sortBySubSpirit('ver')">Vermut</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'bit']" ng-click="sortBySubSpirit('bit')">Bitter</li>
+                                </ul>
+                                <ul ng-if="$root.lang==='en'"class="drink-menu-tabs drink-mobile-padding"  ng-show="spiritSubEng">
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'conac']" ng-click="sortBySubSpirit('conac')">Cognac</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'calv']" ng-click="sortBySubSpirit('calv')">Kalvados</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'brand']" ng-click="sortBySubSpirit('brand')">Brandy</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'whisk']" ng-click="sortBySubSpirit('whisk')">Whiskey</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'rum']" ng-click="sortBySubSpirit('rum')">Rum</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'gin']" ng-click="sortBySubSpirit('gin')">Gin</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'vod']" ng-click="sortBySubSpirit('vod')">Vodka</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'teq']" ng-click="sortBySubSpirit('teq')">Tequila</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'liq']" ng-click="sortBySubSpirit('liq')">Liqueur</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'ver']" ng-click="sortBySubSpirit('ver')">Vermut</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'bit']" ng-click="sortBySubSpirit('bit')">Bitter</li>
+                                </ul>
+                                <ul style="margin-top: 20px;" ng-if="$root.lang==='fi'"class="drink-menu-tabs drink-mobile-padding"  ng-show="spiritSubFin">
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'conac']" ng-click="sortBySubSpirit('conac')">Konjakki</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'calv']" ng-click="sortBySubSpirit('calv')">Calvados</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'brand']" ng-click="sortBySubSpirit('brand')">Brandy</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'whisk']" ng-click="sortBySubSpirit('whisk')">Viski</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'rum']" ng-click="sortBySubSpirit('rum')">Rommi</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'gin']" ng-click="sortBySubSpirit('gin')">Gin</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'vod']" ng-click="sortBySubSpirit('vod')">Vodka</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'teq']" ng-click="sortBySubSpirit('teq')">Tequila</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'liq']" ng-click="sortBySubSpirit('liq')">Likööri</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'ver']" ng-click="sortBySubSpirit('ver')">Vermutti</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'bit']" ng-click="sortBySubSpirit('bit')">Bitter</li>
+                                </ul>
+                                <ul style="margin-top: 20px;" ng-if="$root.lang==='ru'"class="drink-menu-tabs drink-mobile-padding"  ng-show="spiritSubRus">
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'conac']" ng-click="sortBySubSpirit('conac')">Коньяк</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'calv']" ng-click="sortBySubSpirit('calv')">Кальвадос</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'brand']" ng-click="sortBySubSpirit('brand')">Бренди</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'whisk']" ng-click="sortBySubSpirit('whisk')">Виски</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'rum']" ng-click="sortBySubSpirit('rum')">Ром</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'gin']" ng-click="sortBySubSpirit('gin')">Джин</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'vod']" ng-click="sortBySubSpirit('vod')">Водка</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'teq']" ng-click="sortBySubSpirit('teq')">текила</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'liq']" ng-click="sortBySubSpirit('liq')">Ликер</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'ver']" ng-click="sortBySubSpirit('ver')">Вермут</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'bit']" ng-click="sortBySubSpirit('bit')">Bitter</li>
+                                </ul>
+                                <table style="width:100%;">
+                                    <tbody>
+                                        <tr ng-repeat="item in drinks">
+                                            <td class="menu-padding">
+                                                <p ng-if="$root.lang==='ee'" class="menu-drink">
+                                                    {{item.name}}
+                                                </p>
+                                                <p ng-if="$root.lang==='en'" class="menu-drink">
+                                                    {{item.nameEng}}
+                                                </p>
+                                                <p ng-if="$root.lang==='fi'" class="menu-drink">
+                                                    {{item.nameFin}}
+                                                </p>
+                                                <p style="font-family:Roboto;" ng-if="$root.lang==='ru'" class="menu-drink">
+                                                    {{item.nameRus}}
+                                                </p>
+
+                                                <p ng-if="$root.lang==='ee'" class="menu-description">
+                                                    {{item.description}}
+                                                </p>
+                                                <p ng-if="$root.lang==='en'" class="menu-description">
+                                                    {{item.descEng}}
+                                                </p>
+                                                <p ng-if="$root.lang==='fi'" class="menu-description">
+                                                    {{item.descFin}}
+                                                </p>
+                                                <p style="font-family:Roboto;" ng-if="$root.lang==='ru'" class="menu-description">
+                                                    {{item.descRus}}
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p ng-if="$root.lang ==='en' && item.nameEng.length != 0" class="menu-price-drink">
+                                                     {{item.price}} €
+                                                </p>
+                                                <p ng-if="$root.lang ==='fi' && item.nameFin.length != 0" class="menu-price-drink">
+                                                     {{item.price}} €
+                                                </p>
+                                                <p ng-if="$root.lang ==='ru' && item.nameRus.length != 0" class="menu-price-drink">
+                                                     {{item.price}} €
+                                                </p>
+                                                <p ng-if="$root.lang ==='ee'" class="menu-price-drink">
+                                                     {{item.price}} €
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-6 menu-container-padding">
+                            <div class="menu-picture" style="background-image:url({{firstPicturePath}})">
+
+                            </div>
+                            <div class="main-course-menu-holder" ng-controller="foodCtrl">
+                                <p ng-if="$root.lang ==='en'" class="menu-box-title">
+                                    MAIN COURSE
+                                </p>
+                                <p ng-if="$root.lang ==='ee'" class="menu-box-title">
+                                    PEAMENÜÜ
+                                </p>
+                                <p ng-if="$root.lang ==='fi'" class="menu-box-title">
+                                    PÄÄRUOKIA
+                                </p>
+                                <p ng-if="$root.lang ==='ru'" class="menu-box-title" style="text-transform: uppercase; font-family:Roboto;">
+                                    Основные блюдa
+                                </p>
+                                <p ng-if="maincourse.length === 0" class="empty-menu">
+                                    There are currently no dishes in this menu
+                                </p>
+                                <table style="width:100%;">
+                                    <tbody>
+                                        <tr ng-repeat="item in maincourse">
+                                            <td class="menu-padding">
+                                                <p ng-if="$root.lang ==='ee'" class="menu-dish">
+                                                    {{item.name}}
+                                                </p>
+                                                <p ng-if="$root.lang ==='en' && item.descEng.length != 0" class="menu-dish">
+                                                    {{item.nameEng}}
+                                                </p>
+                                                <p ng-if="$root.lang ==='fi' && item.descFin.length != 0" class="menu-dish">
+                                                    {{item.nameFin}}
+                                                </p>
+                                                <p style="font-family:Roboto" ng-if="$root.lang ==='ru' && item.descRus.length != 0" class="menu-dish">
+                                                    {{item.nameRus}}
+                                                </p>
+
+                                                <p ng-if="$root.lang ==='ee'" class="menu-description">
+                                                    {{item.description}}
+                                                </p>
+                                                <p  ng-if="$root.lang ==='en' && item.nameEng.length != 0" class="menu-description">
+                                                    {{item.descEng}}
+                                                </p>
+                                                <p  ng-if="$root.lang ==='fi' && item.nameFin.length != 0" class="menu-description">
+                                                    {{item.descFin}}
+                                                </p>
+                                                <p style="font-family:Roboto"  ng-if="$root.lang ==='ru' && item.nameRus.length != 0" class="menu-description">
+                                                    {{item.descRus}}
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p ng-if="$root.lang ==='en' && item.descEng.length != 0 && item.nameEng.length != 0" class="menu-price">
+                                                     {{item.price}} €
+                                                </p>
+                                                <p ng-if="$root.lang ==='fi' && item.descFin.length != 0 && item.nameFin.length != 0" class="menu-price">
+                                                     {{item.price}} €
+                                                </p>
+                                                <p ng-if="$root.lang ==='ru' && item.descRus.length != 0 && item.nameRus.length != 0" class="menu-price">
+                                                     {{item.price}} €
+                                                </p>
+                                                <p ng-if="$root.lang ==='ee'" class="menu-price">
+                                                     {{item.price}} €
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="dessert-menu-holder" ng-controller="foodCtrl">
+                                <p ng-if="$root.lang ==='en'" class="menu-box-title">
+                                    DESSERTS
+                                </p>
+                                <p ng-if="$root.lang ==='ee'" class="menu-box-title">
+                                    MAGUSTOIDUD
+                                </p>
+                                <p ng-if="$root.lang ==='fi'" class="menu-box-title">
+                                    JÄLKIRUOKIA
+                                </p>
+                                <p ng-if="$root.lang ==='ru'" class="menu-box-title" style="text-transform: uppercase; font-family:Roboto">
+                                    Десерты
+                                </p>
+                                <p ng-if="dessert.length === 0" class="empty-menu">
+                                    There are currently no dishes in this menu
+                                </p>
+                                <table style="width:100%;">
+                                    <tbody>
+                                        <tr ng-repeat="item in dessert">
+                                            <td class="menu-padding">
+                                                <p ng-if="$root.lang ==='ee'" class="menu-dish">
+                                                    {{item.name}}
+                                                </p>
+                                                <p ng-if="$root.lang ==='en' && item.descEng.length != 0" class="menu-dish">
+                                                    {{item.nameEng}}
+                                                </p>
+                                                <p ng-if="$root.lang ==='fi' && item.descFin.length != 0" class="menu-dish">
+                                                    {{item.nameFin}}
+                                                </p>
+                                                <p style="font-family:Roboto;" ng-if="$root.lang ==='ru' && item.descRus.length != 0" class="menu-dish">
+                                                    {{item.nameRus}}
+                                                </p>
+
+                                                <p ng-if="$root.lang ==='ee'" class="menu-description">
+                                                    {{item.description}}
+                                                </p>
+                                                <p ng-if="$root.lang ==='en' && item.nameEng.length != 0" class="menu-description">
+                                                    {{item.descEng}}
+                                                </p>
+                                                <p ng-if="$root.lang ==='fi' && item.nameFin.length != 0" class="menu-description">
+                                                    {{item.descFin}}
+                                                </p>
+                                                <p style="font-family:Roboto;" ng-if="$root.lang ==='ru' && item.nameRus.length != 0" class="menu-description">
+                                                    {{item.descRus}}
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p ng-if="$root.lang ==='en' && item.descEng.length != 0 && item.nameEng.length != 0" class="menu-price">
+                                                     {{item.price}} €
+                                                </p>
+                                                <p ng-if="$root.lang ==='fi' && item.descFin.length != 0 && item.nameFin.length != 0" class="menu-price">
+                                                     {{item.price}} €
+                                                </p>
+                                                <p ng-if="$root.lang ==='ru' && item.descRus.length != 0 && item.nameRus.length != 0" class="menu-price">
+                                                     {{item.price}} €
+                                                </p>
+                                                <p ng-if="$root.lang ==='ee'" class="menu-price">
+                                                     {{item.price}} €
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="menu-picture-third" style="background-image:url({{thirdPicturePath}})">
+
+                            </div>
+                            <div class="menu-drink-holder hidden-md hidden-lg" ng-controller="drinkCtrl">
+                                <p ng-if="$root.lang ==='en'" class="menu-box-title">
+                                    DRINKS
+                                </p>
+                                <p ng-if="$root.lang ==='ee'" class="menu-box-title">
+                                    JOOGID
+                                </p>
+                                <p ng-if="$root.lang ==='fi'" class="menu-box-title">
+                                    JUOMIA
+                                </p>
+                                <p ng-if="$root.lang ==='ru'" class="menu-box-title" style="text-transform: uppercase; font-family:Roboto;">
+                                    Напитки
+                                </p>
+                                <ul ng-if="$root.lang==='en'" class="drink-menu-tabs">
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'wine']" ng-click="changeDrinks('wine')">WINE AND CHAMPAGNE</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'beer']" ng-click="changeDrinks('beer')">BEER / CIDER</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hardalco']" ng-click="changeDrinks('hardalco')">SPIRITS</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'cocktail']" ng-click="changeDrinks('cocktail')">COCKTAILS</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'nonalco']" ng-click="changeDrinks('nonalco')">SOFT DRINKS</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hotdrink']" ng-click="changeDrinks('hotdrink')">HOT BEVERAGES</li>
+                                </ul>
+                                <ul ng-if="$root.lang==='ee'" class="drink-menu-tabs" style="list-style:none;">
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'wine']" ng-click="changeDrinks('wine')">VEIN JA MULL</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'beer']" ng-click="changeDrinks('beer')">LAHJA</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hardalco']" ng-click="changeDrinks('hardalco')">KANGE</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'cocktail']" ng-click="changeDrinks('cocktail')">KOKTEILID</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'nonalco']" ng-click="changeDrinks('nonalco')">ALKOHOLIVABAD</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hotdrink']" ng-click="changeDrinks('hotdrink')">KUUMAD JOOGID</li>
+                                </ul>
+                                <ul ng-if="$root.lang ==='ee'" class="drink-menu-tabs drink-mobile-padding" ng-show="wineSubEst">
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'white']" ng-click="sortBySub('white')">Valge</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'red']" ng-click="sortBySub('red')">Punane</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'rose']" ng-click="sortBySub('rose')">Roosa</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'champ']" ng-click="sortBySub('champ')">Šampanja</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'prose']" ng-click="sortBySub('prose')">Vahuvein</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'port']" ng-click="sortBySub('port')">Portvein ja šerri</li>
+                                </ul>
+                                <ul ng-if="$root.lang ==='en'" class="drink-menu-tabs drink-mobile-padding" ng-show="wineSubEng">
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'white']" ng-click="sortBySub('white')">White</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'red']" ng-click="sortBySub('red')">Red</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'rose']" ng-click="sortBySub('rose')">Rose</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'champ']" ng-click="sortBySub('champ')">Champagne</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'prose']" ng-click="sortBySub('prose')">Sparkling wine</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'port']" ng-click="sortBySub('port')">Port and sherry</li>
+                                </ul>
+                                <ul ng-if="$root.lang==='ee'" class="drink-menu-tabs drink-mobile-padding"  ng-show="spiritSubEst">
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'conac']" ng-click="sortBySubSpirit('conac')">Konjak</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'calv']" ng-click="sortBySubSpirit('calv')">Kalvados</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'brand']" ng-click="sortBySubSpirit('brand')">Brändi</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'whisk']" ng-click="sortBySubSpirit('whisk')">Viski</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'rum']" ng-click="sortBySubSpirit('rum')">Rumm</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'gin']" ng-click="sortBySubSpirit('gin')">Džinn</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'vod']" ng-click="sortBySubSpirit('vod')">Viin</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'teq']" ng-click="sortBySubSpirit('teq')">Tekiila</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'liq']" ng-click="sortBySubSpirit('liq')">Liköör</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'ver']" ng-click="sortBySubSpirit('ver')">Vermut</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'bit']" ng-click="sortBySubSpirit('bit')">Bitter</li>
+                                </ul>
+                                <ul ng-if="$root.lang==='en'"class="drink-menu-tabs drink-mobile-padding"  ng-show="spiritSubEng">
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'conac']" ng-click="sortBySubSpirit('conac')">Cognac</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'calv']" ng-click="sortBySubSpirit('calv')">Kalvados</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'brand']" ng-click="sortBySubSpirit('brand')">Brandy</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'whisk']" ng-click="sortBySubSpirit('whisk')">Whiskey</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'rum']" ng-click="sortBySubSpirit('rum')">Rum</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'gin']" ng-click="sortBySubSpirit('gin')">Gin</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'vod']" ng-click="sortBySubSpirit('vod')">Vodka</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'teq']" ng-click="sortBySubSpirit('teq')">Tequila</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'liq']" ng-click="sortBySubSpirit('liq')">Liqueur</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'ver']" ng-click="sortBySubSpirit('ver')">Vermut</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'bit']" ng-click="sortBySubSpirit('bit')">Bitter</li>
+                                </ul>
+                                <table style="width:100%;">
+                                    <tbody>
+                                        <tr ng-repeat="item in drinks">
+                                            <td class="menu-padding">
+                                                <p ng-if="$root.lang==='ee'" class="menu-drink">
+                                                    {{item.name}}
+                                                </p>
+                                                <p ng-if="$root.lang==='en'" class="menu-drink">
+                                                    {{item.nameEng}}
+                                                </p>
+                                                <p ng-if="$root.lang==='fi'" class="menu-drink">
+                                                    {{item.nameFin}}
+                                                </p>
+                                                <p style="font-family:Roboto;" ng-if="$root.lang==='ru'" class="menu-drink">
+                                                    {{item.nameRus}}
+                                                </p>
+
+                                                <p ng-if="$root.lang==='ee'" class="menu-description">
+                                                    {{item.description}}
+                                                </p>
+                                                <p ng-if="$root.lang==='en'" class="menu-description">
+                                                    {{item.descEng}}
+                                                </p>
+                                                <p ng-if="$root.lang==='fi'" class="menu-description">
+                                                    {{item.descFin}}
+                                                </p>
+                                                <p style="font-family:Roboto;" ng-if="$root.lang==='ru'" class="menu-description">
+                                                    {{item.descRus}}
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p ng-if="$root.lang ==='en' && item.nameEng.length != 0" class="menu-price-drink">
+                                                     {{item.price}} €
+                                                </p>
+                                                <p ng-if="$root.lang ==='fi' && item.nameFin.length != 0" class="menu-price-drink">
+                                                     {{item.price}} €
+                                                </p>
+                                                <p ng-if="$root.lang ==='ru' && item.nameRus.length != 0" class="menu-price-drink">
+                                                     {{item.price}} €
+                                                </p>
+                                                <p ng-if="$root.lang ==='ee'" class="menu-price-drink">
+                                                     {{item.price}} €
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div ng-if="$root.lang ==='en'" class="row">
+                            <div class="col-md-12" style="margin-top: 60px;">
+                                <span style="height: 1px;
+                        width: 40px;
+                        background: white;
+                        display: block;
+                        position: absolute;
+                        top: 10px;
+                        left: 40px;"></span>
+                                <p style="    position: absolute;
+                        color:white;
+                        top: 0px;
+                        left: 90px;
+                        font-family: spaceMono;">
+                                    Tasting Menu
+                                </p>
+                            </div>
+                        </div>
+                        <div  ng-if="$root.lang ==='ee'" class="row">
+                            <div class="col-md-12" style="margin-top: 60px;">
+                                <span style="height: 1px;
+                        width: 40px;
+                        background: white;
+                        display: block;
+                        position: absolute;
+                        top: 10px;
+                        left: 40px;"></span>
+                                <p style="    position: absolute;
+                        color:white;
+                        top: 0px;
+                        left: 90px;
+                        font-family: spaceMono;">
+                                    Grupimenüü
+                                </p>
+                            </div>
+                        </div>
+                        <div  ng-if="$root.lang ==='fi'" class="row">
+                            <div class="col-md-12" style="margin-top: 60px;">
+                                <span style="height: 1px;
+                        width: 40px;
+                        background: white;
+                        display: block;
+                        position: absolute;
+                        top: 10px;
+                        left: 40px;"></span>
+                                <p style="    position: absolute;
+                        color:white;
+                        top: 0px;
+                        left: 90px;
+                        font-family: spaceMono;">
+                                    Ryhmämenu
+                                </p>
+                            </div>
+                        </div>
+                        <div  ng-if="$root.lang ==='ru'" class="row">
+                            <div class="col-md-12" style="margin-top: 60px;">
+                                <span style="height: 1px;
+                        width: 40px;
+                        background: white;
+                        display: block;
+                        position: absolute;
+                        top: 10px;
+                        left: 40px;"></span>
+                                <p style="    position: absolute;
+                        color:white;
+                        top: 0px;
+                        left: 90px;
+                        font-family: Roboto;">
+                                    Mеню группы 
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p ng-if="$root.lang ==='ee'" class="menu-section-text">
+                                    {{tastingText}}
+                                </p>
+                                <p ng-if="$root.lang ==='en'" class="menu-section-text">
+                                    {{tastingTextEng}}
+                                </p>
+                                <p ng-if="$root.lang ==='fi' && tastingTextFin != 'There is nothint yet inserted'" class="menu-section-text">
+                                    {{tastingTextFin}}
+                                </p>
+                                <p style="font-family:Roboto" ng-if="$root.lang ==='ru' && tastingTextRus != 'There is nothint yet inserted'" class="menu-section-text">
+                                    {{tastingTextRus}}
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <button ng-click="toUrlEng()" ng-if="$root.lang === 'en'" class="tasting-menu-btn" >View Tasting Menu<img class="tasting-menu-arrow" src="css/img/arrow.png" /></button>
+                                <button ng-click="toUrlEst()" ng-if="$root.lang === 'ee'" class="tasting-menu-btn" >Vaata grupimenüüd<img class="tasting-menu-arrow" src="css/img/arrow.png" /></button>
+                                <button ng-click="toUrlEng()" ng-if="$root.lang === 'fi'" class="tasting-menu-btn" >Katso ryhmämenu<img class="tasting-menu-arrow" src="css/img/arrow.png" /></button>
+                                <button style="font-family:Roboto;" ng-click="toUrlEng()" ng-if="$root.lang === 'ru'" class="tasting-menu-btn" >Cмотри меню группы<img class="tasting-menu-arrow" src="css/img/arrow.png" /></button>
+
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" ng-hide="eventDialog" ng-controller="eventCtrl" scroll-bookmark="events">
+            <div class="container">
+                <div class="row">
+                    <div ng-if="$root.lang==='en'"class="col-md-12" style="margin-top: 60px;">
+                        <span style="height: 1px;
+                width: 40px;
+                background: black;
+                display: block;
+                position: absolute;
+                top: 10px;
+                left: 40px;"></span>
+                        <p style="    position: absolute;
+                top: 0px;
+                left: 90px;
+                font-family: spaceMono;">
+                            Events
+                        </p>
+                    </div>
+                    <div ng-if="$root.lang==='ee'" class="col-md-12" style="margin-top: 60px;">
+                        <span style="height: 1px;
+                width: 40px;
+                background: black;
+                display: block;
+                position: absolute;
+                top: 10px;
+                left: 40px;"></span>
+                        <p style="    position: absolute;
+                top: 0px;
+                left: 90px;
+                font-family: spaceMono;">
+                            Üritused
+                        </p>
+                    </div>
+                    <div ng-if="$root.lang==='fi'" class="col-md-12" style="margin-top: 60px;">
+                        <span style="height: 1px;
+                width: 40px;
+                background: black;
+                display: block;
+                position: absolute;
+                top: 10px;
+                left: 40px;"></span>
+                        <p style="    position: absolute;
+                top: 0px;
+                left: 90px;
+                font-family: spaceMono;">
+                            Tapahtumat
+                        </p>
+                    </div>
+                    <div ng-if="$root.lang==='ru'" class="col-md-12" style="margin-top: 60px;">
+                        <span style="height: 1px;
+                width: 40px;
+                background: black;
+                display: block;
+                position: absolute;
+                top: 10px;
+                left: 40px;"></span>
+                        <p style="    position: absolute;
+                top: 0px;
+                left: 90px;
+                font-family: Roboto;">
+                            Cобытия
+                        </p>
+                    </div>
+                </div>
+                <div class="row" style="padding-bottom: 100px; border-bottom: 1px solid #CCCCCC;">
+                    <div class="col-md-6">
+                        <p ng-if="$root.lang ==='ee'" class="events-headline">
+                            {{eventTitle}}
+                        </p>
+                        <p ng-if="$root.lang ==='en'" class="events-headline">
+                            {{eventTitleEng}}
+                        </p>
+                        <p ng-if="$root.lang ==='fi' && eventTitleFin != 'There is nothint yet inserted'" class="events-headline">
+                            {{eventTitleFin}}
+                        </p>
+                        <p style="font-family:Play;" ng-if="$root.lang ==='ru' && eventTitleRus != 'There is nothint yet inserted'" class="events-headline">
+                            {{eventTitleRus}}
+                        </p>
+                        <p ng-if="event.length === ''">
+                            There are currently no events coming
+                        </p>
+                        <div class="event">
+                            <p ng-if="$root.lang==='ee'"class="event-title">
+                                {{event.name}}
+                            </p>
+                            <p ng-if="$root.lang==='en'" class="event-title">
+                                {{event.nameEng}}
+                            </p>
+                            <p ng-if="$root.lang==='fi'" class="event-title">
+                                {{event.nameFin}}
+                            </p>
+                            <p style="font-family:Roboto;" ng-if="$root.lang==='ru'" class="event-title">
+                                {{event.nameRus}}
+                            </p>
+                            <!--<p class="event-time">
+                                {{event.date}}
+                            </p>-->
+                            <p ng-if="$root.lang==='ee'" class="event-description">
+                                {{event.description}}
+                            </p>
+                            <p ng-if="$root.lang==='en'" class="event-description">
+                                {{event.descEng}}
+                            </p>
+                            <p ng-if="$root.lang==='fi'" class="event-description">
+                                {{event.descFin}}
+                            </p>
+                            <p style="font-family:Roboto;" ng-if="$root.lang==='ru'" class="event-description">
+                                {{event.descRus}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div ng-if="$root.lang === 'ee'" class="event-picture" style="background-image: url({{eventPicturePathEst}})">
+
+                        </div>
+                        <div ng-if="$root.lang === 'en'" class="event-picture" style="background-image: url({{eventPicturePathEng}})">
+
+                        </div>
+                        <div ng-if="$root.lang === 'fi'" class="event-picture" style="background-image: url({{eventPicturePathFin}})">
+
+                        </div>
+                        <div ng-if="$root.lang === 'ru'" class="event-picture" style="background-image: url({{eventPicturePathRus}})">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" scroll-bookmark="contact">
+            <div class="container">
+                <div class="row">
+                    <div ng-if="$root.lang==='en'" class="col-md-12" style="margin-top: 60px;">
+                        <span style="height: 1px;
+                width: 40px;
+                background: black;
+                display: block;
+                position: absolute;
+                top: 10px;
+                left: 40px;"></span>
+                        <p style="    position: absolute;
+                top: 0px;
+                left: 90px;
+                font-family: spaceMono;">
+                            Contact
+                        </p>
+                    </div>
+                    <div ng-if="$root.lang==='ee'" class="col-md-12" style="margin-top: 60px;">
+                        <span style="height: 1px;
+                width: 40px;
+                background: black;
+                display: block;
+                position: absolute;
+                top: 10px;
+                left: 40px;"></span>
+                        <p style="    position: absolute;
+                top: 0px;
+                left: 90px;
+                font-family: spaceMono;">
+                            Kontakt
+                        </p>
+                    </div>
+                    <div ng-if="$root.lang==='fi'" class="col-md-12" style="margin-top: 60px;">
+                        <span style="height: 1px;
+                width: 40px;
+                background: black;
+                display: block;
+                position: absolute;
+                top: 10px;
+                left: 40px;"></span>
+                        <p style="    position: absolute;
+                top: 0px;
+                left: 90px;
+                font-family: spaceMono;">
+                            Yhteystiedot
+                        </p>
+                    </div>
+                    <div ng-if="$root.lang==='ru'" class="col-md-12" style="margin-top: 60px;">
+                        <span style="height: 1px;
+                width: 40px;
+                background: black;
+                display: block;
+                position: absolute;
+                top: 10px;
+                left: 40px;"></span>
+                        <p style="    position: absolute;
+                top: 0px;
+                left: 90px;
+                font-family: Roboto;">
+                            Kонтакты
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p ng-if="$root.lang==='en'" class="booking-title" style="color:black;">
+                            Come to visit us
+                        </p>
+                        <p ng-if="$root.lang==='ee'" class="booking-title" style="color:black;">
+                            Tule meile külla
+                        </p>
+                        <p ng-if="$root.lang==='fi'" class="booking-title" style="color:black;">
+                            Tervetuloa
+                        </p>
+                        <p ng-if="$root.lang==='ru'" class="booking-title" style="color:black;font-family:Play">
+                            Приходите к нам
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <button ng-if="$root.lang==='en'" ng-click="bronModal()" class="booking-btn">Book a table<img class="contact-menu-arrow" src="css/img/arrow.png" /></button>
+                        <button ng-if="$root.lang==='ee'" ng-click="bronModal()" class="booking-btn">Broneeri laud<img class="contact-menu-arrow" src="css/img/arrow.png" /></button>
+                        <button ng-if="$root.lang==='fi'" ng-click="bronModal()" class="booking-btn">Varaa pöytä<img class="contact-menu-arrow" src="css/img/arrow.png" /></button>
+                        <button ng-if="$root.lang==='ru'" ng-click="bronModal()" class="booking-btn" style="font-family:Roboto;">Заказать столик<img class="contact-menu-arrow" src="css/img/arrow.png" /></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 75px">
+            <div class="col-md-6" style="margin:0; padding:0">
+                <div class="mapPicture" style="background-image: url({{mapPicture}})">
+
+                </div>
+            </div>
+            <div class="col-md-6" style="margin:0; padding:0">
+                <div ng-controller="mapCtrl" ng-init="initMap()">
+                    <div id="map" style="height: 400px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 100px;">
+            <div class="container">
+                <div class="col-md-3 contact-padding-mobile">
+                    <p ng-if="$root.lang==='en'" class="contact-title">
+                        Call us
+                    </p>
+                    <p ng-if="$root.lang==='ee'" class="contact-title">
+                        Helista meile
+                    </p>
+                    <p ng-if="$root.lang==='fi'" class="contact-title">
+                        Soita meille
+                    </p>
+                    <p style="font-family:Roboto" ng-if="$root.lang==='ru'" class="contact-title">
+                        Позвоните нам
+                    </p>
+                    <p ng-if="$root.lang==='en'" class="contact-info">
+                        {{contactCallEng}}
+                    </p>
+                    <p ng-if="$root.lang==='ee'" class="contact-info">
+                        {{contactCallEst}}
+                    </p>
+                    <p ng-if="$root.lang==='fi'" class="contact-info">
+                        {{contactCallFin}}
+                    </p>
+                    <p style="font-family:Roboto" ng-if="$root.lang==='ru'" class="contact-info">
+                        {{contactCallRus}}
+                    </p>
+                </div>
+                <div class="col-md-3 contact-padding-mobile">
+                    <p ng-if="$root.lang==='en'" class="contact-title">
+                        Visit us
+                    </p>
+                    <p ng-if="$root.lang==='ee'" class="contact-title">
+                        Külasta meid
+                    </p>
+                    <p ng-if="$root.lang==='fi'" class="contact-title">
+                        Tervetuloa
+                    </p>
+                    <p style="font-family:Roboto" ng-if="$root.lang==='ru'" class="contact-title">
+                        Приходите к нам
+                    </p>
+                    <p ng-if="$root.lang==='ee'" class="contact-info">
+                        {{contactVisitEst}}
+                    </p>
+                    <p ng-if="$root.lang==='en'" class="contact-info">
+                        {{contactVisitEng}}
+                    </p>
+                    <p ng-if="$root.lang==='fi'" class="contact-info">
+                        {{contactVisitFin}}
+                    </p>
+                    <p style="font-family:Roboto" ng-if="$root.lang==='ru'" class="contact-info">
+                        {{contactVisitRus}}
+                    </p>
+                </div>
+                <div class="col-md-3 contact-padding-mobile">
+                    <p ng-if="$root.lang==='en'" class="contact-title">
+                        Opening hours
+                    </p>
+                    <p ng-if="$root.lang==='ee'" class="contact-title">
+                        Avatud
+                    </p>
+                    <p ng-if="$root.lang==='fi'" class="contact-title">
+                        Aukioloajat
+                    </p>
+                    <p style="font-family:Roboto" ng-if="$root.lang==='ru'" class="contact-title">
+                        Часы работы
+                    </p>
+                    <p  ng-if="$root.lang==='en'" class="contact-info">
+                        <span style="font-size:12px">Mon - Sat</span> {{contactTimeWorkWeekEng}}<br />
+                        <span style="font-size:12px">Sun</span> {{contactTimeWeekendEng}}
+                    </p>
+                    <p ng-if="$root.lang==='ee'" class="contact-info">
+                        <span style="font-size:12px">Esmasp - Laup</span> {{contactTimeWorkWeek}}<br />
+                        <span style="font-size:12px">Pühap</span> {{contactTimeWeekend}}
+                    </p>
+                    <p ng-if="$root.lang==='fi'" class="contact-info">
+                        <span style="font-size:12px">MA-LA</span> {{contactTimeWorkWeek}}<br />
+                        <span style="font-size:12px">SU</span> {{contactTimeWeekend}}
+                    </p>
+                    <p ng-if="$root.lang==='ru'" class="contact-info">
+                        <span style="font-size:12px; font-family:Roboto;">Пн.-Сб.</span> {{contactTimeWorkWeek}}<br />
+                        <span style="font-size:12px; font-family:Roboto;">Вс.</span> {{contactTimeWeekend}}
+                    </p>
+                </div>
+                <div class="col-md-3 contact-padding-mobile">
+                    <p ng-if="$root.lang==='en'" class="contact-title">
+                        Write to us
+                    </p>
+                    <p ng-if="$root.lang==='ee'" class="contact-title">
+                        Kirjuta meile
+                    </p>
+                    <p ng-if="$root.lang==='fi'" class="contact-title">
+                        Kirjoita meille
+                    </p>
+                    <p style="font-family:Roboto;" ng-if="$root.lang==='ru'" class="contact-title">
+                        Написать нам
+                    </p>
+                    <p ng-if="$root.lang==='en'" class="contact-info-email">
+                        {{contactEmailEng}}
+                    </p>
+                    <p ng-if="$root.lang==='ee'" class="contact-info-email">
+                        {{contactEmailEst}}
+                    </p>
+                    <p ng-if="$root.lang==='fi'" class="contact-info-email">
+                        {{contactEmailFin}}
+                    </p>
+                    <p style="font-family:Roboto;" ng-if="$root.lang==='ru'" class="contact-info-email">
+                        {{contactEmailRus}}
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        <div class="row feedback-form-margin">
+            <div class="container">
+                <div class="col-md-6 hidden-sm hidden-xs">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p ng-if="$root.lang==='en'" class="feedback-title">
+                                Stay in touch
+                            </p>
+                            <p ng-if="$root.lang==='ee'" class="feedback-title">
+                                Jälgi meid
+                            </p>
+                            <p ng-if="$root.lang==='fi'" class="feedback-title">
+                                Seuraa meitä
+                            </p>
+                            <p style="font-family:Roboto;" ng-if="$root.lang==='ru'" class="feedback-title">
+                                Следуйте за нами
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <ul class="footer-social" style="list-style:none">
+                           <li>
+                               <a href="https://www.facebook.com/fiiresto/?fref=ts" target="_blank">
+                                   <img style="height:25px;" src="css/img/facebook.png"/>
+                               </a>
+                           </li>
+                           <li>
+                               <a href="https://www.instagram.com/fiiresto/" target="_blank">
+                                   <img style="height:25px;" src="css/img/instagram.png"/>
+                               </a>
+                           </li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="footer-menu">
+                                <li>
+                                    <a href="http://sophia.tartuhotels.ee/" target="_blank">
+                                        <img style="height: 25px;" src="css/img/hotell-logo.jpg"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <p class="copyright-text">
+                                        Copyright &copy 2017 Fii Restaurant
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mobile-stretch" ng-controller="emailCtrl">
+                    <div class="col-md-12">
+                        <p  ng-if="$root.lang==='en'" class="feedback-title">
+                            Do you have any feedback for us? Send us a message.
+                        </p>
+                        <p ng-if="$root.lang==='ee'" class="feedback-title">
+                            Kas teil on meile tagasisidet? Saatke meile kiri.
+                        </p>
+                        <p ng-if="$root.lang==='fi'" class="feedback-title">
+                            Antakaa meille palautetta!
+                        </p>
+                        <p style="font-family:Roboto;" ng-if="$root.lang==='ru'" class="feedback-title">
+                            Сообщите Ваше мнение
+                        </p>
+                    </div>
+                    <div class="col-md-6 mobile-margin-name-email">
+                        <input ng-if="$root.lang==='en'" type="text" class="feedback-form" ng-model="$root.emailEng" placeholder="E-mail"/>
+                        <input ng-if="$root.lang==='ee'" type="text" class="feedback-form" ng-model="$root.emailEst" placeholder="Email"/>
+                        <input ng-if="$root.lang==='fi'" type="text" class="feedback-form" ng-model="$root.emailFin" placeholder="Sähköposti"/>
+                        <input style="font-family:Roboto;" ng-if="$root.lang==='ru'" type="text" class="feedback-form" ng-model="$root.emailRus" placeholder="Электронная почта"/>
+                    </div>
+                    <div class="col-md-6 mobile-margin-name-email">
+                        <input ng-if="$root.lang==='en'" type="text" class="feedback-form" ng-model="$root.nameEng" placeholder="Full Name"/>
+                        <input ng-if="$root.lang==='ee'" type="text" class="feedback-form" ng-model="$root.nameEst" placeholder="Täisnimi"/>
+                        <input ng-if="$root.lang==='fi'" type="text" class="feedback-form" ng-model="$root.nameFin" placeholder="Etu- ja sukunimi"/>
+                        <input style="font-family:Roboto;" ng-if="$root.lang==='ru'" type="text" class="feedback-form" ng-model="$root.nameRus" placeholder="Полное имя"/>
+                    </div>
+                    <div class="col-md-12" style="margin-top:20px;">
+                        <textarea  ng-if="$root.lang==='en'" class="feedback-form" ng-model="$root.messageEng" placeholder="Message"></textarea>
+                        <textarea ng-if="$root.lang==='ee'" class="feedback-form" ng-model="$root.messageEst" placeholder="Sõnum"></textarea>
+                        <textarea ng-if="$root.lang==='fi'" class="feedback-form" ng-model="$root.messageFin" placeholder="Viesti"></textarea>
+                        <textarea style="font-family:Roboto;" ng-if="$root.lang==='ru'" class="feedback-form" ng-model="$root.messageRus" placeholder="Cообщение"></textarea>
+                    </div>
+                    <div class="col-md-12">
+                        <button ng-if="$root.lang==='en'" ng-click="sendEmailEng()" class="feedback-btn">Send Message<img class="feedback-arrow" style="width: 15px;" src="css/img/arrow.png" /></button>
+                        <button ng-if="$root.lang==='ee'" ng-click="sendEmailEst()" class="feedback-btn">Saada kiri<img class="feedback-arrow" style="width: 15px;" src="css/img/arrow.png" /></button>
+                        <button ng-if="$root.lang==='fi'" ng-click="sendEmailEst()" class="feedback-btn">Lähetä viesti<img class="feedback-arrow" style="width: 15px;" src="css/img/arrow.png" /></button>
+                        <button style="font-family:Roboto" ng-if="$root.lang==='ru'" ng-click="sendEmailEst()" class="feedback-btn">Отправить<img class="feedback-arrow" style="width: 15px;" src="css/img/arrow.png" /></button>
+                    </div>
+                </div>
+                <div class="col-md-6 hidden-md hidden-lg">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p ng-if="$root.lang==='en'" class="feedback-title">
+                                Stay in touch
+                            </p>
+                            <p ng-if="$root.lang==='ee'" class="feedback-title">
+                                Jälgi meid
+                            </p>
+                            <p ng-if="$root.lang==='fi'" class="feedback-title">
+                                Seuraa meitä
+                            </p>
+                            <p style="font-family: Roboto;" ng-if="$root.lang==='ru'" class="feedback-title">
+                                Следуйте за нами
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <ul class="footer-social" style="list-style:none">
+                           <li>
+                               <a href="https://www.facebook.com/fiiresto/?fref=ts" target="_blank">
+                                   <img style="height:25px;" src="css/img/facebook.png"/>
+                               </a>
+                           </li>
+                           <li>
+                               <a href="https://www.instagram.com/fiiresto/" target="_blank">
+                                   <img style="height:25px;" src="css/img/instagram.png"/>
+                               </a>
+                           </li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="footer-menu">
+                                <li>
+                                    <a href="http://sophia.tartuhotels.ee/" target="_blank">
+                                        <img style="height: 25px;" src="css/img/hotell-logo.jpg"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <p class="copyright-text">
+                                        Copyright &copy 2017 Fii Restaurant
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 bron-modal" ng-controller="bronCtrl" ng-show="bookingModal">
+        <div class="overlay">
+            <div class="row">
+                <div class="col-md-12">
+                    <i class="fa fa-times bron-close-btn" ng-click="closeModal()" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container">
+                    <p ng-if="$root.lang ==='en'" class="bron-modal-title" ng-click="bronModal()" ng-class="{true: 'newMargin', false: 'oldMargin'}[errorMsg]">
+                        Book a Table
+                    </p>
+                    <p ng-if="$root.lang ==='ee'" class="bron-modal-title">
+                        Broneeri laud
+                    </p>
+                    <p ng-if="$root.lang ==='fi'" class="bron-modal-title">
+                        Varaa pöytä
+                    </p>
+                    <p style="font-family:Roboto;" ng-if="$root.lang ==='ru'" class="bron-modal-title bron-rus-title">
+                        Заказать столик
+                    </p>
+                    <!--<p ng-if="$root.lang ==='ee'" ng-show="bronSecond" ng-click="backToFirst()" class="bron-back">
+                        Tagasi
+                    </p>
+                    <p ng-if="$root.lang ==='ee'" ng-show="bronSecond" ng-click="backToFirst()" class="bron-back">
+                        Go back
+                    </p>-->
+                </div>
+            </div>
+            <div ng-show="bronFirst">
+                <div class="row">
+                    <div class="container" ng-if="$root.lang ==='en'">
+                        <div class="col-md-12">
+                            <p style="color:white;font-family:spaceMono;color:#a94442" ng-show="errorMsg">We're sorry, restaurant is fully booked on this time. Please change the details.</p>
+                            <p class="error-message" ng-if="dropDownPeopleEngError || dropDownTimeEngError || dateEngError ">Please make selection on all fields.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <label style="color:white;">How many people?</label>
+                            <div class="dropdown" ng-class="{true:'error-bron', false:'nonerror-bron'}[dropDownPeopleEngError===true]" ng-click="test1()">
+                              <span>{{dropDownPeople}}</span>
+                              <i class="fa fa-caret-down bron-caret" aria-hidden="true"></i>
+                              <div class="dropdown-content" ng-show="form.showDropDownPeopleEng">
+                                  <a ng-repeat="item in people" ng-click="changePeople(item);$event.stopPropagation();">{{item}}</a>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label style="color:white;">Time?</label>
+                            <div ng-class="{true:'error-bron', false:'nonerror-bron'}[dropDownTimeEngError===true]" class="dropdown" ng-click="test2()">
+                              <span>{{dropDownTime}}</span>
+                              <i class="fa fa-caret-down bron-caret" aria-hidden="true"></i>
+                              <div  class="dropdown-content" ng-show="form.showDropDownTimeEng">
+                                  <a ng-repeat="item in times" ng-click="changeTime(item); $event.stopPropagation();">{{item}}</a>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label style="color:white;">When?</label>
+                            <datepicker date-format="d MMMM, yyyy">
+                              <input ng-class="{true:'error-bron', false:'nonerror-bron'}[dateEngError===true]" readonly="true" class="bron-date" ng-model="$root.dateEng" type="text" placeholder="Pick a date"/>
+                            </datepicker>
+                        </div>
+                    </div>
+                    <div class="container" ng-if="$root.lang ==='ee'">
+                        <div class="col-md-12">
+                            <p style="color:white;font-family:spaceMono;color:#a94442" ng-show="errorMsg">Kahjuks on kogu restoran sellel kellaajal broneeritud. Palun muutke kellaaega või kuupäeva.</p>
+                            <p class="error-message" ng-if="dropDownPeopleEstError || dropDownTimeEstError || dateEstError ">Kõik väljad peavad olema valitud</p>
+                        </div>
+                        <div class="col-md-4">
+                            <label  style="color:white;">Mitu inimest?</label>
+                            <div ng-class="{true:'error-bron', false:'nonerror-bron'}[dropDownPeopleEstError===true]" class="dropdown" ng-click="test()">
+                              <span>{{dropDownPeopleEst}}</span>
+                              <i class="fa fa-caret-down bron-caret" aria-hidden="true"></i>
+                              <div class="dropdown-content" ng-show="form.showDropDownPeople">
+                                  <a ng-repeat="item in peopleEst" ng-click="changePeopleEst(item); $event.stopPropagation();">{{item}}</a>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label  style="color:white;">Kellaaeg?</label>
+                            <div ng-class="{true:'error-bron', false:'nonerror-bron'}[dropDownTimeEstError===true]" class="dropdown" ng-click="test3()">
+                              <span>{{dropDownTimeEst}}</span>
+                              <i class="fa fa-caret-down bron-caret" aria-hidden="true"></i>
+                              <div class="dropdown-content" ng-show="form.showDropDownTime">
+                                  <a ng-repeat="item in times" ng-click="changeTimeEst(item); $event.stopPropagation();">{{item}}</a>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <label style="color:white;">Kuupäev?</label>
+                          <datepicker date-format="d MMMM, yyyy">
+                              <input ng-class="{true: 'error-bron', false:'nonerror-bron'}[dateEstError===true]" readonly="true" class="bron-date" ng-model="$root.dateEst" type="text" placeholder="Vali kuupäev"/>
+                          </datepicker>
+                            <!--<datepicker ng-if="$root.lang ==='en'" date-format="d MMMM, yyyy">
+                              <input class="bron-date" ng-model="date" type="text" placeholder="Pick a date"/>
+                          </datepicker>-->
+                        </div>
+                    </div>
+                    <div class="container" ng-if="$root.lang ==='fi'">
+                        <div class="col-md-12">
+                            <p style="color:white;font-family:spaceMono;color:#a94442" ng-show="errorMsg">Valitettavasti ravintolamme on valitsemmallasi ajankohtalla varattu. Muuta kellonaika tai päivämäärä.</p>
+                            <p class="error-message" ng-if="dropDownPeopleFinError || dropDownTimeFinError || dateFinError ">Kaikki kentät on lisättävä</p>
+                        </div>
+                        <div class="col-md-4">
+                            <label  style="color:white;">Montako henkilöä?</label>
+                            <div ng-class="{true:'error-bron', false:'nonerror-bron'}[dropDownPeopleFinError===true]" class="dropdown" ng-click="openPeopleFin()">
+                              <span>{{dropDownPeopleFin}}</span>
+                              <i class="fa fa-caret-down bron-caret" aria-hidden="true"></i>
+                              <div class="dropdown-content" ng-show="form.showDropDownPeopleFin">
+                                  <a ng-repeat="item in peopleFin" ng-click="changePeopleFin(item); $event.stopPropagation();">{{item}}</a>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label  style="color:white;">Kellonaika?</label>
+                            <div ng-class="{true:'error-bron', false:'nonerror-bron'}[dropDownTimeFinError===true]" class="dropdown" ng-click="openTimeFin()">
+                              <span>{{dropDownTimeFin}}</span>
+                              <i class="fa fa-caret-down bron-caret" aria-hidden="true"></i>
+                              <div class="dropdown-content" ng-show="form.showDropDownTimeFin">
+                                  <a ng-repeat="item in times" ng-click="changeTimeFin(item); $event.stopPropagation();">{{item}}</a>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <label style="color:white;">Päivämäärä?</label>
+                          <datepicker date-format="d MMMM, yyyy">
+                              <input ng-class="{true: 'error-bron', false:'nonerror-bron'}[dateFinError===true]" readonly="true" class="bron-date" ng-model="$root.dateFin" type="text" placeholder="Valitse päivämäärä"/>
+                          </datepicker>
+
+                        </div>
+                    </div>
+                    <div class="container" ng-if="$root.lang ==='ru'">
+                        <div class="col-md-12">
+                            <p style="color:white;font-family:Roboto;color:#a94442" ng-show="errorMsg">К сожалению весь ресторан забронирован в то время. Пожалуйста измените время или дату.</p>
+                            <p class="error-message" style="font-family:Roboto;" ng-if="dropDownPeopleRusError || dropDownTimeRusError || dateRusError ">Все поля должны быть выбраны</p>
+                        </div>
+                        <div class="col-md-4">
+                            <label  style="color:white; font-family:Roboto">Сколько людей?</label>
+                            <div ng-class="{true:'error-bron', false:'nonerror-bron'}[dropDownPeopleRusError===true]" class="dropdown" ng-click="showRusPeople()">
+                              <span style="font-family:Roboto;">{{dropDownPeopleRus}}</span>
+                              <i class="fa fa-caret-down bron-caret" aria-hidden="true"></i>
+                              <div class="dropdown-content" ng-show="form.showDropDownPeopleRus">
+                                  <a style="font-family:Roboto;" ng-repeat="item in peopleRus" ng-click="changePeopleRus(item); $event.stopPropagation();">{{item}}</a>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label  style="color:white;font-family:Roboto;">Время?</label>
+                            <div ng-class="{true:'error-bron', false:'nonerror-bron'}[dropDownTimeRusError===true]" class="dropdown" ng-click="showRusTime()">
+                              <span style="font-family:Roboto;">{{dropDownTimeRus}}</span>
+                              <i class="fa fa-caret-down bron-caret" aria-hidden="true"></i>
+                              <div class="dropdown-content" ng-show="form.showDropDownTimeRus">
+                                  <a style="font-family:Roboto;" ng-repeat="item in times" ng-click="changeTimeRus(item); $event.stopPropagation();">{{item}}</a>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <label style="color:white;font-family:Roboto;">Дата?</label>
+                          <datepicker date-format="d MMMM, yyyy">
+                              <input style="font-family:Roboto;" ng-class="{true: 'error-bron', false:'nonerror-bron'}[dateRusError===true]" readonly="true" class="bron-date" ng-model="$root.dateRus" type="text" placeholder="Выберите дату"/>
+                          </datepicker>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container">
+                        <div class="col-md-12">
+                            <!--<button class="bron-btn"  ng-if="$root.lang ==='en'" ng-click="validateDate()">Book a Table</button>-->
+                            <button ng-if="$root.lang ==='ee'" class="bron-btn" ng-click="validateDateEst()">Reserveeri laud <img class="booking-modal-arrow" src="css/img/arrow.png" /></button>
+                            <button ng-if="$root.lang ==='en'" class="bron-btn" ng-click="validateDateEng()">Book a table <img class="booking-modal-arrow" src="css/img/arrow.png" /></button>
+                            <button ng-if="$root.lang ==='fi'" class="bron-btn" ng-click="validateDateFin()">Varaa pöytä<img class="booking-modal-arrow" src="css/img/arrow.png" /></button>
+                            <button style="font-family:Roboto;" ng-if="$root.lang ==='ru'" class="bron-btn" ng-click="validateDateRus()">Заказать столик<img class="booking-modal-arrow" src="css/img/arrow.png" /></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="bronSecond">
+                <div class="row bron-second-margin">
+                    <div class="container">
+                        <i class="fa fa-arrow-left bron-modal-back" aria-hidden="true" style="color:white;float: left;margin-top: 4px;margin-left: 15px;"></i>
+                        <p class="back-btn" ng-click="backToFirstModal()" ng-if="$root.lang ==='ee'">
+                            Tagasi
+                        </p>
+                        <p class="back-btn" ng-click="backToFirstModal()" ng-if="$root.lang ==='en'">
+                            Back
+                        </p>
+                        <p class="back-btn" ng-click="backToFirstModal()" ng-if="$root.lang ==='fi'">
+                            Sitten
+                        </p>
+                        <p class="back-btn" ng-click="backToFirstModal()" ng-if="$root.lang ==='ru'" style="font-family:Roboto;">
+                            назад
+                        </p>
+                    </div>
+                    <div class="container">
+                        <div class="col-md-12">
+                            <p class="error-message" ng-if="nameEstError || emailEstError || phoneEstError ">Kõik väljad peavad olema täidetud</p>
+                            <p class="error-message" ng-if="nameEngError || emailEngError || phoneEngError ">All fields have to be filled.</p>
+                            <p class="error-message" style="font-family:Roboto;" ng-if="nameRusError || emailRusError || phoneRusError ">Все поля должны быть выбраны</p>
+                            <p class="error-message" ng-if="nameFinError || emailFinError || phoneFinError ">Kaikki kentät on lisättävä</p>
+                        </div>
+                        <div class="col-md-4">
+                            <label style="color:white" ng-if="$root.lang ==='en'">Your name</label>
+                            <input ng-class="{true:'error-bron', false:'nonerror-bron'}[nameEngError===true]" ng-if="$root.lang ==='en'" type="text" class="bron-input" placeholder="Full name" ng-model="$root.nameEng"/>
+                            <label style="color:white" ng-if="$root.lang ==='ee'">Teie nimi</label>
+                            <input ng-class="{true:'error-bron', false:'nonerror-bron'}[nameEstError===true]" ng-if="$root.lang ==='ee'" type="text" class="bron-input" placeholder="Täisnimi" ng-model="$root.nameEst"/>
+                            <label style="color:white" ng-if="$root.lang ==='fi'">Etu- ja sukunimi</label>
+                            <input ng-class="{true:'error-bron', false:'nonerror-bron'}[nameFinError===true]" ng-if="$root.lang ==='fi'" type="text" class="bron-input" placeholder="Etu- ja sukunimi" ng-model="$root.nameFin"/>
+                            <label style="color:white; font-family:Roboto;" ng-if="$root.lang ==='ru'">Полное имя</label>
+                            <input style="font-family:Roboto;" ng-class="{true:'error-bron', false:'nonerror-bron'}[nameRusError===true]" ng-if="$root.lang ==='ru'" type="text" class="bron-input" placeholder="Полное имя" ng-model="$root.nameRus"/>
+
+                        </div>
+                        <div class="col-md-4">
+                            <label style="color:white" ng-if="$root.lang ==='en'">Email address</label>
+                            <input ng-class="{true:'error-bron', false:'nonerror-bron'}[emailEngError===true]" ng-if="$root.lang ==='en'" type="text" class="bron-input" placeholder="E-mail" ng-model="$root.emailEng"/>
+                            <label style="color:white" ng-if="$root.lang ==='ee'">Emaili aadress</label>
+                            <input ng-class="{true:'error-bron', false:'nonerror-bron'}[emailEstError===true]" ng-if="$root.lang ==='ee'" type="text" class="bron-input" placeholder="Email" ng-model="$root.emailEst"/>
+                            <label style="color:white" ng-if="$root.lang ==='fi'">Sähköposti</label>
+                            <input ng-class="{true:'error-bron', false:'nonerror-bron'}[emailFinError===true]" ng-if="$root.lang ==='fi'" type="text" class="bron-input" placeholder="Sähköposti" ng-model="$root.emailFin"/>
+                            <label style="color:white; font-family:Roboto;" ng-if="$root.lang ==='ru'">Электронная почта</label>
+                            <input style="font-family:Roboto;" ng-class="{true:'error-bron', false:'nonerror-bron'}[emailRusError===true]" ng-if="$root.lang ==='ru'" type="text" class="bron-input" placeholder="Электронная почта" ng-model="$root.emailRus"/>
+                        </div>
+                        <div class="col-md-4">
+                            <label style="color:white" ng-if="$root.lang ==='en'">Phone number</label>
+                            <input ng-class="{true:'error-bron', false:'nonerror-bron'}[phoneEngError===true]" ng-if="$root.lang ==='en'" type="text" class="bron-input" placeholder="Phone number" ng-model="$root.phoneEng"/>
+                            <label style="color:white" ng-if="$root.lang ==='ee'">Telefoninumber</label>
+                            <input ng-class="{true:'error-bron', false:'nonerror-bron'}[phoneEstError===true]" ng-if="$root.lang ==='ee'" type="text" class="bron-input" placeholder="Telefoninumber" ng-model="$root.phoneEst"/>
+                            <label style="color:white" ng-if="$root.lang ==='fi'">Puhelinnumero</label>
+                            <input ng-class="{true:'error-bron', false:'nonerror-bron'}[phoneFinError===true]" ng-if="$root.lang ==='fi'" type="text" class="bron-input" placeholder="Puhelinnumero" ng-model="$root.phoneFin"/>
+                            <label style="color:white; font-family:Roboto;" ng-if="$root.lang ==='ru'">Телефон</label>
+                            <input style="font-family:Roboto;" ng-class="{true:'error-bron', false:'nonerror-bron'}[phoneRusError===true]" ng-if="$root.lang ==='ru'" type="text" class="bron-input" placeholder="Телефон" ng-model="$root.phoneRus"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container">
+
+                        <p ng-click="openInfoModal()" class="add-info-btn" ng-if="$root.lang === 'en'">
+                            <i class="fa fa-plus" aria-hidden="true" style="margin-right: 10px;margin-top: 10px;"></i>Add additional info
+                        </p>
+                        <p ng-click="openInfoModal()" class="add-info-btn" ng-if="$root.lang === 'ee'">
+                            <i class="fa fa-plus" aria-hidden="true" style="margin-right: 10px;margin-top: 10px;"></i>Lisainfo
+                        </p>
+                        <p ng-click="openInfoModal()" class="add-info-btn" ng-if="$root.lang === 'fi'">
+                            <i class="fa fa-plus" aria-hidden="true" style="margin-right: 10px;margin-top: 10px;"></i>Lisätietoja
+                        </p>
+                        <p ng-click="openInfoModal()" class="add-info-btn" ng-if="$root.lang === 'ru'" style="font-family: Roboto;">
+                            <i class="fa fa-plus" aria-hidden="true" style="margin-right: 10px;margin-top: 10px;"></i>Дополнительные сведения
+                        </p>
+                        <div class="col-md-12" style="color:white;font-family:spaceMono;">
+                            <div>
+                                <input ng-show="showInfoModal" type="text" class="bron-input" ng-model="addInfo"/>
+                            </div>
+                            <div class="newsletter">
+                                <input ng-if="$root.lang === 'ee'" ng-model="newsLetter.status" type="checkbox" />
+                                <span ng-if="$root.lang === 'ee'">Soovin liituda uudiskirjaga</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container">
+                        <div class="col-md-12">
+
+                            <button  ng-if="$root.lang ==='fi'" style="font-family:Roboto;" class="bron-btn btn-second" ng-click="bookFin()">Varaa pöytä {{validPeople}} henkilölle {{displayDateFin}} klo {{validTime}}.<img class="booking-modal-arrow booking-modal-arrow-mobile-second" src="css/img/arrow.png" /></button>
+                            <button  ng-if="$root.lang ==='ee'" class="bron-btn btn-second" ng-click="bookEst()">Reserveeri laud {{displayDate}} kell {{validTime}}<img class="booking-modal-arrow booking-modal-arrow-mobile-second" src="css/img/arrow.png" /></button>
+                            <button  ng-if="$root.lang ==='en'" class="bron-btn btn-second" ng-click="bookEng()">Book a Table on {{validDate}} at {{validTime}} for {{validPeople}}<img class="booking-modal-arrow booking-modal-arrow-mobile-second" src="css/img/arrow.png" /></button>
+                            <button  ng-if="$root.lang ==='ru'" style="font-family:Roboto;" class="bron-btn btn-second" ng-click="bookRus()">Забронироваите столик для {{validPeople}} людей по {{displayDateRus}} в {{validTime}}.<img class="booking-modal-arrow booking-modal-arrow-mobile-second" src="css/img/arrow.png" /></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

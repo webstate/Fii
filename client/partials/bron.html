@@ -1,0 +1,89 @@
+
+<div ng-controller="bookingAdminCtrl" class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <button class="add-new-worker-btn" ng-click="showModal()">Lisa uus suletud aeg</button>
+        </div>
+    </div>
+    <div class="row" ng-show="closeTimeModal" style="margin-top:50px;">
+        <div class="col-md-6">
+            <div class="row">
+                <label  style="margin-left: 15px;">Kuupäev</label>
+                <datepicker class="backend-date" date-format="dd-MM-yyyy">
+                  <input readonly="true" ng-model="event.date" type="text" placeholder="Vali kuupäev"/>
+                </datepicker>
+            </div>
+            <div class="row">
+                <label style="margin-left: 15px;">Algus kellaeg</label>
+                <div class="dropdown-back" ng-click="showStartTime()">
+                      <span style="font-family:Roboto;">{{startTime}}</span>
+                      <div class="dropdown-content-back" ng-show="form.showStartTime">
+                          <a style="font-family:Roboto" ng-repeat="item in startTimes" ng-click="changeStartTime(item); $event.stopPropagation();">{{item}}</a>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <label style="margin-left: 15px;">Lõpu kellaeg</label>
+                <div class="dropdown-back" ng-click="showEndTime()">
+                      <span style="font-family:Roboto;">{{endTime}}</span>
+                      <div class="dropdown-content-back" ng-show="form.showEndTime">
+                          <a style="font-family:Roboto" ng-repeat="item in endTimes" ng-click="changeEndTime(item); $event.stopPropagation();">{{item}}</a>
+                      </div>
+                </div>
+            </div>
+            <label>Põhjus</label>
+            <input class="form-control" style="width: 95%;" type="text" ng-model="event.reason" />
+        </div>
+        <div class="col-md-6">
+            <i class="fa fa-times" aria-hidden="true" style="position: absolute;right: 20px;cursor:pointer;" ng-click="hideModal()"></i>
+            <button  ng-click="submitClosedTime()" class="submit-worker-btn">Sulge ajavahemik</button>
+        </div>
+    </div>
+    <div class="row" style="padding-bottom: 100px;">
+        <h2 style="font-family:spaceMono">Reserveeritud ajad</h2>
+        <table class="table" style="margin: 0 auto;margin-top: 100px;">
+            <thead>
+                <th style="width:250px;">Inimeste arv</th>
+                <th style="width:250px;">Kellaeg ja kuupäev</th>
+                <th style="width:250px;">Isiku nimi</th>
+                <th style="width:250px;">Isiku email</th>
+                <th style="width:125px;">Isiku telefoninumber</th>
+                <th style="width:125px;">Lisainformatsioon</th>
+                <th style="width:125px;">Tegevused</th>
+            </thead>
+            <tbody ng-repeat="item in bookings">
+                <td style="padding-top:25px;">{{item.people}}</td>
+                <td style="padding-top:25px;">{{item.date}}</td>
+                <td style="padding-top:25px;">{{item.name}}</td>
+                <td style="padding-top:25px;">{{item.email}}</td>
+                <td style="padding-top:25px;">{{item.phone}}</td>
+                <td style="padding-top:25px;">{{item.info}}</td>
+                <td style="padding-top: 22px;">
+                    <ul style="list-style:none; display:inline-block; margin-left: -60px;">
+                        <li class="edit-worker-btn" style="float:left;margin-left: 22px;" ng-click="removeBooking(item.id)"><i class="fa fa-trash" aria-hidden="true"></i></li>
+                    </ul>
+                </td>
+            </tbody>
+        </table>
+    </div>
+    <div class="row" style="padding-bottom: 100px;">
+        <h2 style="font-family:spaceMono">Suletud ajad</h2>
+        <table class="table" style="margin: 0 auto;margin-top: 100px;">
+            <thead>
+                <th style="width:250px;">Põhjus</th>
+                <th style="width:250px;">Algus Aeg</th>
+                <th style="width:250px;">Lõpu Aeg</th>
+            </thead>
+            <tbody ng-repeat="item in closedTimes">
+                <td style="padding-top:25px;">{{item.reason}}</td>
+                <td style="padding-top:25px;">{{item.start}}</td>
+                <td style="padding-top:25px;">{{item.end}}</td>
+                <td style="padding-top: 22px;">
+                    <ul style="list-style:none; display:inline-block; margin-left: -60px;">
+                        <li class="edit-worker-btn" style="float:left;margin-left: 22px;" ng-click="deleteClosedTime(item._id)"><i class="fa fa-trash" aria-hidden="true"></i></li>
+                    </ul>
+                </td>
+            </tbody>
+        </table>
+    </div>
+</div>

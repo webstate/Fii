@@ -1,0 +1,1085 @@
+
+<div class="container">
+    <ul style="list-style:none; text-align: center; width: 400px;margin: 0 auto; margin-top: 50px;">
+        <li style="cursor:pointer;float:left; font-family: spaceMono; margin-left: 20px;font-size: 24px;">
+            <p ng-click="changeEst();changeActiveTab('est')" ng-class="{true: 'activeDesign'}[activeTab ==='est']">
+                Est
+            </p>
+        </li>
+        <li style="cursor:pointer;float:left; font-family: spaceMono; margin-left: 20px;font-size: 24px;">
+            <p ng-click="changeEng();changeActiveTab('eng')" ng-class="{true: 'activeDesign'}[activeTab ==='eng']">
+                Eng
+            </p>
+        </li>
+        <li style="cursor:pointer;float:left; font-family: spaceMono; margin-left: 20px;font-size: 24px;">
+            <p ng-click="changeFin();changeActiveTab('fin')" ng-class="{true: 'activeDesign'}[activeTab ==='fin']">
+                Fin
+            </p>
+        </li>
+        <li style="cursor:pointer;float:left; font-family: spaceMono; margin-left: 20px;font-size: 24px;">
+            <p ng-click="changeRus();changeActiveTab('rus')" ng-class="{true: 'activeDesign'}[activeTab ==='rus']">
+                Rus
+            </p>
+        </li>
+    </ul>
+</div>
+<div class="container" ng-show="estDesign">
+    <div class="row" style="margin-top: 50px;">
+        <div class="banner-mockup" style="background-image:url({{bannerImage}})">
+            <div class="col-md-12">
+                <img id="mockup-logo" src="css/img/logo.png" />
+                <ul style="list-style:none;" class="banner-menu-mockup">
+                    <li class="mockup-menu"></li>
+                    <li class="mockup-menu"></li>
+                    <li class="mockup-menu"></li>
+                    <li class="mockup-menu"></li>
+                </ul>
+                <ul style="list-style:none;" class="banner-menu-btns">
+                    <li class="mockup-btn">
+
+                    </li>
+                    <li class="mockup-btn-2">
+
+                    </li>
+                </ul>
+            </div>
+            <input class="bannerTextField" value="{{editBannerTitleEst}}" type="text" ng-model="bannerTitleEst" ng-initial/>
+            <button class="timeBtn" ng-click="insertBannerTitleEst()"><i class="fa fa-check" aria-hidden="true"></i></button>
+        </div>
+        <div class="banner-mockup-shadow">
+            <input type="file" name="file" id="file" class="inputfile" onchange="angular.element(this).scope().filesChanged(this)"/>
+            <label style="margin-top: 260px;margin-left: 40px;" for="file"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+        </div>
+        <div class="worker-area-mockup">
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-md-12">
+                    <span class="section-mockup"></span>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-md-6">
+                    <p editable-text="workerTitle.title" class="worker-section-title-mockup">
+                        {{workerTitle.title}}
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <p editable-text="worker.text" class="worker-section-text-mockup" style="margin-left: 20px;">
+                        {{worker.text}}
+                    </p>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 60px;">
+                <div class="col-md-6">
+                    <div class="worker-img-mockup"></div>
+                    <div class="worker-name-mockup"></div>
+                    <div class="worker-occupation-mockup"></div>
+                    <div class="worker-info-mockup" style="margin-top:25px;"></div>
+                    <div class="worker-info-mockup"></div>
+                    <div class="worker-info-mockup"></div>
+                    <div class="worker-info-mockup"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="worker-img-mockup"></div>
+                    <div class="worker-name-mockup"></div>
+                    <div class="worker-occupation-mockup"></div>
+                    <div class="worker-info-mockup" style="margin-top:25px;"></div>
+                    <div class="worker-info-mockup"></div>
+                    <div class="worker-info-mockup"></div>
+                    <div class="worker-info-mockup"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu-area-mockup">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-second-mockup">
+
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-md-6">
+                <p editable-text="menuTitle.title" class="menu-section-title-mockup">
+                    {{menuTitle.title}}
+                </p>
+            </div>
+            <div class="col-md-6" style="margin-bottom: 50px;">
+                <p editable-text="menuText.text" class="menu-section-text-mockup" style="margin-left: 20px;">
+                    {{menuText.text}}
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6" style="margin-top: 50px;">
+            <div class="menu-mockup">
+                <p class="menu-course-mockup">
+                    STARTERS
+                </p>
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+            </div>
+            <div class="menu-pic-second-mockup" style="background-image: url({{secondPicturePath}})">
+                <input type="file" name="file2" id="file2"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'second')"/>
+                <label style="margin-top: 115px;margin-left: 10px;" for="file2"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+            </div>
+            <div class="menu-mockup" style="margin-top: 15px;">
+                <p class="menu-course-mockup">
+                    DRINKS
+                </p>
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="menu-pic-first-mockup" style="background-image:url({{firstPicturePath}}); margin-top: 100px;">
+                <input type="file" name="file2" id="file1"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'first')"/>
+                <label style="margin-top: 115px;margin-left: 10px;" for="file1"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+            </div>
+            <div class="menu-mockup" style="margin-top: 15px;">
+                <p class="menu-course-mockup">
+                    MAIN COURSE
+                </p>
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+            </div>
+            <div class="menu-mockup" style="margin-top: 15px;">
+                <p class="menu-course-mockup">
+                    DESSERTS
+                </p>
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+            </div>
+            <div class="menu-pic-third-mockup" style="background-image:url({{thirdPicturePath}});">
+                <input type="file" name="file2" id="file3"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'third')"/>
+                <label style="margin-top: 115px;margin-left: 10px;" for="file3"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-second-mockup">
+
+                </div>
+            </div>
+            <div class="col-md-6" style="margin-top: 50px">
+                <p editable-text="tastingText.text" class="menu-section-text-mockup" style="margin-left: 20px;">
+                    {{tastingText.text}}
+                </p>
+            </div>
+            <div class="col-md-6" style="margin-top: 40px;">
+                <div class="tasting-menu-btn-mockup"></div>
+            </div>
+        </div>
+    </div>
+    <div class="event-block-mockup">
+        <div class="row">
+            <div class="col-md-12">
+                <span class="section-mockup"></span>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-md-6">
+                <p editable-text="eventTitle.title" class="event-section-title-mockup">
+                    {{eventTitle.title}}
+                </p>
+                <div class="event-title-mockup"></div>
+                <div class="event-date-mockup"></div>
+                <div class="event-detail-mockup"></div>
+                <div class="event-detail-mockup"></div>
+                <div class="event-detail-mockup"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="event-pic-mockup" style="background-image:url({{eventPicturePathEst}});">
+                    <input type="file" name="file2" id="fileEst" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'eventEst')"/>
+                    <label style="margin-top: 185px;margin-left: 10px;" for="fileEst"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-md-12">
+                <span class="section-mockup"></span>
+            </div>
+            <div class="col-md-6">
+                <div class="come-visit-mockup"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="booking-btn-mockup"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="padding: 0; margin-top: 50px;">
+                <div class="map-picture" style="background-image: url({{mapPicturePath}})">
+                    <input type="file" name="file2" id="file5"class="inputfile" onchange="angular.element(this).scope().mapPicChanged(this, 'map')"/>
+                    <label style="margin-top: 135px;margin-left: 10px;" for="file5"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                </div>
+            </div>
+            <div class="col-md-6" style="padding: 0; margin-top: 50px;">
+                <div class="map-mockup"></div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
+                <div class="col-md-6">
+                    <p class="contact-title-mockup">
+                        Helista meile
+                    </p>
+                    <p editable-text="contactCallEst.text" class="contact-info-mockup">
+                        {{contactCallEst.text}}
+                    </p>
+                </div>
+                <div class="col-md-6" >
+                    <p class="contact-title-mockup">
+                        Külasta meid
+                    </p>
+                    <p editable-text="contactVisitEst.text" class="contact-info-mockup">
+                        {{contactVisitEst.text}}
+                    </p>
+                </div>
+                <div class="col-md-6" style="margin-top: 30px;">
+                    <div class="row">
+                        <p class="contact-title-mockup">
+                            Avatud
+                        </p>
+                        <p class="contact-title-mockup">
+                            Nädalapäevadel:
+                        </p>
+                        <input value="{{editWorkWeekTime}}" type="text" ng-model="workWeekTime" ng-initial/>
+                        <button class="timeBtn" ng-click="insertWorkWeek()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="row">
+                        <p class="contact-title-mockup">
+                            Nädalavahetusel:
+                        </p>
+                        <input value="{{editWeekendTime}}" type="text" ng-model="weekendTime" ng-initial/>
+                        <button class="timeBtn" ng-click="insertWeekend()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                <div class="col-md-6" style="margin-top: 30px;">
+                    <p class="contact-title-mockup">
+                        Kirjuta meile
+                    </p>
+                    <p editable-text="contactEmailEst.text" class="contact-info-mockup">
+                        {{contactEmailEst.text}}
+                    </p>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" ng-show="engDesign">
+    <div class="row" style="margin-top: 50px;">
+        <div class="banner-mockup" style="background-image:url({{bannerImage}})">
+            <div class="col-md-12">
+                <img id="mockup-logo" src="css/img/logo.png" />
+                <ul style="list-style:none;" class="banner-menu-mockup">
+                    <li class="mockup-menu"></li>
+                    <li class="mockup-menu"></li>
+                    <li class="mockup-menu"></li>
+                    <li class="mockup-menu"></li>
+                </ul>
+                <ul style="list-style:none;" class="banner-menu-btns">
+                    <li class="mockup-btn">
+
+                    </li>
+                    <li class="mockup-btn-2">
+
+                    </li>
+                </ul>
+            </div>
+            <input class="bannerTextField" value="{{editBannerTitleEng}}" type="text" ng-model="bannerTitleEng" ng-initial/>
+            <button class="timeBtn" ng-click="insertBannerTitleEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+        </div>
+        <div class="banner-mockup-shadow">
+            <input type="file" name="file" id="file" class="inputfile" onchange="angular.element(this).scope().filesChanged(this)"/>
+            <label style="margin-top: 260px;margin-left: 40px;" for="file"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+        </div>
+        <div class="worker-area-mockup">
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-md-12">
+                    <span class="section-mockup"></span>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-md-6">
+                    <p editable-text="workerTitleEng.title" class="worker-section-title-mockup">
+                        {{workerTitleEng.title}}
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <p editable-text="workerEng.text" class="worker-section-text-mockup" style="margin-left: 20px;">
+                        {{workerEng.text}}
+                    </p>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 60px;">
+                <div class="col-md-6">
+                    <div class="worker-img-mockup"></div>
+                    <div class="worker-name-mockup"></div>
+                    <div class="worker-occupation-mockup"></div>
+                    <div class="worker-info-mockup" style="margin-top:25px;"></div>
+                    <div class="worker-info-mockup"></div>
+                    <div class="worker-info-mockup"></div>
+                    <div class="worker-info-mockup"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="worker-img-mockup"></div>
+                    <div class="worker-name-mockup"></div>
+                    <div class="worker-occupation-mockup"></div>
+                    <div class="worker-info-mockup" style="margin-top:25px;"></div>
+                    <div class="worker-info-mockup"></div>
+                    <div class="worker-info-mockup"></div>
+                    <div class="worker-info-mockup"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu-area-mockup">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-second-mockup">
+
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-md-6">
+                <p editable-text="menuTitleEng.title" class="menu-section-title-mockup">
+                    {{menuTitleEng.title}}
+                </p>
+            </div>
+            <div class="col-md-6" style="margin-bottom: 50px;">
+                <p editable-text="menuTextEng.text" class="menu-section-text-mockup" style="margin-left: 20px;">
+                    {{menuTextEng.text}}
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6" style="margin-top: 50px;">
+            <div class="menu-mockup">
+                <p class="menu-course-mockup">
+                    STARTERS
+                </p>
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+            </div>
+            <div class="menu-pic-second-mockup" style="background-image: url({{secondPicturePath}})">
+                <input type="file" name="file2" id="file2"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'second')"/>
+                <label style="margin-top: 115px;margin-left: 10px;" for="file2"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+            </div>
+            <div class="menu-mockup" style="margin-top: 15px;">
+                <p class="menu-course-mockup">
+                    DRINKS
+                </p>
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="menu-pic-first-mockup" style="background-image:url({{firstPicturePath}}); margin-top: 100px;">
+                <input type="file" name="file2" id="file1"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'first')"/>
+                <label style="margin-top: 115px;margin-left: 10px;" for="file1"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+            </div>
+            <div class="menu-mockup" style="margin-top: 15px;">
+                <p class="menu-course-mockup">
+                    MAIN COURSE
+                </p>
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+            </div>
+            <div class="menu-mockup" style="margin-top: 15px;">
+                <p class="menu-course-mockup">
+                    DESSERTS
+                </p>
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+            </div>
+            <div class="menu-pic-third-mockup" style="background-image:url({{thirdPicturePath}});">
+                <input type="file" name="file2" id="file3"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'third')"/>
+                <label style="margin-top: 115px;margin-left: 10px;" for="file3"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-second-mockup">
+
+                </div>
+            </div>
+            <div class="col-md-6" style="margin-top: 50px">
+                <p editable-text="tastingTextEng.text" class="menu-section-text-mockup" style="margin-left: 20px;">
+                    {{tastingTextEng.text}}
+                </p>
+            </div>
+            <div class="col-md-6" style="margin-top: 40px;">
+                <div class="tasting-menu-btn-mockup"></div>
+            </div>
+        </div>
+    </div>
+    <div class="event-block-mockup">
+        <div class="row">
+            <div class="col-md-12">
+                <span class="section-mockup"></span>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-md-6">
+                <p editable-text="eventTitleEng.title" class="event-section-title-mockup">
+                    {{eventTitleEng.title}}
+                </p>
+                <div class="event-title-mockup"></div>
+                <div class="event-date-mockup"></div>
+                <div class="event-detail-mockup"></div>
+                <div class="event-detail-mockup"></div>
+                <div class="event-detail-mockup"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="event-pic-mockup" style="background-image:url({{eventPicturePathEng}});">
+                    <input type="file" name="file2" id="fileEng"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'eventEng')"/>
+                    <label style="margin-top: 185px;margin-left: 10px;" for="fileEng"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-md-12">
+                <span class="section-mockup"></span>
+            </div>
+            <div class="col-md-6">
+                <div class="come-visit-mockup"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="booking-btn-mockup"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="padding: 0; margin-top: 50px;">
+                <div class="map-picture" style="background-image: url({{mapPicturePath}})">
+                    <input type="file" name="file2" id="file5"class="inputfile" onchange="angular.element(this).scope().mapPicChanged(this, 'map')"/>
+                    <label style="margin-top: 135px;margin-left: 10px;" for="file5"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                </div>
+            </div>
+            <div class="col-md-6" style="padding: 0; margin-top: 50px;">
+                <div class="map-mockup"></div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
+                <div class="col-md-6">
+                    <p class="contact-title-mockup">
+                        Call us
+                    </p>
+                    <p editable-text="contactCallEng.text" class="contact-info-mockup">
+                        {{contactCallEng.text}}
+                    </p>
+                </div>
+                <div class="col-md-6" >
+                    <p class="contact-title-mockup">
+                        Visit us
+                    </p>
+                    <p editable-text="contactVisitEng.text" class="contact-info-mockup">
+                        {{contactVisitEng.text}}
+                    </p>
+                </div>
+                <div class="col-md-6" style="margin-top: 30px;">
+                    <div class="row">
+                        <p class="contact-title-mockup">
+                            Opening hours
+                        </p>
+                        <p class="contact-title-mockup">
+                            Nädalapäevadel:
+                        </p>
+                        <input value="{{editWorkWeekTimeEng}}" type="text" ng-model="workWeekTimeEng" ng-initial/>
+                        <button class="timeBtn" ng-click="insertWorkWeekEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="row">
+                        <p class="contact-title-mockup">
+                            Nädalavahetusel:
+                        </p>
+                        <input value="{{editWeekendTimeEng}}" type="text" ng-model="weekendTimeEng" ng-initial/>
+                        <button class="timeBtn" ng-click="insertWeekendEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                <div class="col-md-6" style="margin-top: 30px;">
+                    <p class="contact-title-mockup">
+                        Write us
+                    </p>
+                    <p editable-text="contactEmailEng.text" class="contact-info-mockup">
+                        {{contactEmailEng.text}}
+                    </p>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" ng-show="finDesign">
+    <div class="row" style="margin-top: 50px;">
+        <div class="banner-mockup" style="background-image:url({{bannerImage}})">
+            <div class="col-md-12">
+                <img id="mockup-logo" src="css/img/logo.png" />
+                <ul style="list-style:none;" class="banner-menu-mockup">
+                    <li class="mockup-menu"></li>
+                    <li class="mockup-menu"></li>
+                    <li class="mockup-menu"></li>
+                    <li class="mockup-menu"></li>
+                </ul>
+                <ul style="list-style:none;" class="banner-menu-btns">
+                    <li class="mockup-btn">
+
+                    </li>
+                    <li class="mockup-btn-2">
+
+                    </li>
+                </ul>
+            </div>
+            <input class="bannerTextField" value="{{editBannerTitleFin}}" type="text" ng-model="bannerTitleFin" ng-initial/>
+            <button class="timeBtn" ng-click="insertBannerTitleFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+        </div>
+        <div class="banner-mockup-shadow">
+            <input type="file" name="file" id="file" class="inputfile" onchange="angular.element(this).scope().filesChanged(this)"/>
+            <label style="margin-top: 260px;margin-left: 40px;" for="file"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+        </div>
+        <div class="worker-area-mockup">
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-md-12">
+                    <span class="section-mockup"></span>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-md-6">
+                    <p editable-text="workerTitleFin.title" class="worker-section-title-mockup">
+                        {{workerTitleFin.title}}
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <p editable-text="workerFin.text" class="worker-section-text-mockup" style="margin-left: 20px;">
+                        {{workerFin.text}}
+                    </p>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 60px;">
+                <div class="col-md-6">
+                    <div class="worker-img-mockup"></div>
+                    <div class="worker-name-mockup"></div>
+                    <div class="worker-occupation-mockup"></div>
+                    <div class="worker-info-mockup" style="margin-top:25px;"></div>
+                    <div class="worker-info-mockup"></div>
+                    <div class="worker-info-mockup"></div>
+                    <div class="worker-info-mockup"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="worker-img-mockup"></div>
+                    <div class="worker-name-mockup"></div>
+                    <div class="worker-occupation-mockup"></div>
+                    <div class="worker-info-mockup" style="margin-top:25px;"></div>
+                    <div class="worker-info-mockup"></div>
+                    <div class="worker-info-mockup"></div>
+                    <div class="worker-info-mockup"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu-area-mockup">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-second-mockup">
+
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-md-6">
+                <p editable-text="menuTitleFin.title" class="menu-section-title-mockup">
+                    {{menuTitleFin.title}}
+                </p>
+            </div>
+            <div class="col-md-6" style="margin-bottom: 50px;">
+                <p editable-text="menuTextFin.text" class="menu-section-text-mockup" style="margin-left: 20px;">
+                    {{menuTextFin.text}}
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6" style="margin-top: 50px;">
+            <div class="menu-mockup">
+                <p class="menu-course-mockup">
+                    STARTERS
+                </p>
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+            </div>
+            <div class="menu-pic-second-mockup" style="background-image: url({{secondPicturePath}})">
+                <input type="file" name="file2" id="file2"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'second')"/>
+                <label style="margin-top: 115px;margin-left: 10px;" for="file2"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+            </div>
+            <div class="menu-mockup" style="margin-top: 15px;">
+                <p class="menu-course-mockup">
+                    DRINKS
+                </p>
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="menu-pic-first-mockup" style="background-image:url({{firstPicturePath}}); margin-top: 100px;">
+                <input type="file" name="file2" id="file1"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'first')"/>
+                <label style="margin-top: 115px;margin-left: 10px;" for="file1"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+            </div>
+            <div class="menu-mockup" style="margin-top: 15px;">
+                <p class="menu-course-mockup">
+                    MAIN COURSE
+                </p>
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+            </div>
+            <div class="menu-mockup" style="margin-top: 15px;">
+                <p class="menu-course-mockup">
+                    DESSERTS
+                </p>
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+            </div>
+            <div class="menu-pic-third-mockup" style="background-image:url({{thirdPicturePath}});">
+                <input type="file" name="file2" id="file3"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'third')"/>
+                <label style="margin-top: 115px;margin-left: 10px;" for="file3"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-second-mockup">
+
+                </div>
+            </div>
+            <div class="col-md-6" style="margin-top: 50px">
+                <p editable-text="tastingTextFin.text" class="menu-section-text-mockup" style="margin-left: 20px;">
+                    {{tastingTextFin.text}}
+                </p>
+            </div>
+            <div class="col-md-6" style="margin-top: 40px;">
+                <div class="tasting-menu-btn-mockup"></div>
+            </div>
+        </div>
+    </div>
+    <div class="event-block-mockup">
+        <div class="row">
+            <div class="col-md-12">
+                <span class="section-mockup"></span>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-md-6">
+                <p editable-text="eventTitleFin.title" class="event-section-title-mockup">
+                    {{eventTitleFin.title}}
+                </p>
+                <div class="event-title-mockup"></div>
+                <div class="event-date-mockup"></div>
+                <div class="event-detail-mockup"></div>
+                <div class="event-detail-mockup"></div>
+                <div class="event-detail-mockup"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="event-pic-mockup" style="background-image:url({{eventPicturePathFin}});">
+                    <input type="file" name="file2" id="fileFin"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'eventFin')"/>
+                    <label style="margin-top: 185px;margin-left: 10px;" for="fileFin"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-md-12">
+                <span class="section-mockup"></span>
+            </div>
+            <div class="col-md-6">
+                <div class="come-visit-mockup"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="booking-btn-mockup"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="padding: 0; margin-top: 50px;">
+                <div class="map-picture" style="background-image: url({{mapPicturePath}})">
+                    <input type="file" name="file2" id="file5"class="inputfile" onchange="angular.element(this).scope().mapPicChanged(this, 'map')"/>
+                    <label style="margin-top: 135px;margin-left: 10px;" for="file5"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                </div>
+            </div>
+            <div class="col-md-6" style="padding: 0; margin-top: 50px;">
+                <div class="map-mockup"></div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
+                <div class="col-md-6">
+                    <p class="contact-title-mockup">
+                        Helista meile
+                    </p>
+                    <p editable-text="contactCallFin.text" class="contact-info-mockup">
+                        {{contactCallFin.text}}
+                    </p>
+                </div>
+                <div class="col-md-6" >
+                    <p class="contact-title-mockup">
+                        Külasta meid
+                    </p>
+                    <p editable-text="contactVisitFin.text" class="contact-info-mockup">
+                        {{contactVisitFin.text}}
+                    </p>
+                </div>
+                <div class="col-md-6" style="margin-top: 30px;">
+                    <div class="row">
+                        <p class="contact-title-mockup">
+                            Avatud
+                        </p>
+                        <p class="contact-title-mockup">
+                            Nädalapäevadel:
+                        </p>
+                        <input value="{{editWorkWeekTimeFin}}" type="text" ng-model="workWeekTimeFin" ng-initial/>
+                        <button class="timeBtn" ng-click="insertWorkWeekFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="row">
+                        <p class="contact-title-mockup">
+                            Nädalavahetusel:
+                        </p>
+                        <input value="{{editWeekendTimeFin}}" type="text" ng-model="weekendTimeFin" ng-initial/>
+                        <button class="timeBtn" ng-click="insertWeekendFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                <div class="col-md-6" style="margin-top: 30px;">
+                    <p class="contact-title-mockup">
+                        Kirjuta meile
+                    </p>
+                    <p editable-text="contactEmailFin.text" class="contact-info-mockup">
+                        {{contactEmailFin.text}}
+                    </p>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" ng-show="rusDesign">
+    <div class="row" style="margin-top: 50px;">
+        <div class="banner-mockup" style="background-image:url({{bannerImage}})">
+            <div class="col-md-12">
+                <img id="mockup-logo" src="css/img/logo.png" />
+                <ul style="list-style:none;" class="banner-menu-mockup">
+                    <li class="mockup-menu"></li>
+                    <li class="mockup-menu"></li>
+                    <li class="mockup-menu"></li>
+                    <li class="mockup-menu"></li>
+                </ul>
+                <ul style="list-style:none;" class="banner-menu-btns">
+                    <li class="mockup-btn">
+
+                    </li>
+                    <li class="mockup-btn-2">
+
+                    </li>
+                </ul>
+            </div>
+            <input class="bannerTextField" value="{{editBannerTitleRus}}" type="text" ng-model="bannerTitleRus" ng-initial/>
+            <button class="timeBtn" ng-click="insertBannerTitleRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+        </div>
+        <div class="banner-mockup-shadow">
+            <input type="file" name="file" id="file" class="inputfile" onchange="angular.element(this).scope().filesChanged(this)"/>
+            <label style="margin-top: 260px;margin-left: 40px;" for="file"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+        </div>
+        <div class="worker-area-mockup">
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-md-12">
+                    <span class="section-mockup"></span>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-md-6">
+                    <p editable-text="workerTitleRus.title" class="worker-section-title-mockup">
+                        {{workerTitleRus.title}}
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <p editable-text="workerRus.text" class="worker-section-text-mockup" style="margin-left: 20px;">
+                        {{workerRus.text}}
+                    </p>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 60px;">
+                <div class="col-md-6">
+                    <div class="worker-img-mockup"></div>
+                    <div class="worker-name-mockup"></div>
+                    <div class="worker-occupation-mockup"></div>
+                    <div class="worker-info-mockup" style="margin-top:25px;"></div>
+                    <div class="worker-info-mockup"></div>
+                    <div class="worker-info-mockup"></div>
+                    <div class="worker-info-mockup"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="worker-img-mockup"></div>
+                    <div class="worker-name-mockup"></div>
+                    <div class="worker-occupation-mockup"></div>
+                    <div class="worker-info-mockup" style="margin-top:25px;"></div>
+                    <div class="worker-info-mockup"></div>
+                    <div class="worker-info-mockup"></div>
+                    <div class="worker-info-mockup"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu-area-mockup">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-second-mockup">
+
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-md-6">
+                <p editable-text="menuTitleRus.title" class="menu-section-title-mockup">
+                    {{menuTitleRus.title}}
+                </p>
+            </div>
+            <div class="col-md-6" style="margin-bottom: 50px;">
+                <p editable-text="menuTextRus.text" class="menu-section-text-mockup" style="margin-left: 20px;">
+                    {{menuTextRus.text}}
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6" style="margin-top: 50px;">
+            <div class="menu-mockup">
+                <p class="menu-course-mockup">
+                    STARTERS
+                </p>
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+            </div>
+            <div class="menu-pic-second-mockup" style="background-image: url({{secondPicturePath}})">
+                <input type="file" name="file2" id="file2"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'second')"/>
+                <label style="margin-top: 115px;margin-left: 10px;" for="file2"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+            </div>
+            <div class="menu-mockup" style="margin-top: 15px;">
+                <p class="menu-course-mockup">
+                    DRINKS
+                </p>
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="menu-pic-first-mockup" style="background-image:url({{firstPicturePath}}); margin-top: 100px;">
+                <input type="file" name="file2" id="file1"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'first')"/>
+                <label style="margin-top: 115px;margin-left: 10px;" for="file1"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+            </div>
+            <div class="menu-mockup" style="margin-top: 15px;">
+                <p class="menu-course-mockup">
+                    MAIN COURSE
+                </p>
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+            </div>
+            <div class="menu-mockup" style="margin-top: 15px;">
+                <p class="menu-course-mockup">
+                    DESSERTS
+                </p>
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+            </div>
+            <div class="menu-pic-third-mockup" style="background-image:url({{thirdPicturePath}});">
+                <input type="file" name="file2" id="file3"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'third')"/>
+                <label style="margin-top: 115px;margin-left: 10px;" for="file3"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-second-mockup">
+
+                </div>
+            </div>
+            <div class="col-md-6" style="margin-top: 50px">
+                <p editable-text="tastingTextRus.text" class="menu-section-text-mockup" style="margin-left: 20px;">
+                    {{tastingTextRus.text}}
+                </p>
+            </div>
+            <div class="col-md-6" style="margin-top: 40px;">
+                <div class="tasting-menu-btn-mockup"></div>
+            </div>
+        </div>
+    </div>
+    <div class="event-block-mockup">
+        <div class="row">
+            <div class="col-md-12">
+                <span class="section-mockup"></span>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-md-6">
+                <p editable-text="eventTitleRus.title" class="event-section-title-mockup">
+                    {{eventTitleRus.title}}
+                </p>
+                <div class="event-title-mockup"></div>
+                <div class="event-date-mockup"></div>
+                <div class="event-detail-mockup"></div>
+                <div class="event-detail-mockup"></div>
+                <div class="event-detail-mockup"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="event-pic-mockup" style="background-image:url({{eventPicturePathRus}});">
+                    <input type="file" name="file2" id="fileRus" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'eventRus')"/>
+                    <label style="margin-top: 185px;margin-left: 10px;" for="fileRus"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-md-12">
+                <span class="section-mockup"></span>
+            </div>
+            <div class="col-md-6">
+                <div class="come-visit-mockup"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="booking-btn-mockup"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="padding: 0; margin-top: 50px;">
+                <div class="map-picture" style="background-image: url({{mapPicturePath}})">
+                    <input type="file" name="file2" id="file5"class="inputfile" onchange="angular.element(this).scope().mapPicChanged(this, 'map')"/>
+                    <label style="margin-top: 135px;margin-left: 10px;" for="file5"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                </div>
+            </div>
+            <div class="col-md-6" style="padding: 0; margin-top: 50px;">
+                <div class="map-mockup"></div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
+                <div class="col-md-6">
+                    <p class="contact-title-mockup">
+                        Helista meile
+                    </p>
+                    <p editable-text="contactCallRus.text" class="contact-info-mockup">
+                        {{contactCallRus.text}}
+                    </p>
+                </div>
+                <div class="col-md-6" >
+                    <p class="contact-title-mockup">
+                        Külasta meid
+                    </p>
+                    <p editable-text="contactVisitRus.text" class="contact-info-mockup">
+                        {{contactVisitRus.text}}
+                    </p>
+                </div>
+                <div class="col-md-6" style="margin-top: 30px;">
+                    <div class="row">
+                        <p class="contact-title-mockup">
+                            Avatud
+                        </p>
+                        <p class="contact-title-mockup">
+                            Nädalapäevadel:
+                        </p>
+                        <input value="{{editWorkWeekTimeRus}}" type="text" ng-model="workWeekTimeRus" ng-initial/>
+                        <button class="timeBtn" ng-click="insertWorkWeekRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="row">
+                        <p class="contact-title-mockup">
+                            Nädalavahetusel:
+                        </p>
+                        <input value="{{editWeekendTimeRus}}" type="text" ng-model="weekendTimeRus" ng-initial/>
+                        <button class="timeBtn" ng-click="insertWeekendRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                <div class="col-md-6" style="margin-top: 30px;">
+                    <p class="contact-title-mockup">
+                        Kirjuta meile
+                    </p>
+                    <p editable-text="contactEmailRus.text" class="contact-info-mockup">
+                        {{contactEmailRus.text}}
+                    </p>
+                </div>
+        </div>
+    </div>
+</div>

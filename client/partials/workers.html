@@ -1,0 +1,141 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <button class="add-new-worker-btn" ng-click="showModal()">Lisa uus töötaja</button>
+        </div>
+    </div>
+    <div class="row" ng-show="workerModal" style="margin-top:50px;">
+        <div class="col-md-6" ng-show="estModal">
+            <label>Töötaja nimi</label>
+            <input class="form-control" type="text" ng-model="worker.name"  ng-initial/>
+            <label>Töötaja amet</label>
+            <input class="form-control" type="text" ng-model="worker.occupation" ng-initial/>
+            <label>Lühikene kirjeldus</label>
+            <textarea class="form-control" ng-model="worker.info" ng-initial></textarea>
+            <button  ng-click="submitWorker()" class="submit-worker-btn">Lisa töötaja</button>
+        </div>
+        <div class="col-md-6" ng-show="engModal">
+            <label>Töötaja amet EN</label>
+            <input class="form-control" type="text" ng-model="worker.occupationEng" ng-initial/>
+            <label>Lühikene kirjeldus EN</label>
+            <textarea class="form-control" ng-model="worker.infoEng" ng-initial></textarea>
+        </div>
+        <div class="col-md-6" ng-show="finModal">
+            <label>Töötaja amet FI</label>
+            <input class="form-control" type="text" ng-model="worker.occupationFin" ng-initial/>
+            <label>Lühikene kirjeldus FI</label>
+            <textarea class="form-control" ng-model="worker.infoFin" ng-initial></textarea>
+        </div>
+        <div class="col-md-6" ng-show="rusModal">
+            <label>Töötaja amet RU</label>
+            <input class="form-control" type="text" ng-model="worker.occupationRus" ng-initial/>
+            <label>Lühikene kirjeldus RU</label>
+            <textarea class="form-control" ng-model="worker.infoRus" ng-initial></textarea>
+        </div>
+        <div class="col-md-6">
+            <i class="fa fa-times" aria-hidden="true" style="position: absolute;right: 20px;cursor:pointer;" ng-click="hideModal()"></i>
+            <p ng-click="showEst()"  style="margin-top: 30px;font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Eesti keeles
+            </p>
+            <p ng-click="showEng()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Inglise keeles
+            </p>
+            <p ng-click="showFin()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Soome keeles
+            </p>
+            <p ng-click="showRus()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Vene keeles
+            </p>
+            <div class="picture-holder">
+
+            </div>
+            <input type="file" onchange="angular.element(this).scope().filesChanged(this)" />
+        </div>
+    </div>
+    <div class="row" ng-show="workerModalEdit" style="margin-top:50px;">
+        <div class="col-md-6" ng-show="estEditModal">
+            <label>Töötaja nimi</label>
+            <input  value="{{nameEditEst}}"class="form-control" type="text" ng-model="editNameEst" ng-initial/>
+            <label>Töötaja amet</label>
+            <input value="{{editOccupationEst}}" class="form-control" type="text" ng-model="editOccupationEst"ng-initial/>
+            <label>Lühikene kirjeldus</label>
+            <textarea value="{{infoEditEst}}" class="form-control" ng-model="editInfoEst" ng-initial></textarea>
+
+        </div>
+        <div class="col-md-6" ng-show="engEditModal">
+            <label>Töötaja amet</label>
+            <input value="{{editOccupationEng}}" class="form-control" type="text" ng-model="editOccupationEng"ng-initial/>
+            <label>Lühikene kirjeldus</label>
+            <textarea value="{{infoEditEng}}" class="form-control" ng-model="editInfoEng" ng-initial></textarea>
+        </div>
+        <div class="col-md-6" ng-show="finEditModal">
+            <label>Töötaja amet</label>
+            <input value="{{editOccupationFin}}" class="form-control" type="text" ng-model="editOccupationFin"ng-initial/>
+            <label>Lühikene kirjeldus</label>
+            <textarea value="{{infoEditFin}}" class="form-control" ng-model="editInfoFin" ng-initial></textarea>
+        </div>
+        <div class="col-md-6" ng-show="rusEditModal">
+            <label>Töötaja amet</label>
+            <input value="{{editOccupationRus}}" class="form-control" type="text" ng-model="editOccupationRus"ng-initial/>
+            <label>Lühikene kirjeldus</label>
+            <textarea value="{{infoEditRus}}" class="form-control" ng-model="editInfoRus" ng-initial></textarea>
+        </div>
+        <div class="col-md-6">
+            <i class="fa fa-times" aria-hidden="true" style="position: absolute;right: 20px;cursor:pointer;" ng-click="hideModal()"></i>
+            <p ng-click="showEstEdit()"  style="margin-top: 30px;font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Eesti keeles
+            </p>
+            <p ng-click="showEngEdit()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Inglise keeles
+            </p>
+            <p ng-click="showFinEdit()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Soome keeles
+            </p>
+            <p ng-click="showRusEdit()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Vene keeles
+            </p>
+            <button  ng-click="updateWorker()" class="submit-worker-btn">Muuda andmeid</button>
+
+        </div>
+    </div>
+    <div class="row">
+        <table class="table" style="width: 850px;margin: 0 auto;margin-top: 100px;">
+            <thead>
+                <th></th>
+                <th style="width:250px;">Nimi</th>
+                <th style="width:250px;">Amet</th>
+                <th style="width:250px;">Tööriistad</th>
+                <th style="width: 250px">
+                    Seisund
+                </th>
+            </thead>
+            <tbody ng-repeat="worker in workers">
+                <td><div class="table-img" style="height: 50px; width: 50px; background-image:url({{worker.picture}}); background-size:cover;"></div></td>
+                <td style="padding-top:25px;">{{worker.name}}</td>
+                <td style="padding-top:25px;">{{worker.position}}</td>
+                <td style="padding-top: 22px;">
+                    <ul style="list-style:none; display:inline-block; margin-left: -60px;">
+                        <li class="edit-worker-btn" style="float:left;margin-left: 22px;" ng-click="getWorker(worker._id)"><i class="fa fa-pencil" aria-hidden="true"></i></li>
+                        <li class="edit-worker-btn" style="float:left;margin-left: 22px;" ng-click="removeWorker(worker._id)"><i class="fa fa-trash" aria-hidden="true"></i></li>
+                    </ul>
+                </td>
+                <td>
+                    <ul style="list-style: none;" class="lang-bar">
+                        <li ng-class="{true: 'red', false: 'green'}[worker.name.length == 0]">
+                            EE
+                        </li>
+                        <li ng-class="{true: 'red', false: 'green'}[worker.occupationEng.length == 0 || worker.infoEng.length == 0]">
+                            EN
+                        </li>
+                        <li ng-class="{true: 'red', false: 'green'}[worker.occupationFin.length == 0 || worker.infoFin.length == 0]">
+                            FI
+                        </li>
+                        <li ng-class="{true: 'red', false: 'green'}[worker.occupationRus.length == 0 || worker.infoRus.length == 0]">
+                            RU
+                        </li>
+                    </ul>
+                </td>
+            </tbody>
+        </table>
+    </div>
+</div>

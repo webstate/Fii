@@ -1,0 +1,150 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <button class="add-new-worker-btn" ng-click="showModal()">Lisa uus Jook</button>
+        </div>
+    </div>
+    <div class="row" ng-show="addDrinkModal" style="margin-top:50px;">
+        <div class="col-md-6" ng-show="estModal">
+            <label>Joogi nimi</label>
+            <input class="form-control" type="text" ng-model="drink.nameEst" />
+            <label>Tüüp</label>
+            <select ng-options="item for item in drinkSelection" class="form-control" ng-model="selected"></select>
+            <label ng-show="subDrinkWineShow">Alamkategooria</label>
+            <select ng-show="subDrinkWineShow" ng-options="item for item in subDrinkWine" class="form-control" ng-model="selectedWine"></select>
+            <label ng-show="subDrinkSpiritShow">Alamkategooria</label>
+            <select ng-show="subDrinkSpiritShow" ng-options="item for item in subDrinkSpirit" class="form-control" ng-model="selectedSpirit"></select>
+
+            <label>Hind</label>
+            <input class="form-control" type="text" ng-model="drink.price" />
+            <label>Kirjeldus</label>
+            <input class="form-control" type="text" ng-model="drink.descEst" />
+        </div>
+        <div class="col-md-6" ng-show="engModal">
+            <label>Joogi nimi EN</label>
+            <input class="form-control" type="text" ng-model="drink.nameEng" />
+            <label>Kirjeldus EN</label>
+            <input class="form-control" type="text" ng-model="drink.descEng" />
+        </div>
+        <div class="col-md-6" ng-show="rusModal">
+            <label>Joogi nimi RU</label>
+            <input class="form-control" type="text" ng-model="drink.nameRus" />
+            <label>Kirjeldus RU</label>
+            <input class="form-control" type="text" ng-model="drink.descRus" />
+        </div>
+        <div class="col-md-6" ng-show="finModal">
+            <label>Joogi nimi FI</label>
+            <input class="form-control" type="text" ng-model="drink.nameFin" />
+            <label>Kirjeldus FI</label>
+            <input class="form-control" type="text" ng-model="drink.descFin" />
+        </div>
+        <div class="col-md-6">
+
+            <i class="fa fa-times" aria-hidden="true" style="position: absolute;right: 20px;cursor:pointer;" ng-click="hideModal()"></i>
+            <p ng-click="showEst()"  style="margin-top: 30px;font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Eesti keeles
+            </p>
+            <p ng-click="showEng()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Inglise keeles
+            </p>
+            <p ng-click="showFin()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Soome keeles
+            </p>
+            <p ng-click="showRus()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Vene keeles
+            </p>
+            <button  ng-click="submitDrink()" class="submit-worker-btn">Lisa Jook</button>
+        </div>
+    </div>
+    <div class="row" ng-show="changeDrinkModal" style="margin-top:50px;">
+        <div class="col-md-6" ng-show="estEditModal">
+            <label>Joogi nimi</label>
+            <input value="{{nameEstEdit}}" class="form-control" type="text" ng-model="nameEditEst" ng-initial/>
+            <label>Tüüp</label>
+            <select ng-options="item for item in drinkSelection" class="form-control" ng-model="selected"></select>
+            <label>Hind</label>
+            <input value="{{priceEdit}}" class="form-control" type="text" ng-model="editPrice" ng-initial/>
+            <label>Kirjeldus</label>
+            <input value="{{descEstEdit}}" class="form-control" type="text" ng-model="descEditEst" ng-initial/>
+        </div>
+        <div class="col-md-6" ng-show="engEditModal">
+            <label>Joogi nimi EN</label>
+            <input value="{{nameEngEdit}}" class="form-control" type="text" ng-model="nameEditEng" ng-initial/>
+            <label>Kirjeldus EN</label>
+            <input value="{{descEngEdit}}" class="form-control" type="text" ng-model="descEditEng" ng-initial/>
+        </div>
+        <div class="col-md-6" ng-show="finEditModal">
+            <label>Joogi nimi FI</label>
+            <input value="{{nameFinEdit}}" class="form-control" type="text" ng-model="nameEditFin" ng-initial/>
+            <label>Kirjeldus FI</label>
+            <input value="{{descFinEdit}}" class="form-control" type="text" ng-model="descEditFin" ng-initial/>
+        </div>
+        <div class="col-md-6" ng-show="rusEditModal">
+            <label>Joogi nimi RU</label>
+            <input value="{{nameRusEdit}}" class="form-control" type="text" ng-model="nameEditRus" ng-initial/>
+            <label>Kirjeldus RU</label>
+            <input value="{{descRusEdit}}" class="form-control" type="text" ng-model="descEditRus" ng-initial/>
+        </div>
+        <div class="col-md-6">
+            <i class="fa fa-times" aria-hidden="true" style="position: absolute;right: 20px;cursor:pointer;" ng-click="hideModal()"></i>
+            <p ng-click="showEstEdit()"  style="margin-top: 30px;font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Eesti keeles
+            </p>
+            <p ng-click="showEngEdit()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Inglise keeles
+            </p>
+            <p ng-click="showFinEdit()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Soome keeles
+            </p>
+            <p ng-click="showRusEdit()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Vene keeles
+            </p>
+            <button  ng-click="updateDrink()" class="submit-worker-btn">Muuda Jooki</button>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table" style="margin: 0 auto;margin-top: 100px;">
+            <thead>
+                <th style="width:250px;">Jook</th>
+                <th style="width:250px;">Kirjeldus</th>
+                <th style="width:250px;">Hind</th>
+                <th style="width:250px;">Tüüp</th>
+                <th>Alamkategooria</th>
+                <th style="width:250px;">Tegevused</th>
+                <th style="width:250px;">Seisund</th>
+            </thead>
+            <tbody ng-repeat="item in drinks">
+                <td style="padding-top:25px;">{{item.name}}</td>
+                <td style="padding-top:25px;">{{item.description}}</td>
+                <td style="padding-top:25px;">{{item.price}}</td>
+                <td style="padding-top:25px;">{{item.type}}</td>
+                <td style="padding-top:25px">
+                    <span  ng-if="item.subCategory.length > 0">{{item.subCategory}}</span>
+                    <span  ng-if="item.subCategory.length == 0">Puudub</span>
+                </td>
+                <td style="padding-top: 22px;">
+                    <ul style="list-style:none; display:inline-block; margin-left: -60px;">
+                        <li class="edit-worker-btn" style="float:left;margin-left: 22px;" ng-click="changeDrink(item._id)"><i class="fa fa-pencil" aria-hidden="true"></i></li>
+                        <li class="edit-worker-btn" style="float:left;margin-left: 22px;" ng-click="removeDrink(item._id)"><i class="fa fa-trash" aria-hidden="true"></i></li>
+                    </ul>
+                </td>
+                <td>
+                    <ul style="list-style: none;" class="lang-bar">
+                        <li ng-class="{true: 'red', false: 'green'}[item.name.length == 0]">
+                            EE
+                        </li>
+                        <li ng-class="{true: 'red', false: 'green'}[item.nameEng.length == 0]">
+                            EN
+                        </li>
+                        <li ng-class="{true: 'red', false: 'green'}[item.nameFin.length == 0]">
+                            FI
+                        </li>
+                        <li ng-class="{true: 'red', false: 'green'}[item.nameRus.length == 0]">
+                            RU
+                        </li>
+                    </ul>
+                </td>
+            </tbody>
+        </table>
+    </div>
+</div>

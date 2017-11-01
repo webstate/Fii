@@ -1,0 +1,23 @@
+<nav class="navbar-admin" style="margin-top:20px;">
+      <div class="container">
+        <div class="navbar-header">
+           <a class="navbar-brand" href="#"><img src="css/img/fii-must.png" id="fii-must"/></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" style="margin-left: 90px;font-family: spaceMono;">
+          <ul class="nav navbar-nav">
+            <li><a ui-sref="admin.design">Disain</a></li>
+            <li><a ui-sref="admin.workers">Töötajad</a></li>
+            <li><a ui-sref="admin.food">Toidud</a></li>
+            <li><a ui-sref="admin.drink">Joogid</a></li>
+            <li><a ui-sref="admin.event">Üritused</a></li>
+            <li><a ui-sref="admin.bron">Reserveeringud</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right" ng-controller="logoutController">
+                  <li>
+                      <a style="font-size: 12px;margin-right:-15px;" class="signout-btn" ng-click="logout()">Logi välja</a>
+                  </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<div ui-view></div>

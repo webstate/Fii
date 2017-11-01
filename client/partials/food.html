@@ -1,0 +1,141 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <button class="add-new-worker-btn" ng-click="showModal()">Lisa uus Söök</button>
+        </div>
+    </div>
+
+    <div class="row" ng-show="changeFoodModal" style="margin-top: 50px;">
+        <div ng-show="estEditModal" class="col-md-6">
+            <label>Söögi nimi</label>
+            <input value="{{nameEstEdit}}"class="form-control" type="text" ng-model="nameEst" ng-initial />
+            <label>Tüüp</label>
+            <select ng-options="item for item in courses" class="form-control" ng-model="selected"></select>
+            <label>Hind</label>
+            <input value="{{priceEdit}}"class="form-control" type="text" ng-model="price" ng-initial />
+            <label>Kirjeldus</label>
+            <input value="{{descriptionEstEdit}}"class="form-control" type="text" ng-model="descriptionEst" ng-initial />
+        </div>
+        <div ng-show="engEditModal" class="col-md-6">
+            <label>Söögi nimi EN</label>
+            <input value="{{nameEngEdit}}" class="form-control" type="text" ng-model="nameEng" ng-initial/>
+            <label>Kirjeldus EN</label>
+            <input value="{{descriptionEngEdit}}"class="form-control" type="text" ng-model="descriptionEng" ng-initial />
+        </div>
+        <div ng-show="finEditModal" class="col-md-6">
+            <label>Söögi nimi FI</label>
+            <input value="{{nameFinEdit}}" class="form-control" type="text" ng-model="nameFin" ng-initial/>
+            <label>Kirjeldus FI</label>
+            <input value="{{descriptionFinEdit}}"class="form-control" type="text" ng-model="descriptionFin" ng-initial />
+        </div>
+        <div ng-show="rusEditModal" class="col-md-6">
+            <label>Söögi nimi RU</label>
+            <input value="{{nameRusEdit}}" class="form-control" type="text" ng-model="nameRus" ng-initial/>
+            <label>Kirjeldus RU</label>
+            <input value="{{descriptionRusEdit}}"class="form-control" type="text" ng-model="descriptionRus" ng-initial />
+        </div>
+        <div class="col-md-6">
+            <i class="fa fa-times" aria-hidden="true" style="position: absolute;right: 20px;cursor:pointer;" ng-click="hideModal()"></i>
+            <p ng-click="showEstEdit()"  style="margin-top: 30px;font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Eesti keeles
+            </p>
+            <p ng-click="showEngEdit()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Inglise keeles
+            </p>
+            <p ng-click="showFinEdit()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Soome keeles
+            </p>
+            <p ng-click="showRusEdit()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Vene keeles
+            </p>
+            <button  ng-click="changeFood()" class="submit-worker-btn">Muuda söögi andmeid</button>
+        </div>
+    </div>
+
+    <div class="row" ng-show="addFoodModal" style="margin-top:50px;">
+        <div ng-show="estModal" class="col-md-6">
+            <label>Söögi nimi</label>
+            <input class="form-control" type="text" ng-model="food.nameEst" ng-initial />
+            <label>Tüüp</label>
+            <select ng-options="item for item in courses" class="form-control" ng-model="selected"></select>
+            <label>Hind</label>
+            <input class="form-control" type="text" ng-model="food.price" ng-initial />
+            <label>Kirjeldus</label>
+            <input class="form-control" type="text" ng-model="food.descriptionEst" ng-initial />
+        </div>
+        <div ng-show="engModal" class="col-md-6">
+            <label>Söögi nimi EN</label>
+            <input class="form-control" type="text" ng-model="food.nameEng" ng-initial/>
+            <label>Kirjeldus EN</label>
+            <input class="form-control" type="text" ng-model="food.descriptionEng" ng-initial />
+        </div>
+        <div ng-show="finModal" class="col-md-6">
+            <label>Söögi nimi FI</label>
+            <input class="form-control" type="text" ng-model="food.nameFin" ng-initial/>
+            <label>Kirjeldus FI</label>
+            <input class="form-control" type="text" ng-model="food.descriptionFin" ng-initial />
+        </div>
+        <div ng-show="rusModal" class="col-md-6">
+            <label>Söögi nimi RU</label>
+            <input class="form-control" type="text" ng-model="food.nameRus" ng-initial/>
+            <label>Kirjeldus RU</label>
+            <input class="form-control" type="text" ng-model="food.descriptionRus" ng-initial />
+        </div>
+        <div class="col-md-6">
+            <i class="fa fa-times" aria-hidden="true" style="position: absolute;right: 20px;cursor:pointer;" ng-click="hideModal()"></i>
+            <p ng-click="showEst()" style="margin-top: 30px;font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Eesti keeles
+            </p>
+            <p ng-click="showEng()" style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Inglise keeles
+            </p>
+            <p ng-click="showFin()" style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Soome keeles
+            </p>
+            <p ng-click="showRus()" style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Vene keeles
+            </p>
+            <button  ng-click="submitFood()" class="submit-worker-btn">Lisa Söök</button>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table" style="margin: 0 auto;margin-top: 100px;">
+            <thead>
+                <th style="width:250px;">Söök</th>
+                <th style="width:250px;">Kirjeldus</th>
+                <th style="width:250px;">Hind</th>
+                <th style="width:250px;">Käik</th>
+                <th style="width:250px;">Tegevused</th>
+                <th style="width:250px;">Seisund</th>
+            </thead>
+            <tbody ng-repeat="item in foodList">
+                <td style="padding-top:25px;">{{item.name}}</td>
+                <td style="padding-top:25px;">{{item.description}}</td>
+                <td style="padding-top:25px;">{{item.price}}</td>
+                <td style="padding-top:25px;">{{item.course}}</td>
+                <td style="padding-top: 22px;">
+                    <ul style="list-style:none; display:inline-block; margin-left: -60px;">
+                        <li class="edit-worker-btn" style="float:left;margin-left: 22px;" ng-click="editFood(item._id)"><i class="fa fa-pencil" aria-hidden="true"></i></li>
+                        <li class="edit-worker-btn" style="float:left;margin-left: 22px;" ng-click="removeFood(item._id)"><i class="fa fa-trash" aria-hidden="true"></i></li>
+                    </ul>
+                </td>
+                <td>
+                    <ul style="list-style: none;" class="lang-bar">
+                        <li ng-class="{true: 'red', false: 'green'}[item.name.length == 0]">
+                            EE
+                        </li>
+                        <li ng-class="{true: 'red', false: 'green'}[item.nameEng.length == 0 || item.descEng.length == 0]">
+                            EN
+                        </li>
+                        <li ng-class="{true: 'red', false: 'green'}[item.nameFin.length == 0 || item.descFin.length == 0]">
+                            FI
+                        </li>
+                        <li ng-class="{true: 'red', false: 'green'}[item.nameRus.length == 0 || item.descRus.length == 0]">
+                            RU
+                        </li>
+                    </ul>
+                </td>
+            </tbody>
+        </table>
+    </div>
+</div>

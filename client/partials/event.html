@@ -1,0 +1,137 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <button class="add-new-worker-btn" ng-click="showModal()">Lisa uus Üritus</button>
+        </div>
+    </div>
+    <div class="row" ng-show="addEventModal" style="margin-top:50px;">
+        <div class="col-md-6" ng-show="estModal">
+            <label>Ürituse nimi</label>
+            <input class="form-control" type="text" ng-model="event.name" />
+            <label>Kuupäev</label>
+            <input class="form-control" type="date" ng-model="event.date" />
+            <label>Kellaeg</label>
+            <input class="form-control" type="time" ng-model="event.time" />
+            <label>Kirjeldus</label>
+            <input class="form-control" type="text" ng-model="event.description" />
+        </div>
+        <div class="col-md-6" ng-show="engModal">
+            <label>Ürituse nimi EN</label>
+            <input class="form-control" type="text" ng-model="event.nameEng" />
+            <label>Kirjeldus EN</label>
+            <input class="form-control" type="text" ng-model="event.descEng" />
+        </div>
+        <div class="col-md-6" ng-show="finModal">
+            <label>Ürituse nimi FI</label>
+            <input class="form-control" type="text" ng-model="event.nameFin" />
+            <label>Kirjeldus FI</label>
+            <input class="form-control" type="text" ng-model="event.descFin" />
+        </div>
+        <div class="col-md-6" ng-show="rusModal">
+            <label>Ürituse nimi RU</label>
+            <input class="form-control" type="text" ng-model="event.nameRus" />
+            <label>Kirjeldus RU</label>
+            <input class="form-control" type="text" ng-model="event.descRus" />
+        </div>
+        <div class="col-md-6">
+            <i class="fa fa-times" aria-hidden="true" style="position: absolute;right: 20px;cursor:pointer;" ng-click="hideModal()"></i>
+            <p ng-click="showEst()"  style="margin-top: 30px;font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Eesti keeles
+            </p>
+            <p ng-click="showEng()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Inglise keeles
+            </p>
+            <p ng-click="showFin()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Soome keeles
+            </p>
+            <p ng-click="showRus()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Vene keeles
+            </p>
+            <button  ng-click="submitEvent()" class="submit-worker-btn">Lisa Üritus</button>
+        </div>
+    </div>
+    <div class="row" ng-show="changeEventModal" style="margin-top:50px;">
+        <div class="col-md-6" ng-show="estEditModal">
+            <label>Ürituse nimi</label>
+            <input value="{{nameEstEdit}}" class="form-control" type="text" ng-model="editNameEst" ng-initial/>
+            <label>Kuupäev</label>
+            <input class="form-control" type="date" ng-model="dateEdit" ng-initial/>
+            <label>Kellaeg</label>
+            <input class="form-control" type="time" ng-model="timeEdit" ng-initial/>
+            <label>Kirjeldus</label>
+            <input value="{{descEstEdit}}" class="form-control" type="text" ng-model="editDescEst" ng-initial/>
+        </div>
+        <div class="col-md-6" ng-show="engEditModal">
+            <label>Ürituse nimi EN</label>
+            <input value="{{nameEngEdit}}" class="form-control" type="text" ng-model="editNameEng" ng-initial/>
+            <label>Kirjeldus EN</label>
+            <input value="{{descEngEdit}}" class="form-control" type="text" ng-model="editDescEng" ng-initial/>
+        </div>
+        <div class="col-md-6" ng-show="finEditModal">
+            <label>Ürituse nimi FI</label>
+            <input value="{{nameFinEdit}}" class="form-control" type="text" ng-model="editNameFin" ng-initial/>
+            <label>Kirjeldus FI</label>
+            <input value="{{descFinEdit}}" class="form-control" type="text" ng-model="editDescFin" ng-initial/>
+        </div>
+        <div class="col-md-6" ng-show="rusEditModal">
+            <label>Ürituse nimi RU</label>
+            <input value="{{nameRusEdit}}" class="form-control" type="text" ng-model="editNameRus" ng-initial/>
+            <label>Kirjeldus RU</label>
+            <input value="{{descRusEdit}}" class="form-control" type="text" ng-model="editDescRus" ng-initial/>
+        </div>
+        <div class="col-md-6">
+            <i class="fa fa-times" aria-hidden="true" style="position: absolute;right: 20px;cursor:pointer;" ng-click="hideEditModal()"></i>
+            <p ng-click="showEstEdit()"  style="margin-top: 30px;font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Eesti keeles
+            </p>
+            <p ng-click="showEngEdit()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Inglise keeles
+            </p>
+            <p ng-click="showFinEdit()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Soome keeles
+            </p>
+            <p ng-click="showRusEdit()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
+                Vene keeles
+            </p>
+            <button  ng-click="updateEvent()" class="submit-worker-btn">Muuda Üritust</button>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table" style="margin: 0 auto;margin-top: 100px;">
+            <thead>
+                <th style="width:250px;">Üritus</th>
+                <th style="width:250px;">Kirjeldus</th>
+                <th style="width:250px;">Toimumise aeg</th>
+                <th style="width:250px;">Tegevused</th>
+                <th style="width:250px;">Seisund</th>
+            </thead>
+            <tbody ng-repeat="item in events">
+                <td style="padding-top:25px;">{{item.name}}</td>
+                <td style="padding-top:25px;">{{item.description}}</td>
+                <td style="padding-top:25px;">{{item.date}}</td>
+                <td style="padding-top: 22px;">
+                    <ul style="list-style:none; display:inline-block; margin-left: -60px;">
+                        <li class="edit-worker-btn" style="float:left;margin-left: 22px;" ng-click="changeEvent(item.id)"><i class="fa fa-pencil" aria-hidden="true"></i></li>
+                        <li class="edit-worker-btn" style="float:left;margin-left: 22px;" ng-click="removeEvent(item.id)"><i class="fa fa-trash" aria-hidden="true"></i></li>
+                    </ul>
+                </td>
+                <td>
+                    <ul style="list-style: none;" class="lang-bar">
+                        <li ng-class="{true: 'red', false: 'green'}[item.name.length == 0]">
+                            EE
+                        </li>
+                        <li ng-class="{true: 'red', false: 'green'}[item.nameEng.length == 0 || item.descEng.length == 0]">
+                            EN
+                        </li>
+                        <li ng-class="{true: 'red', false: 'green'}[item.nameFin.length == 0 || item.descFin.length == 0]">
+                            FI
+                        </li>
+                        <li ng-class="{true: 'red', false: 'green'}[item.nameRus.length == 0 || item.descRus.length == 0]">
+                            RU
+                        </li>
+                    </ul>
+                </td>
+            </tbody>
+        </table>
+    </div>
+</div>

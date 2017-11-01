@@ -1,0 +1,32 @@
+{
+  "name": "fii",
+  "version": "0.0.1",
+  "description": "fii restoran",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/oskarmartin/Fii"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "express-session": "^1.15.2",
+    "mailgun-js": "^0.13.1",
+    "moment-timezone": "^0.5.13",
+    "mongoose": "^4.9.3",
+    "morgan": "^1.8.1",
+    "multer": "^1.3.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.0.0",
+    "path": "^0.12.7"
+  }
+}
