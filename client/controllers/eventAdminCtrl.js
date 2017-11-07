@@ -1,6 +1,6 @@
 var eventAdminCtrl = angular.module('eventAdminCtrl', []);
 
-eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService){
+eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictureService){
     $scope.addEventModal = false;
     $scope.changeEventModal = false;
     $scope.event = {};
@@ -13,6 +13,37 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService){
     }
     $scope.hideEditModal = function(){
         $scope.changeEventModal = false;
+    }
+    $scope.imageChanged = function(elm, type) {
+        var fd = new FormData();
+        angular.forEach(elm.files, function(file){
+            fd.append('file', file);
+        })
+
+        pictureService.saveImage(fd).then(function(file){
+            if (type == 'est') {
+                $scope.event.image = file;
+            } else if (type == 'edit_est') {
+                $scope.editImageEst = file;
+                console.dir(file);
+            } else if (type == 'eng') {
+                $scope.event.imageEng = file;
+            } else if (type == 'edit_eng') {
+                $scope.editImageEng = file;
+            } else if (type == 'fin') {
+                $scope.event.imageFin = file;
+            } else if (type == 'edit_fin') {
+                $scope.editImageFin = file;
+            } else if (type == 'rus') {
+                $scope.event.imageRus = file;
+            } else if (type == 'edit_rus') {
+                $scope.editImageRus = file;
+            }
+
+            console.dir($scope.event);
+        }, function(err){
+            console.log(err);
+        })
     }
 
     $scope.estModal = true;
@@ -104,10 +135,10 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService){
             minutes = "0" + $scope.event.time.getMinutes();
         }
 
-        eventService.addEvent($scope.event.name, $scope.event.description, $scope.event.date, hours+offset+":"+minutes+":00",
-        $scope.event.nameEng, $scope.event.descEng,
-        $scope.event.nameFin, $scope.event.descFin,
-        $scope.event.nameRus, $scope.event.descRus).then(function(){
+        eventService.addEvent($scope.event.name, $scope.event.description, $scope.event.image, $scope.event.date, hours+offset+":"+minutes+":00",
+        $scope.event.nameEng, $scope.event.descEng, $scope.event.imageEng,
+        $scope.event.nameFin, $scope.event.descFin, $scope.event.imageFin,
+        $scope.event.nameRus, $scope.event.descRus, $scope.event.imageRus).then(function(){
             eventService.getEvents().then(function(data){
                 $scope.events = data;
                 $scope.event = {};
@@ -139,29 +170,45 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService){
             $scope.timeEdit = new Date(data.time);
             $scope.editNameEst = data.name;
             $scope.editDescEst = data.description;
+            $scope.editImageEst = data.image;
             $scope.editNameEng = data.nameEng;
             $scope.editDescEng = data.descEng;
+            $scope.editImageEng = data.imageEng;
             $scope.editNameFin = data.nameFin;
             $scope.editDescFin = data.descFin;
+            $scope.editImageFin = data.imageFin;
+            $scope.editImageRus = data.imageRus;
             $scope.editNameRus = data.nameRus;
             $scope.editDescRus = data.descRus;
             $scope.eventId = data.id;
+
+            console.dir(data);
         })
     }
     $scope.updateEvent  = function(){
         var estName = "";
         var estDesc = "";
+        var estImage = "";
+
         var engName = "";
         var engDesc = "";
+        var engImage = "";
 
         estName = $scope.editNameEst;
         estDesc = $scope.editDesEst;
+        estImage = $scope.editImageEst;
+
         engName = $scope.editNameEng;
         engDesc = $scope.editDescEng;
+        engImage = $scope.editImageEng;
+
         finName = $scope.editNameFin;
         finDesc = $scope.editDescFin;
+        finImage = $scope.editImageFin;
+
         rusName = $scope.editNameRus;
         rusDesc = $scope.editDescRus;
+        rusImage = $scope.editImageRus;
 
         console.log(estName);
         console.log(estDesc);
@@ -196,10 +243,13 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService){
         if($scope.editDescRus === "{{descRusEdit}}"){
             rusDesc = $scope.descRusEdit;
         }
-        eventService.updateEvent($scope.eventId, estName, estDesc, $scope.dateEdit,
-        $scope.timeEdit, engName, engDesc,
-        finName, finDesc,
-        rusName, rusDesc).then(function(data){
+        console.dir("Est image: " + estImage);
+        eventService.updateEvent($scope.eventId,
+        estName, estDesc, estImage,
+        $scope.dateEdit, $scope.timeEdit,
+        engName, engDesc, engImage,
+        finName, finDesc, finImage,
+        rusName, rusDesc, rusImage).then(function(data){
             console.log(data);
             $scope.changeEventModal = false;
             eventService.getEvents().then(function(data){

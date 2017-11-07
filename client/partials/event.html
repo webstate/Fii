@@ -14,24 +14,49 @@
             <input class="form-control" type="time" ng-model="event.time" />
             <label>Kirjeldus</label>
             <input class="form-control" type="text" ng-model="event.description" />
+            <label>Pilt</label>
+            <!--<input class="form-control" type="text" ng-model="event.description" />-->
+            <div class="menu-pic-third-mockup" style="background-image:url({{event.image}});">
+                <input type="file" name="image" id="image" class="inputfile" onchange="angular.element(this).scope().imageChanged(this, 'est')" />
+                <label for="image" style="width: 100%; height: 100%"><i class="fa fa-pencil" style="color: black; position: absolute; bottom: 0;" aria-hidden="true"></i></label>
+            </div>
         </div>
         <div class="col-md-6" ng-show="engModal">
             <label>Ürituse nimi EN</label>
             <input class="form-control" type="text" ng-model="event.nameEng" />
             <label>Kirjeldus EN</label>
             <input class="form-control" type="text" ng-model="event.descEng" />
+            <label>Pilt EN</label>
+            <!--<input class="form-control" type="text" ng-model="event.description" />-->
+            <div class="menu-pic-third-mockup" style="background-image:url({{event.imageEng}});">
+                <input type="file" name="image" id="image-en" class="inputfile" onchange="angular.element(this).scope().imageChanged(this, 'eng')" />
+                <label for="image-en" style="width: 100%; height: 100%"><i class="fa fa-pencil" style="color: black; position: absolute; bottom: 0;" aria-hidden="true"></i></label>
+            </div>
         </div>
         <div class="col-md-6" ng-show="finModal">
             <label>Ürituse nimi FI</label>
             <input class="form-control" type="text" ng-model="event.nameFin" />
             <label>Kirjeldus FI</label>
             <input class="form-control" type="text" ng-model="event.descFin" />
+            <label>Pilt FI</label>
+            <!--<input class="form-control" type="text" ng-model="event.description" />-->
+            <div class="menu-pic-third-mockup" style="background-image:url({{event.imageFin}});">
+                <input type="file" name="image" id="image-fi" class="inputfile" onchange="angular.element(this).scope().imageChanged(this, 'fin')" />
+                <label for="image-fi" style="width: 100%; height: 100%"><i class="fa fa-pencil" style="color: black; position: absolute; bottom: 0;" aria-hidden="true"></i></label>
+            </div>
         </div>
         <div class="col-md-6" ng-show="rusModal">
             <label>Ürituse nimi RU</label>
             <input class="form-control" type="text" ng-model="event.nameRus" />
             <label>Kirjeldus RU</label>
             <input class="form-control" type="text" ng-model="event.descRus" />
+            <label>Pilt RU</label>
+            <!--<input class="form-control" type="text" ng-model="event.description" />-->
+            <div class="menu-pic-third-mockup" style="background-image:url({{event.imageRus}});">
+                <input type="file" name="image" id="image-ru" class="inputfile" onchange="angular.element(this).scope().imageChanged(this, 'rus')" />
+                <label for="image-ru" style="width: 100%; height: 100%"><i class="fa fa-pencil" style="color: black; position: absolute; bottom: 0;" aria-hidden="true"></i></label>
+            </div>
+
         </div>
         <div class="col-md-6">
             <i class="fa fa-times" aria-hidden="true" style="position: absolute;right: 20px;cursor:pointer;" ng-click="hideModal()"></i>
@@ -60,24 +85,49 @@
             <input class="form-control" type="time" ng-model="timeEdit" ng-initial/>
             <label>Kirjeldus</label>
             <input value="{{descEstEdit}}" class="form-control" type="text" ng-model="editDescEst" ng-initial/>
+            <label>Pilt</label>
+            <!--<input class="form-control" type="text" ng-model="event.description" />-->
+            <div class="menu-pic-third-mockup" style="background-image:url({{editImageEst}});">
+                <input type="file" name="image" id="image-edit-est" class="inputfile" onchange="angular.element(this).scope().imageChanged(this, 'edit_est')" />
+                <label for="image-edit-est" style="width: 100%; height: 100%"><i class="fa fa-pencil" style="color: black; position: absolute; bottom: 0;" aria-hidden="true"></i></label>
+            </div>
         </div>
         <div class="col-md-6" ng-show="engEditModal">
             <label>Ürituse nimi EN</label>
             <input value="{{nameEngEdit}}" class="form-control" type="text" ng-model="editNameEng" ng-initial/>
             <label>Kirjeldus EN</label>
             <input value="{{descEngEdit}}" class="form-control" type="text" ng-model="editDescEng" ng-initial/>
+            <label>Pilt EN</label>
+            <!--<input class="form-control" type="text" ng-model="event.description" />-->
+            <div class="menu-pic-third-mockup" style="background-image:url({{editImageEng}});">
+                <input type="file" name="image" id="image-edit-eng" class="inputfile" onchange="angular.element(this).scope().imageChanged(this, 'edit_eng')" />
+                <label for="image-edit-eng" style="width: 100%; height: 100%"><i class="fa fa-pencil" style="color: black; position: absolute; bottom: 0;" aria-hidden="true"></i></label>
+            </div>
         </div>
         <div class="col-md-6" ng-show="finEditModal">
             <label>Ürituse nimi FI</label>
             <input value="{{nameFinEdit}}" class="form-control" type="text" ng-model="editNameFin" ng-initial/>
             <label>Kirjeldus FI</label>
             <input value="{{descFinEdit}}" class="form-control" type="text" ng-model="editDescFin" ng-initial/>
+            <label>Pilt FI</label>
+            <!--<input class="form-control" type="text" ng-model="event.description" />-->
+            <div class="menu-pic-third-mockup" style="background-image:url({{editImageFin}});">
+                <input type="file" name="image" id="image-edit-fin" class="inputfile" onchange="angular.element(this).scope().imageChanged(this, 'edit_fin')" />
+                <label for="image-edit-fin" style="width: 100%; height: 100%"><i class="fa fa-pencil" style="color: black; position: absolute; bottom: 0;" aria-hidden="true"></i></label>
+            </div>
+
         </div>
         <div class="col-md-6" ng-show="rusEditModal">
             <label>Ürituse nimi RU</label>
             <input value="{{nameRusEdit}}" class="form-control" type="text" ng-model="editNameRus" ng-initial/>
             <label>Kirjeldus RU</label>
             <input value="{{descRusEdit}}" class="form-control" type="text" ng-model="editDescRus" ng-initial/>
+            <label>Pilt RU</label>
+            <!--<input class="form-control" type="text" ng-model="event.description" />-->
+            <div class="menu-pic-third-mockup" style="background-image:url({{editImageRus}});">
+                <input type="file" name="image" id="image-edit-rus" class="inputfile" onchange="angular.element(this).scope().imageChanged(this, 'edit_rus')" />
+                <label for="image-edit-rus" style="width: 100%; height: 100%"><i class="fa fa-pencil" style="color: black; position: absolute; bottom: 0;" aria-hidden="true"></i></label>
+            </div>
         </div>
         <div class="col-md-6">
             <i class="fa fa-times" aria-hidden="true" style="position: absolute;right: 20px;cursor:pointer;" ng-click="hideEditModal()"></i>

@@ -622,13 +622,17 @@ router.post('/event/add', function(req, res){
     Event.create({
         name: req.body.name,
         description: req.body.description,
+        image: req.body.image,
         date: moment(dateTime),
         descEng: req.body.descEng,
         nameEng: req.body.nameEng,
+        imageEng: req.body.imageEng,
         descFin: req.body.descFin,
         nameFin: req.body.nameFin,
+        imageFin: req.body.imageFin,
         descRus: req.body.descRus,
-        nameRus: req.body.nameRus
+        nameRus: req.body.nameRus,
+        imageRus: req.body.imageRus
     }, function(err, ev){
         if(err) res.send(err);
         res.json(ev);
@@ -646,13 +650,17 @@ router.post('/event/update', function(req, res){
         response.update({
             name: req.body.name,
             description: req.body.description,
+            image: req.body.image,
             date: dateTime,
             descEng: req.body.descEng,
             nameEng: req.body.nameEng,
+            imageEng: req.body.imageEng,
             descFin: req.body.descFin,
             nameFin: req.body.nameFin,
+            imageFin: req.body.imageFin,
             descRus: req.body.descRus,
-            nameRus: req.body.nameRus
+            nameRus: req.body.nameRus,
+            imageRus: req.body.imageRus
 
         }, function(err){
             if(err)res.send(err);
@@ -689,6 +697,10 @@ router.post('/event/findbyid', function(req, res){
         perma.descFin = response.descFin;
         perma.nameRus = response.nameRus;
         perma.descRus = response.descRus;
+        perma.image = response.image;
+        perma.imageEng = response.imageEng;
+        perma.imageFin = response.imageFin;
+        perma.imageRus = response.imageRus;
         perma.date = moment.tz(response.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DD");
         perma.time = moment.tz(response.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DDTHH:mm:ss");
         res.json(perma);
@@ -735,6 +747,10 @@ router.get('/event/getnext', function(req, res){
                 perma.descFin = element.descFin;
                 perma.nameRus = element.nameRus;
                 perma.descRus = element.descRus;
+                perma.image = element.image;
+                perma.imageEng = element.imageEng;
+                perma.imageRus = element.imageRus;
+                perma.imageFin = element.imageFin;
                 perma.date = moment.tz(element.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("DD-MM-YYYY HH:mm");
                 response.push(perma);
             }else{

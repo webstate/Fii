@@ -9,19 +9,23 @@ eventService.factory('eventService', function($q, $http){
         findByIdEvent:findByIdEvent,
         updateEvent: updateEvent
     })
-    function addEvent(name, description, date, time, nameEng, descEng, nameFin, descFin, nameRus, descRus){
+    function addEvent(name, description, image, date, time, nameEng, descEng, imageEng, nameFin, descFin, imageFin, nameRus, descRus, imageRus){
         var d = $q.defer();
         $http.post('drink/event/add', {
             name: name,
             description: description,
+            image: image,
             date: date,
             time: time,
             descEng: descEng,
             nameEng: nameEng,
+            imageEng: imageEng,
             descFin: descFin,
             nameFin: nameFin,
+            imageFin: imageFin,
             descRus: descRus,
-            nameRus: nameRus
+            nameRus: nameRus,
+            imageRus: imageRus
         })
         .success(function(data){
             d.resolve(data);
@@ -31,20 +35,24 @@ eventService.factory('eventService', function($q, $http){
         return d.promise;
 
     }
-    function updateEvent(id, name, description, date, time, nameEng, descEng, nameFin, descFin, nameRus, descRus){
+    function updateEvent(id, name, description, image, date, time, nameEng, descEng, imageEng, nameFin, descFin, imageFin, nameRus, descRus, imageRus){
         var d = $q.defer();
         $http.post('drink/event/update', {
             id: id,
             name: name,
             description: description,
+            image: image,
             date: date,
             time: time,
             descEng: descEng,
             nameEng: nameEng,
+            imageEng: imageEng,
             descFin: descFin,
             nameFin: nameFin,
+            imageFin: imageFin,
             descRus: descRus,
-            nameRus: nameRus
+            nameRus: nameRus,
+            imageRus: imageRus
         })
         .success(function(data){
             d.resolve(data);
