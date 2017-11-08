@@ -195,7 +195,7 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictu
         var engImage = "";
 
         estName = $scope.editNameEst;
-        estDesc = $scope.editDesEst;
+        estDesc = $scope.editDescEst;
         estImage = $scope.editImageEst;
 
         engName = $scope.editNameEng;
