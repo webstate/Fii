@@ -35,6 +35,8 @@ var myApp = angular.module('myApp', [
     'menu',
     'menuItem',
     'modalDemoCtrl',
+    'angularTrix',
+    'ngSanitize'
 ]);
 
 myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {

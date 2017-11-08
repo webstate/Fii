@@ -13,7 +13,8 @@
             <label>Kellaeg</label>
             <input class="form-control" type="time" ng-model="event.time" />
             <label>Kirjeldus</label>
-            <input class="form-control" type="text" ng-model="event.description" />
+            <!--<input class="form-control" type="text" ng-model="event.description" />-->
+            <trix-editor angular-trix ng-model="event.description"></trix-editor>
             <label>Pilt</label>
             <!--<input class="form-control" type="text" ng-model="event.description" />-->
             <div class="menu-pic-third-mockup" style="background-image:url({{event.image}});">
@@ -25,7 +26,8 @@
             <label>Ürituse nimi EN</label>
             <input class="form-control" type="text" ng-model="event.nameEng" />
             <label>Kirjeldus EN</label>
-            <input class="form-control" type="text" ng-model="event.descEng" />
+            <!-- <input class="form-control" type="text" ng-model="event.descEng" /> -->
+            <trix-editor angular-trix ng-model="event.descEng"></trix-editor>
             <label>Pilt EN</label>
             <!--<input class="form-control" type="text" ng-model="event.description" />-->
             <div class="menu-pic-third-mockup" style="background-image:url({{event.imageEng}});">
@@ -37,7 +39,8 @@
             <label>Ürituse nimi FI</label>
             <input class="form-control" type="text" ng-model="event.nameFin" />
             <label>Kirjeldus FI</label>
-            <input class="form-control" type="text" ng-model="event.descFin" />
+            <!-- <input class="form-control" type="text" ng-model="event.descFin" /> -->
+            <trix-editor angular-trix ng-model="event.descFin"></trix-editor>
             <label>Pilt FI</label>
             <!--<input class="form-control" type="text" ng-model="event.description" />-->
             <div class="menu-pic-third-mockup" style="background-image:url({{event.imageFin}});">
@@ -49,7 +52,8 @@
             <label>Ürituse nimi RU</label>
             <input class="form-control" type="text" ng-model="event.nameRus" />
             <label>Kirjeldus RU</label>
-            <input class="form-control" type="text" ng-model="event.descRus" />
+            <!-- <input class="form-control" type="text" ng-model="event.descRus" /> -->
+            <trix-editor angular-trix ng-model="event.descRus"></trix-editor>
             <label>Pilt RU</label>
             <!--<input class="form-control" type="text" ng-model="event.description" />-->
             <div class="menu-pic-third-mockup" style="background-image:url({{event.imageRus}});">
@@ -84,7 +88,8 @@
             <label>Kellaeg</label>
             <input class="form-control" type="time" ng-model="timeEdit" ng-initial/>
             <label>Kirjeldus</label>
-            <input value="{{descEstEdit}}" class="form-control" type="text" ng-model="editDescEst" ng-initial/>
+            <!-- <input value="{{descEstEdit}}" class="form-control" type="text" ng-model="editDescEst" ng-initial/> -->
+            <trix-editor angular-trix ng-model="editDescEst" ng-initial></trix-editor>
             <label>Pilt</label>
             <!--<input class="form-control" type="text" ng-model="event.description" />-->
             <div class="menu-pic-third-mockup" style="background-image:url({{editImageEst}});">
@@ -96,7 +101,8 @@
             <label>Ürituse nimi EN</label>
             <input value="{{nameEngEdit}}" class="form-control" type="text" ng-model="editNameEng" ng-initial/>
             <label>Kirjeldus EN</label>
-            <input value="{{descEngEdit}}" class="form-control" type="text" ng-model="editDescEng" ng-initial/>
+            <!-- <input value="{{descEngEdit}}" class="form-control" type="text" ng-model="editDescEng" ng-initial/> -->
+            <trix-editor angular-trix ng-model="editDescEng" ng-initial></trix-editor>
             <label>Pilt EN</label>
             <!--<input class="form-control" type="text" ng-model="event.description" />-->
             <div class="menu-pic-third-mockup" style="background-image:url({{editImageEng}});">
@@ -108,7 +114,8 @@
             <label>Ürituse nimi FI</label>
             <input value="{{nameFinEdit}}" class="form-control" type="text" ng-model="editNameFin" ng-initial/>
             <label>Kirjeldus FI</label>
-            <input value="{{descFinEdit}}" class="form-control" type="text" ng-model="editDescFin" ng-initial/>
+            <!-- <input value="{{descFinEdit}}" class="form-control" type="text" ng-model="editDescFin" ng-initial/> -->
+            <trix-editor angular-trix ng-model="editDescFin" ng-initial></trix-editor>
             <label>Pilt FI</label>
             <!--<input class="form-control" type="text" ng-model="event.description" />-->
             <div class="menu-pic-third-mockup" style="background-image:url({{editImageFin}});">
@@ -121,6 +128,7 @@
             <label>Ürituse nimi RU</label>
             <input value="{{nameRusEdit}}" class="form-control" type="text" ng-model="editNameRus" ng-initial/>
             <label>Kirjeldus RU</label>
+            <!-- <input value="{{descRusEdit}}" class="form-control" type="text" ng-model="editDescRus" ng-initial/> -->
             <input value="{{descRusEdit}}" class="form-control" type="text" ng-model="editDescRus" ng-initial/>
             <label>Pilt RU</label>
             <!--<input class="form-control" type="text" ng-model="event.description" />-->
@@ -157,7 +165,7 @@
             </thead>
             <tbody ng-repeat="item in events">
                 <td style="padding-top:25px;">{{item.name}}</td>
-                <td style="padding-top:25px;">{{item.description}}</td>
+                <td style="padding-top:25px;" ng-bind-html="item.description"></td>
                 <td style="padding-top:25px;">{{item.date}}</td>
                 <td style="padding-top: 22px;">
                     <ul style="list-style:none; display:inline-block; margin-left: -60px;">

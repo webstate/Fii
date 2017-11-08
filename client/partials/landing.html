@@ -1176,18 +1176,10 @@
                             <!--<p class="event-time">
                                 {{event.date}}
                             </p>-->
-                            <p ng-if="$root.lang==='ee'" class="event-description">
-                                {{event.description}}
-                            </p>
-                            <p ng-if="$root.lang==='en'" class="event-description">
-                                {{event.descEng}}
-                            </p>
-                            <p ng-if="$root.lang==='fi'" class="event-description">
-                                {{event.descFin}}
-                            </p>
-                            <p style="font-family:Roboto;" ng-if="$root.lang==='ru'" class="event-description">
-                                {{event.descRus}}
-                            </p>
+                            <p ng-if="$root.lang==='ee'" class="event-description" ng-bind-html="event.description"></p>
+                            <p ng-if="$root.lang==='en'" class="event-description" ng-bind-html="event.descEng"></p>
+                            <p ng-if="$root.lang==='fi'" class="event-description" ng-bind-html="event.descFin"></p>
+                            <p style="font-family:Roboto;" ng-if="$root.lang==='ru'" class="event-description" ng-bind-html="event.descRus"></p>
                         </div>
                     </div>
                     <div class="col-md-6">
