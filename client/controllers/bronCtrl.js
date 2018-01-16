@@ -1,5 +1,6 @@
 var bronCtrl = angular.module('bronCtrl', []);
 
+
 bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
     $scope.newsLetter = {
         status:true
