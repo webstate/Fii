@@ -16,7 +16,7 @@ landingTextService.factory('landingTextService', function($q, $http){
         return d.promise;
     }
     function getLandingText(place, lan){
-        var d = $q.defer();
+        var d = $q.defer(); //$q is a promise. Means the program can keep on working and once q has the variable it will finish the designated route
         $http.post('food/landingText/get', {place:place, lan:lan})
         .success(function(data){
             d.resolve(data);

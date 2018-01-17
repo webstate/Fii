@@ -823,13 +823,13 @@ designViewController.controller('designViewController', function($scope, picture
     }, function(err){
         console.log(err);
     })
-    $scope.$watch('contactEmailRus.text', function(val){
+    $scope.$watch('contactEmailRus.text', function(val){   // watch is so-called digest cycle, considered as a loop during which angular checks if there are any changes to all the variables watched
         landingTextService.addOrUpdateLandingText("contactEmailRus", val, "ee");
     })
 
 
-    landingTextService.getLandingText("contactTimeWorkWeekRus", "ee").then(function(data){
-        if(data.text == null){
+    landingTextService.getLandingText("contactTimeWorkWeekRus", "ee").then(function(data){ // This is a service. Once the program has the promice "getLandingText" it does the following function
+        if(data.text == null){  //"ee" is a language, "contactTimeForWeekRus" is a place
             $scope.workWeekTimeRus = "Nothing here";
         }
         $scope.workWeekTimeRus = data.text;
