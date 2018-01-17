@@ -98,6 +98,7 @@ ul.nav > li > a:visited{
     background: #63ada4;
     color: white;
     margin-bottom: 10px;
+    cursor:pointer;
 }
 .tel-btn{
     width: 225px;
@@ -194,6 +195,7 @@ ul.nav > li > a:visited{
 #logo{
     height: 60px;
     margin-top: 20px;
+    cursor: default;
 }
 #mockup-logo{
     height: 32px;
@@ -313,6 +315,7 @@ a.editable-click{
 .worker-name{
     font-family: spaceMono-Bold;
     margin-top: 60px;
+    cursor: default;
 }
 .worker-occupation{
     font-size: 14px;
@@ -320,11 +323,13 @@ a.editable-click{
     text-transform: uppercase;
     color: #CCCCCC;
     margin-top: -10px;
+    cursor: default;
 }
 .worker-info{
     font-family: spaceMono;
     margin-top: 40px;
     margin-bottom: 100px;
+    cursor: default;
 }
 .worker-img-mockup{
     background-image: url('img/mockup-worker.png');
@@ -480,28 +485,33 @@ th{
     font-size: 18px;
     padding-left: -10px;
     margin-right: 20px;
+    cursor: default;
 }
 .menu-price-drink{
     font-size: 11px;
     padding-left: -10px;
     margin-right: 20px;
+    cursor: default;
 }
 .menu-description{
     margin-left: 50px;
     margin-top: -15px;
     color: #757575;
     font-size: 12px;
+    cursor: default;
 }
 .menu-dish{
     margin-left: 50px;
     font-family: spaceMono-Bold;
     font-size: 18px;
+    cursor: default;
 }
 .menu-drink{
     margin-left: 50px;
     font-family: spaceMono-Bold;
     font-size: 10px;
     margin-top: -20px;
+    cursor:default;
 }
 .menu-drink-description{
     font-size: 10px;
@@ -519,6 +529,7 @@ th{
     font-family: spaceMono;
     font-size: 24px;
     margin-bottom: 30px;
+    cursor: default;
 }
 .menu-padding{
     padding-top: 20px;
@@ -608,7 +619,7 @@ th{
     font-family: spaceMono;
 }
 .drink-menu-tabs{
-    margin-left: 10px;
+    margin-left: 5px;
     padding-bottom: 30px;
     list-style:none;
 }
@@ -627,7 +638,8 @@ th{
     font-size: 14px;
     color: white;
     font-family: spaceMono;
-    width: 270px;
+    width: auto;
+    display: inline-block;
     position: absolute;
     right: 30px;
     margin-top: 60px;
@@ -760,7 +772,7 @@ th{
 .contact-title-mockup{
     font-family: spaceMono;
     font-size: 12px;
-    color: #757576;
+    color: #757575;
 }
 .contact-info{
     font-family: spaceMono;
@@ -825,6 +837,7 @@ textarea:focus, input:focus{
     top: 0;
     background: rgba(0,0,0,0.3);
     position: fixed;
+    scroll: hidden;
 }
 .bron-close-btn{
     color: white;
@@ -875,15 +888,15 @@ textarea:focus, input:focus{
     padding: 5px;
     height: 200px;
     overflow-y: scroll;
-    visibility: visible;
     opacity: 1;
+    display: block;
     transition: visibility 0s, opacity 0.5s linear;
 
 }
-/*.dropdown:hover .dropdown-content {
-    visibility: visible;
-    opacity: 1;
-}*/
+.dropdown-content:hover {
+    display: block;
+}
+
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
@@ -904,6 +917,7 @@ textarea:focus, input:focus{
     width: 100%;
     padding: 21px;
     border: none;
+    cursor: pointer;
 }
 ._720kb-datepicker-calendar-header:nth-child(odd){
     background-color:white;
@@ -928,9 +942,10 @@ textarea:focus, input:focus{
     /* border-radius: 3px; */
     border-radius: 0px;
     border-top: 1px solid rgba(0,0,0,0.1);
+    cursor: pointer;
 }
 datepicker._720kb-datepicker-calendar-body
- {
+{
 
     font-size: 13.5px;
     -webkit-box-sizing: border-box;
@@ -1083,6 +1098,23 @@ datepicker._720kb-datepicker-calendar-body
     font-size: 14px;
     color: black;
 }
+
+.bron-input_email{
+    padding: 20px;
+    width: 100%;
+    border: none;
+    font-size: 14px;
+    color: black;
+}
+
+.bron-input_email:valid{
+    background: hsla(100, 50%, 70%, 1);
+}
+
+.bron-input_email:invalid{
+    background: hsla(0, 50%, 80%, 1);
+}
+
 .feedback-btn: focus,
 .feedback-btn: active,
 .feedback-btn: visited{
@@ -1094,7 +1126,14 @@ datepicker._720kb-datepicker-calendar-body
 .activeTab{
     color:#63ada4;
     text-decoration: underline;
+    cursor: default;
+    pointer-events: none;
 }
+
+ul.drink-menu-tabs li:hover {
+    color: #d3d3d3;
+}
+
 .timeBtn {
     background: white;
     border: 1px solid black;
@@ -1102,7 +1141,10 @@ datepicker._720kb-datepicker-calendar-body
 .subActive{
     color:#efb248;
     text-decoration: underline;
+    cursor: default;
+    pointer-events: none;
 }
+
 .landing-menu > li > a:hover{
     underline: none;
     text-decoration: none;
@@ -1203,6 +1245,7 @@ datepicker._720kb-datepicker-calendar-body
     }
     .worker-name{
         margin-top: -50px;
+        cursor: default;
     }
     .footer-menu > li {
         width: 100%;
@@ -1243,9 +1286,11 @@ datepicker._720kb-datepicker-calendar-body
     }
     .menu-description{
         font-size: 10px;
+        cursor: default;
     }
     .menu-picture{
         margin-top: 15px;
+        cursor: default;
     }
     .drink-mobile-padding{
         margin-top: 20px;
@@ -1271,6 +1316,7 @@ datepicker._720kb-datepicker-calendar-body
     }
     .bron-date{
         width: 95%;
+        cursor: pointer;
     }
     .bron-btn{
         width: 95%;
@@ -1363,6 +1409,7 @@ datepicker._720kb-datepicker-calendar-body
 }
 .nonerror-bron{
     border:none;
+    cursor:pointer;
 }
 .burger-menu{
     position: absolute;
@@ -1380,74 +1427,74 @@ datepicker._720kb-datepicker-calendar-body
     text-decoration: none;
 }
 .border-box {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 menu {
-  display: block;
+    display: block;
 }
 menu > div {
-  padding-top: 100px;
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-transition: -webkit-transform ease 250ms;
-  -moz-transition: -webkit-transform ease 250ms;
-  -ms-transition: -webkit-transform ease 250ms;
-  -o-transition: -webkit-transform ease 250ms;
-  transition: -webkit-transform ease 250ms;
-  -webkit-transition: transform ease 250ms;
-  -moz-transition: transform ease 250ms;
-  -ms-transition: transform ease 250ms;
-  -o-transition: transform ease 250ms;
-  transition: transform ease 250ms;
+    padding-top: 100px;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-transition: -webkit-transform ease 250ms;
+    -moz-transition: -webkit-transform ease 250ms;
+    -ms-transition: -webkit-transform ease 250ms;
+    -o-transition: -webkit-transform ease 250ms;
+    transition: -webkit-transform ease 250ms;
+    -webkit-transition: transform ease 250ms;
+    -moz-transition: transform ease 250ms;
+    -ms-transition: transform ease 250ms;
+    -o-transition: transform ease 250ms;
+    transition: transform ease 250ms;
 }
 menu > div.left {
-  background: black;
-  left: -100vw;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background: black;
+    left: -100vw;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 menu > div.show.left {
-  transform: translate3d(100vw, 0, 0);
-  -ms-transform: translate3d(100vw, 0, 0);
-  -webkit-transform: translate3d(100vw, 0, 0);
-  -o-transform: translate3d(100vw, 0, 0);
-  -moz-transform: translate3d(100vw, 0, 0);
+    transform: translate3d(100vw, 0, 0);
+    -ms-transform: translate3d(100vw, 0, 0);
+    -webkit-transform: translate3d(100vw, 0, 0);
+    -o-transform: translate3d(100vw, 0, 0);
+    -moz-transform: translate3d(100vw, 0, 0);
 }
 
 menu > div.show.right {
-  transform: translate3d(-100vw, 0, 0);
-  -ms-transform: translate3d(-100vw, 0, 0);
-  -webkit-transform: translate3d(-100vw, 0, 0);
-  -o-transform: translate3d(-100vw, 0, 0);
-  -moz-transform: translate3d(-100vw, 0, 0);
+    transform: translate3d(-100vw, 0, 0);
+    -ms-transform: translate3d(-100vw, 0, 0);
+    -webkit-transform: translate3d(-100vw, 0, 0);
+    -o-transform: translate3d(-100vw, 0, 0);
+    -moz-transform: translate3d(-100vw, 0, 0);
 }
 menu > div > menu-item {
-  display: block;
-  margin-top: 20px;
+    display: block;
+    margin-top: 20px;
 }
 menu > div > menu-item > div {
-  float: left;
-  width: 100%;
-  margin: 0;
-  padding: 10px 15px;
-  cursor: pointer;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  color: white;
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 10px 15px;
+    cursor: pointer;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    color: white;
 }
 menu > div > menu-item > div:hover {
-  color: #F0F0F0;
+    color: #F0F0F0;
 }
 menu > div > menu-item > div > span {
-      float: left;
-      color: white;
-      font-family: spaceMono;
-      font-size: 32px;
+    float: left;
+    color: white;
+    font-family: spaceMono;
+    font-size: 32px;
 }
 .bron-btn-modal{
     position: absolute;
@@ -1460,66 +1507,67 @@ menu > div > menu-item > div > span {
     padding-left: 25px;
     padding-right: 25px;
     font-family: spaceMono;
+    cursor: pointer;
 }
 .nav_button {
-   width: 32px;
-   height: 18px;
-   cursor: pointer;
-   position: absolute;
-   right: 20px;
-   top: 35px;
-   z-index: 9999999;
-   color: white;
+    width: 32px;
+    height: 18px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 35px;
+    z-index: 9999999;
+    color: white;
 }
 
 .nav_button #burger {
-  position: relative;
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-  -webkit-transition: .6s ease-in-out;
-  transition: .6s ease-in-out;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .6s ease-in-out;
+    transition: .6s ease-in-out;
 }
 .nav_button #burger span {
-  display: block;
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  background: white;
-  border-radius: 9px;
-  opacity: 1;
-  left: 0;
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: white;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
 }
 
 .nav_button #burger span:nth-child(1) {
-  top: 0;
+    top: 0;
 }
 .nav_button #burger span:nth-child(2), .nav_button #burger span:nth-child(3) {
-  top: 8px;
+    top: 8px;
 }
 .nav_button #burger span:nth-child(4) {
-  top: 16px;
+    top: 16px;
 }
 .nav_button #burger.active-sandwich span:nth-child(1) {
-  top: 18px;
-  width: 0%;
-  left: 50%;
+    top: 18px;
+    width: 0%;
+    left: 50%;
 }
 .nav_button #burger.active-sandwich span:nth-child(2) {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 .nav_button #burger.active-sandwich span:nth-child(3) {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 .nav_button #burger.active-sandwich span:nth-child(4) {
-  top: 18px;
-  width: 0%;
-  left: 50%;
+    top: 18px;
+    width: 0%;
+    left: 50%;
 }
 .sideNavNumber{
     font-family: spaceMono;
@@ -1537,10 +1585,11 @@ menu > div > menu-item > div > span {
 }
 .newsletter{
     margin-top: 30px;
+    color: white;
+    cursor: default;
 }
 .error-message {
-    font-family:
-    spaceMono;
+    font-family: spaceMono;
     color:#a94442
 }
 .bron-btn:active,
@@ -1553,6 +1602,7 @@ menu > div > menu-item > div > span {
     color: white;
     margin-left: 15px;
     margin-top: 25px;
+    cursor: pointer;
 }
 .hamburger-mobile{
     background-color: white;
@@ -1567,7 +1617,6 @@ menu > div > menu-item > div > span {
     color: white;
     font-family: spaceMono;
     font-size: 16px;
-    margin-left: 40px;
     cursor: pointer;
 }
 .langmenu-mobile{
@@ -1587,6 +1636,7 @@ menu > div > menu-item > div > span {
     }
     .bron-date{
         padding: 10px;
+        cursor: pointer;
     }
     .dropdown{
         padding: 10px;
@@ -1611,6 +1661,7 @@ menu > div > menu-item > div > span {
     }
     .add-info-btn{
         font-size: 12px;
+        cursor: pointer;
     }
     .booking-modal-arrow-mobile-second {
         margin-top: 2px;
@@ -1696,3 +1747,4 @@ datepicker.backend-date > input{
     cursor: pointer;
     background: #CCCCCC;
 }
+

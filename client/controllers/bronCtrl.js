@@ -1,6 +1,5 @@
 var bronCtrl = angular.module('bronCtrl', []);
 
-
 bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
     $scope.newsLetter = {
         status:true
@@ -76,6 +75,43 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
     $scope.test3 = function(){
         $scope.form.showDropDownTime = true;
     }
+
+    $scope.mouseLeave = function(){
+        $scope.form.showDropDownPeople = false;
+    }
+
+    $scope.mouseLeave2 = function(){
+        $scope.form.showDropDownTime = false;
+    }
+
+    $scope.mouseLeaveFin2 = function(){
+        $scope.form.showDropDownTimeFin = false;
+    }
+
+    $scope.mouseLeaveEng2 = function(){
+        $scope.form.showDropDownTimeEng = false;
+    }
+
+    $scope.mouseLeaveRus2 = function(){
+        $scope.form.showDropDownTimeRus = false;
+    }
+
+    $scope.mouseLeaveDate = function() {
+        $scope.hideCalendar = true;
+    }
+
+    $scope.mouseLeaveFin = function(){
+        $scope.form.showDropDownPeopleFin = false;
+    }
+
+    $scope.mouseLeaveRus = function(){
+        $scope.form.showDropDownPeopleRus = false;
+    }
+
+    $scope.mouseLeaveEng = function(){
+        $scope.form.showDropDownPeopleEng = false;
+    }
+
     $scope.openTimeFin = function(){
         $scope.form.showDropDownTimeFin = true;
     }
@@ -84,7 +120,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
     }
 
     $scope.times = ["10:00","10:30","11:00", "11:30", "12:00", "12:30", "13:00", "13:30",
-    "14:00", "14:30","15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30","20:00", "20:30", "21:00", "21:30"];
+        "14:00", "14:30","15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30","20:00", "20:30", "21:00", "21:30"];
     $scope.people = ["1 people", "2 people", "3 people", "4 people", "5 people", "6 people", "7 people", "8 people"];
     $scope.peopleEst = ["1 inimene", "2 inimest", "3 inimest", "4 inimest", "5 inimest", "6 inimest", "7 inimest", "8 inimest"];
     $scope.peopleRus = ["1 человек", "2 человек", "3 человека", "4 человек", "5 человек", "6 человек", "7 человек", "8 человек"];
@@ -392,15 +428,15 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         if(!$scope.nameEstError && !$scope.emailEstError && !$scope.phoneEstError){
             bookingService.addBooking($scope.validPeople, $scope.validTime,
                 $scope.validDate, $rootScope.nameEst, $rootScope.emailEst, $rootScope.phoneEst, "ee", addInfoText, $scope.newsLetter.status).then(function(data){
-                    $rootScope.bookingModal = false;
-                    $scope.bronFirst = true;
-                    $scope.bronSecond = false;
-                    $rootScope.dateEst = "";
-                    $scope.dropDownTimeEst = "Vali kellaeg";
-                    $scope.dropDownPeopleEst = "Vali inimeste arv";
-                    $rootScope.nameEst = "";
-                    $rootScope.emailEst = "";
-                    $rootScope.phoneEst = "";
+                $rootScope.bookingModal = false;
+                $scope.bronFirst = true;
+                $scope.bronSecond = false;
+                $rootScope.dateEst = "";
+                $scope.dropDownTimeEst = "Vali kellaeg";
+                $scope.dropDownPeopleEst = "Vali inimeste arv";
+                $rootScope.nameEst = "";
+                $rootScope.emailEst = "";
+                $rootScope.phoneEst = "";
 
 
             });
@@ -426,15 +462,15 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         if(!$scope.nameEngError && !$scope.emailEngError && !$scope.phoneEngError){
             bookingService.addBooking($scope.validPeople, $scope.validTime,
                 $scope.validDate, $rootScope.nameEng, $rootScope.emailEng, $rootScope.phoneEng, "en").then(function(data){
-                    $rootScope.bookingModal = false;
-                    $scope.bronFirst = true;
-                    $scope.bronSecond = false;
-                    $rootScope.dateEng = "";
-                    $scope.dropDownTime = "Pick a time";
-                    $scope.dropDownPeople = "Number of people";
-                    $rootScope.nameEng = "";
-                    $rootScope.emailEng = "";
-                    $rootScope.phoneEng = "";
+                $rootScope.bookingModal = false;
+                $scope.bronFirst = true;
+                $scope.bronSecond = false;
+                $rootScope.dateEng = "";
+                $scope.dropDownTime = "Pick a time";
+                $scope.dropDownPeople = "Number of people";
+                $rootScope.nameEng = "";
+                $rootScope.emailEng = "";
+                $rootScope.phoneEng = "";
 
             });
         }
@@ -459,15 +495,15 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         if(!$scope.nameRusError && !$scope.emailRusError && !$scope.phoneRusError){
             bookingService.addBooking($scope.validPeople, $scope.validTime,
                 $scope.validDate, $rootScope.nameRus, $rootScope.emailRus, $rootScope.phoneRus, "ru").then(function(data){
-                    $rootScope.bookingModal = false;
-                    $scope.bronFirst = true;
-                    $scope.bronSecond = false;
-                    $rootScope.dateRus = "";
-                    $scope.dropDownTimeRus = "Подобрать время";
-                    $scope.dropDownPeopleRus = "Выберите количество людей";
-                    $rootScope.nameRus = "";
-                    $rootScope.emailRus = "";
-                    $rootScope.phoneRus = "";
+                $rootScope.bookingModal = false;
+                $scope.bronFirst = true;
+                $scope.bronSecond = false;
+                $rootScope.dateRus = "";
+                $scope.dropDownTimeRus = "Подобрать время";
+                $scope.dropDownPeopleRus = "Выберите количество людей";
+                $rootScope.nameRus = "";
+                $rootScope.emailRus = "";
+                $rootScope.phoneRus = "";
 
             });
         }
@@ -492,22 +528,22 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         if(!$scope.nameFinError && !$scope.emailFinError && !$scope.phoneFinError){
             bookingService.addBooking($scope.validPeople, $scope.validTime,
                 $scope.validDate, $rootScope.nameFin, $rootScope.emailFin, $rootScope.phoneFin, "fi").then(function(data){
-                    $rootScope.bookingModal = false;
-                    $scope.bronFirst = true;
-                    $scope.bronSecond = false;
-                    $rootScope.dateFin = "";
-                    $scope.dropDownTimeFin = "Valitse aika";
-                    $scope.dropDownPeopleFin = "Valitse joukko ihmisiä";
-                    $rootScope.nameFin = "";
-                    $rootScope.emailFin = "";
-                    $rootScope.phoneFin = "";
+                $rootScope.bookingModal = false;
+                $scope.bronFirst = true;
+                $scope.bronSecond = false;
+                $rootScope.dateFin = "";
+                $scope.dropDownTimeFin = "Valitse aika";
+                $scope.dropDownPeopleFin = "Valitse joukko ihmisiä";
+                $rootScope.nameFin = "";
+                $rootScope.emailFin = "";
+                $rootScope.phoneFin = "";
 
             });
         }
     }
     $scope.showInfoModal = false;
     $scope.openInfoModal = function(){
-        $scope.showInfoModal = true;
-    }
+        $scope.showInfoModal = !$scope.showInfoModal;
+    };
 
-})
+});
