@@ -837,7 +837,6 @@ textarea:focus, input:focus{
     top: 0;
     background: rgba(0,0,0,0.3);
     position: fixed;
-    scroll: hidden;
 }
 .bron-close-btn{
     color: white;
@@ -888,11 +887,18 @@ textarea:focus, input:focus{
     padding: 5px;
     height: 200px;
     overflow-y: scroll;
+    visability: visible;
     opacity: 1;
     display: block;
     transition: visibility 0s, opacity 0.5s linear;
 
 }
+
+-/*.dropdown:hover .dropdown-content {
+-    visibility: visible;
+-    opacity: 1;
+-}*/
+
 .dropdown-content:hover {
     display: block;
 }
@@ -944,9 +950,7 @@ textarea:focus, input:focus{
     border-top: 1px solid rgba(0,0,0,0.1);
     cursor: pointer;
 }
-datepicker._720kb-datepicker-calendar-body
-{
-
+datepicker._720kb-datepicker-calendar-body {
     font-size: 13.5px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -1430,9 +1434,11 @@ ul.drink-menu-tabs li:hover {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
+
 menu {
     display: block;
 }
+
 menu > div {
     padding-top: 100px;
     position: absolute;
@@ -1617,6 +1623,7 @@ menu > div > menu-item > div > span {
     color: white;
     font-family: spaceMono;
     font-size: 16px;
+    margin-left: 40px;
     cursor: pointer;
 }
 .langmenu-mobile{
@@ -1627,7 +1634,6 @@ menu > div > menu-item > div > span {
     margin-top: 15px;
     left: 75px;
     z-index: 1;
-}
 }
 
 @media screen and (min-width: 320px) and (max-width: 768px) and (orientation: landscape) {
