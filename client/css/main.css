@@ -923,8 +923,9 @@ textarea:focus, input:focus{
     width: 100%;
     padding: 21px;
     border: none;
-    cursor: pointer;
+    cursor: default;
 }
+
 ._720kb-datepicker-calendar-header:nth-child(odd){
     background-color:white;
 }
@@ -1642,7 +1643,7 @@ menu > div > menu-item > div > span {
     }
     .bron-date{
         padding: 10px;
-        cursor: pointer;
+        cursor: default;
     }
     .dropdown{
         padding: 10px;
