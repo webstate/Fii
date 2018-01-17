@@ -1364,6 +1364,10 @@ ul.drink-menu-tabs li:hover {
     .bron-input{
         width: 95%;
     }
+
+    .bron-input_email{
+        width: 95%;
+    }
     .booking-modal-arrow-mobile-second{
         margin-top: -5px;
         right: 40px;
@@ -1661,6 +1665,9 @@ menu > div > menu-item > div > span {
         height: 360px;
     }
     .bron-input{
+        padding: 10px;
+    }
+    .bron-input_email{
         padding: 10px;
     }
     .bron-modal-title-second{
