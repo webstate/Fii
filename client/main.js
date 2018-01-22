@@ -125,7 +125,7 @@ myApp.run(function ($rootScope, $location,$state, AuthService, editableOptions, 
             $window.ga('send', 'pageview', $location.path());
         });
   editableOptions.theme = 'bs3';
-  $rootScope.$on('$stateChangeStart',
+  $rootScope.$on('$stateChangeStart', //Route event that triggers statechange and the next stage
     function (event, next, current) {
       if(next.access.restricted && AuthService.isLoggedIn() === false){
           $location.path('/login');

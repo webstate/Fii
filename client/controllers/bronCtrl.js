@@ -31,6 +31,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.bronSecond = false;
     }
     $scope.closeModal = function(){
+        $('body').css('overflow', 'scroll');
         $rootScope.bookingModal = false;
         $scope.bronFirst = true;
         $scope.bronSecond = false;

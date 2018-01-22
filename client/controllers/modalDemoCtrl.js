@@ -5,7 +5,6 @@ modalDemoCtrl.controller('modalDemoCtrl', function($scope, $rootScope, $timeout)
     $scope.rightVisible = false;
 
     $scope.close = function() {
-        $('body').css('overflow', 'scroll');
         $scope.showSideNav = false;
         $scope.leftVisible = false;
         $scope.rightVisible = false;

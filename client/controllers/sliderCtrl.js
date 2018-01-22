@@ -247,6 +247,7 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     })
     $scope.bronModal = function(){
         $rootScope.bookingModal = true;
+        $('body').css('overflow', 'hidden');
     }
 
     $scope.sendEmailEng = function(){
