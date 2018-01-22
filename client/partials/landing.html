@@ -1597,6 +1597,10 @@
                 <div ng-show="bronFirst">
                     <div class="row">
                         <div class="container" ng-if="$root.lang ==='en'">
+                            <p class="back-btn" ng-click="closeModal()" ng-if="$root.lang ==='en'">
+                                <i class="fa fa-arrow-left bron-modal-back" aria-hidden="true" style="color:white;float: left;margin-top: 4px;margin-left: 15px; margin-right: 10px"></i>
+                                Back
+                            </p>
                             <div class="col-md-12">
                                 <p style="color:white;font-family:spaceMono;color:#a94442" ng-show="errorMsg">We're sorry, restaurant is fully booked on this time. Please change the details.</p>
                                 <p class="error-message" ng-if="dropDownPeopleEngError || dropDownTimeEngError || dateEngError ">Please make selection on all fields.</p>
@@ -1629,6 +1633,10 @@
                             </div>
                         </div>
                         <div class="container" ng-if="$root.lang ==='ee'">
+                            <p class="back-btn" ng-click="closeModal()" ng-if="$root.lang ==='ee'">
+                                <i class="fa fa-arrow-left bron-modal-back" aria-hidden="true" style="color:white;float: left;margin-top: 4px;margin-left: 15px; margin-right: 10px"></i>
+                                Tagasi
+                            </p>
                             <div class="col-md-12">
                                 <p style="color:white;font-family:spaceMono;color:#a94442" ng-show="errorMsg">Kahjuks on kogu restoran sellel kellaajal broneeritud. Palun muutke kellaaega või kuupäeva.</p>
                                 <p class="error-message" ng-if="dropDownPeopleEstError || dropDownTimeEstError || dateEstError ">Kõik väljad peavad olema täidetud</p>
@@ -1666,6 +1674,10 @@
                             </div>
                         </div>
                         <div class="container" ng-if="$root.lang ==='fi'">
+                            <p class="back-btn" ng-click="closeModal()" ng-if="$root.lang ==='fi'">
+                                <i class="fa fa-arrow-left bron-modal-back" aria-hidden="true" style="color:white;float: left;margin-top: 4px;margin-left: 15px; margin-right: 10px"></i>
+                                Sitten
+                            </p>
                             <div class="col-md-12">
                                 <p style="color:white;font-family:spaceMono;color:#a94442" ng-show="errorMsg">Valitettavasti ravintolamme on valitsemmallasi ajankohtalla varattu. Muuta kellonaika tai päivämäärä.</p>
                                 <p class="error-message" ng-if="dropDownPeopleFinError || dropDownTimeFinError || dateFinError ">Kaikki kentät on lisättävä</p>
@@ -1699,6 +1711,10 @@
                             </div>
                         </div>
                         <div class="container" ng-if="$root.lang ==='ru'">
+                            <p class="back-btn" ng-click="closeModal()" ng-if="$root.lang ==='ru'" style="font-family:Roboto;">
+                                <i class="fa fa-arrow-left bron-modal-back" aria-hidden="true" style="color:white;float: left;margin-top: 4px;margin-left: 15px; margin-right: 10px"></i>
+                                назад
+                            </p>
                             <div class="col-md-12">
                                 <p style="color:white;font-family:Roboto;color:#a94442" ng-show="errorMsg">К сожалению весь ресторан забронирован в то время. Пожалуйста измените время или дату.</p>
                                 <p class="error-message" style="font-family:Roboto;" ng-if="dropDownPeopleRusError || dropDownTimeRusError || dateRusError ">Все поля должны быть выбраны</p>

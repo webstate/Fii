@@ -622,10 +622,12 @@ th{
     margin-left: 5px;
     padding-bottom: 30px;
     list-style:none;
+    padding-right: 10px;
 }
 .drink-menu-tabs > li{
     float:left;
     padding-right: 10px;
+    padding-left:10px;
     font-family: spaceMono;
     font-size: 10px;
     cursor: pointer;
@@ -1628,7 +1630,7 @@ menu > div > menu-item > div > span {
     color: white;
     font-family: spaceMono;
     font-size: 16px;
-    margin-left: 4px;
+    margin-left: 16 px;
     cursor: pointer;
 }
 .langmenu-mobile{
