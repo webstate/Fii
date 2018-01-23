@@ -118,10 +118,10 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
 myApp.run(function ($rootScope, $location,$state, AuthService, editableOptions, $window) {
     document.addEventListener("click", function(e) {
-        $rootScope.$broadcast("documentClicked", e.target);
+        $rootScope.$broadcast("documentClicked", e.target); // $rootScope.$broadcast is a convenient way to raise a "global" event which all child scopes can listen for.
     });
-  $window.ga('create', 'UA-98229169-1', 'auto');
-  $rootScope.$on('$stateChangeSuccess', function (event) {
+  $window.ga('create', 'UA-98229169-1', 'auto'); // Google analytics tracking
+  $rootScope.$on('$stateChangeSuccess', function (event) { // listens to a particular event
             $window.ga('send', 'pageview', $location.path());
         });
   editableOptions.theme = 'bs3';
