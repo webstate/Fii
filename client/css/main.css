@@ -1241,6 +1241,11 @@ ul.drink-menu-tabs li:hover {
     .navbar-landing{
         display: none;
     }
+
+    .tasting-menu-btn{
+        margin-top: 30px;
+        width: inherit;
+    }
 }
 @media screen and (max-width: 768px){
     .mapPicture{
