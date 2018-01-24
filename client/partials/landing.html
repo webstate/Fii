@@ -1837,7 +1837,7 @@
                             </p>
                             <div class="col-md-12" style="color:white;font-family:spaceMono;">
                                 <div>
-                                    <input ng-show="showInfoModal" type="text" class="bron-input" ng-model="addInfo"/>
+                                    <input ng-show="showInfoModal" maxlength="200" type="text" class="bron-input" ng-model="addInfo"/>
                                 </div>
                                 <div class="newsletter">
                                     <input ng-if="$root.lang === 'en'" ng-model="newsLetter.status" type="checkbox" style="cursor:pointer;"/>
