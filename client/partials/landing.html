@@ -1789,34 +1789,34 @@
                             </div>
                             <div class="col-md-4">
                                 <label style="color:white" ng-if="$root.lang ==='en'">Your name</label>
-                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[nameEngError===true]" ng-if="$root.lang ==='en'" type="text" class="bron-input" placeholder="Full name" ng-model="$root.nameEng"/>
+                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[nameEngError===true]" ng-if="$root.lang ==='en'" maxlength="40" type="text" class="bron-input" placeholder="Full name" ng-model="$root.nameEng"/>
                                 <label style="color:white" ng-if="$root.lang ==='ee'">Teie nimi</label>
-                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[nameEstError===true]" ng-if="$root.lang ==='ee'" type="text" class="bron-input" placeholder="Täisnimi" ng-model="$root.nameEst"/>
+                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[nameEstError===true]" ng-if="$root.lang ==='ee'" maxlength="40" type="text" class="bron-input" placeholder="Täisnimi" ng-model="$root.nameEst"/>
                                 <label style="color:white" ng-if="$root.lang ==='fi'">Etu- ja sukunimi</label>
-                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[nameFinError===true]" ng-if="$root.lang ==='fi'" type="text" class="bron-input" placeholder="Etu- ja sukunimi" ng-model="$root.nameFin"/>
+                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[nameFinError===true]" ng-if="$root.lang ==='fi'" maxlength="40" type="text" class="bron-input" placeholder="Etu- ja sukunimi" ng-model="$root.nameFin"/>
                                 <label style="color:white; font-family:Roboto;" ng-if="$root.lang ==='ru'">Полное имя</label>
-                                <input style="font-family:Roboto;" ng-class="{true:'error-bron', false:'nonerror-bron'}[nameRusError===true]" ng-if="$root.lang ==='ru'" type="text" class="bron-input" placeholder="Полное имя" ng-model="$root.nameRus"/>
+                                <input style="font-family:Roboto;" ng-class="{true:'error-bron', false:'nonerror-bron'}[nameRusError===true]" ng-if="$root.lang ==='ru'" maxlength="40" type="text" class="bron-input" placeholder="Полное имя" ng-model="$root.nameRus"/>
 
                             </div>
                             <div class="col-md-4">
                                 <label style="color:white" ng-if="$root.lang ==='en'">Email address</label>
-                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[emailEngError===true]" ng-if="$root.lang ==='en'" ng-model="email.text" required type="email" class="bron-input_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="E-mail" ng-model="$root.emailEng"/>
+                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[emailEngError===true]" ng-if="$root.lang ==='en'" ng-model="email.text" maxlength="40" required type="email" class="bron-input_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="E-mail" ng-model="$root.emailEng"/>
                                 <label style="color:white" ng-if="$root.lang ==='ee'">Emaili aadress</label>
-                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[emailEstError===true]" ng-if="$root.lang ==='ee'" type="email" required class="bron-input_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email" ng-model="$root.emailEst"/>
+                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[emailEstError===true]" ng-if="$root.lang ==='ee'" type="email" maxlength="40" required class="bron-input_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email" ng-model="$root.emailEst"/>
                                 <label style="color:white" ng-if="$root.lang ==='fi'">Sähköposti</label>
-                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[emailFinError===true]" ng-if="$root.lang ==='fi'" type="email" required class="bron-input_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Sähköposti" ng-model="$root.emailFin"/>
+                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[emailFinError===true]" ng-if="$root.lang ==='fi'" type="email" maxlength="40" required class="bron-input_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Sähköposti" ng-model="$root.emailFin"/>
                                 <label style="color:white; font-family:Roboto;" ng-if="$root.lang ==='ru'">Электронная почта</label>
-                                <input style="font-family:Roboto;" ng-class="{true:'error-bron', false:'nonerror-bron'}[emailRusError===true]" ng-if="$root.lang ==='ru'" required type="email" class="bron-input_email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Электронная почта" ng-model="$root.emailRus"/>
+                                <input style="font-family:Roboto;" ng-class="{true:'error-bron', false:'nonerror-bron'}[emailRusError===true]" ng-if="$root.lang ==='ru'" maxlength="40" required type="email" class="bron-input_email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Электронная почта" ng-model="$root.emailRus"/>
                             </div>
                             <div class="col-md-4">
                                 <label style="color:white" ng-if="$root.lang ==='en'">Phone number</label>
-                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[phoneEngError===true]" ng-if="$root.lang ==='en'" type="text" class="bron-input" placeholder="Phone number" ng-model="$root.phoneEng"/>
+                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[phoneEngError===true]" ng-if="$root.lang ==='en'" type="text" maxlength="40" class="bron-input" placeholder="Phone number" ng-model="$root.phoneEng"/>
                                 <label style="color:white" ng-if="$root.lang ==='ee'">Telefoninumber</label>
-                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[phoneEstError===true]" ng-if="$root.lang ==='ee'" type="text" class="bron-input" placeholder="Telefoninumber" ng-model="$root.phoneEst"/>
+                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[phoneEstError===true]" ng-if="$root.lang ==='ee'" type="text" maxlength="40" class="bron-input" placeholder="Telefoninumber" ng-model="$root.phoneEst"/>
                                 <label style="color:white" ng-if="$root.lang ==='fi'">Puhelinnumero</label>
-                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[phoneFinError===true]" ng-if="$root.lang ==='fi'" type="text" class="bron-input" placeholder="Puhelinnumero" ng-model="$root.phoneFin"/>
+                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[phoneFinError===true]" ng-if="$root.lang ==='fi'" type="text" maxlength="40" class="bron-input" placeholder="Puhelinnumero" ng-model="$root.phoneFin"/>
                                 <label style="color:white; font-family:Roboto;" ng-if="$root.lang ==='ru'">Телефон</label>
-                                <input style="font-family:Roboto;" ng-class="{true:'error-bron', false:'nonerror-bron'}[phoneRusError===true]" ng-if="$root.lang ==='ru'" type="text" class="bron-input" placeholder="Телефон" ng-model="$root.phoneRus"/>
+                                <input style="font-family:Roboto;" ng-class="{true:'error-bron', false:'nonerror-bron'}[phoneRusError===true]" ng-if="$root.lang ==='ru'" maxlength="40" type="text" class="bron-input" placeholder="Телефон" ng-model="$root.phoneRus"/>
                             </div>
                         </div>
                     </div>
