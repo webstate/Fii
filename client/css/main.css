@@ -1237,7 +1237,7 @@ ul.drink-menu-tabs li:hover {
     margin-top: 100px;
     margin-bottom: 100px;
 }
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 991px){
     .navbar-landing{
         display: none;
     }
@@ -1417,6 +1417,7 @@ ul.drink-menu-tabs li:hover {
 }
 .error-bron{
     border: 2px solid #a94442;
+    cursor: pointer;
 }
 .nonerror-bron{
     border:none;
