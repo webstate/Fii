@@ -4,6 +4,13 @@ eventCtrl.controller('eventCtrl', function($scope, eventService){
     eventService.getEvents().then(function(data){
         console.log(data);
         $scope.events = data;
+        if(data.length === 0){
+            $scope.eventNavbar = true;
+            $scope.eventContainer = true;
+        }else{
+            $scope.eventNavbar = false;
+            $scope.eventContainer = false;
+        }
         data.sort(function(a,b){
             return new Date(b.date) - new Date(a.date);
         });
