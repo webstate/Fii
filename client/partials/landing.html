@@ -1840,14 +1840,8 @@
                                     <input ng-show="showInfoModal" maxlength="200" type="text" class="bron-input" ng-model="addInfo"/>
                                 </div>
                                 <div class="newsletter">
-                                    <input ng-if="$root.lang === 'en'" ng-model="newsLetter.status" type="checkbox" style="cursor:pointer;"/>
-                                    <span ng-if="$root.lang === 'en'">Subscribe to newsletter</span>
                                     <input ng-if="$root.lang === 'ee'" ng-model="newsLetter.status" type="checkbox" style="cursor:pointer;"/>
                                     <span ng-if="$root.lang === 'ee'">Soovin liituda uudiskirjaga</span>
-                                    <input ng-if="$root.lang === 'fi'" ng-model="newsLetter.status" type="checkbox" style="cursor:pointer;"/>
-                                    <span ng-if="$root.lang === 'fi'">Haluan liittyä uutiskirjeeseen</span>
-                                    <input ng-if="$root.lang === 'ru'" ng-model="newsLetter.status" type="checkbox" style="cursor:pointer;"/>
-                                    <span style="font-family: Roboto;" ng-if="$root.lang === 'ru'">Я хочу присоединиться к информационному бюллетеню</span>
                                 </div>
                             </div>
                         </div>
