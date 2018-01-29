@@ -1,125 +1,145 @@
-
-@font-face{
+@font-face {
     font-family: spaceMono;
     src: url('fonts/SpaceMono-Regular.ttf');
 }
-@font-face{
+
+@font-face {
     font-family: spaceMono-Bold;
     src: url('fonts/SpaceMono-Bold.ttf');
 }
-@font-face{
+
+@font-face {
     font-family: Play;
     src: url('fonts/PlayfairDisplay-Regular.otf');
 }
-.bannerTextField{
+
+.bannerTextField {
     margin-top: 200px;
     margin-left: 100px;
     padding: 15px;
     width: 380px;
 }
-.landing-nav-btn{
+
+.landing-nav-btn {
     font-family: spaceMono;
     font-size: 16px;
     padding-top: 12px;
     padding-left: 20px;
     letter-spacing: 1px;
 }
-.landing-menu > li > a{
+
+.landing-menu > li > a {
     margin-right: 40px;
     font-family: spaceMono;
     color: white;
     font-size: 16px;
 }
+
 .landing-menu > li {
     padding-top: 12px;
 }
-.landing-social > li{
+
+.landing-social > li {
     float: left;
     margin-left: 30px;
 }
-.landing-social{
+
+.landing-social {
     list-style: none;
     margin-top: 10px;
     margin-right: 30px;
 }
-.russian-font{
+
+.russian-font {
     font-family: Roboto;
 }
-.footer-social > li{
+
+.footer-social > li {
     float: left;
     margin-right: 40px;
 }
-.footer-social{
+
+.footer-social {
     list-style: none;
     margin-left: -25px;
 }
-.landing-borders{
+
+.landing-borders {
     border-left: 1px solid rgba(255, 255, 255, 0.4);
     border-right: 1px solid rgba(255, 255, 255, 0.4);
     height: 50px;
 }
-.navbar-collapse{
+
+.navbar-collapse {
     margin-top: 30px;
 }
+
 ul.nav > li > a,
 ul.nav > li > a:focus,
 ul.nav > li > a:hover,
-ul.nav > li > a:visited{
+ul.nav > li > a:visited {
     margin-top: 5px;
     margin-right: 30px;
     font-size: 14px;
-    color: rgba(0,0,0,1);
+    color: rgba(0, 0, 0, 1);
     background-color: transparent;
 }
-.navbar{
+
+.navbar {
     padding-top: 50px;
 }
-.banner-picture{
+
+.banner-picture {
     width: 100%;
     height: 550px;
     background-image: url('img/mockup.png');
-    background-size:cover;
+    background-size: cover;
 
 }
-.banner-shadow{
+
+.banner-shadow {
     position: absolute;
     top: 0;
     height: 550px;
     width: 100%;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
-    background: -moz-linear-gradient(left, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+    background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=1); /* IE6-9 */
 }
-.book-table-btn{
+
+.book-table-btn {
     width: 225px;
     height: 50px;
     background: #63ada4;
     color: white;
     margin-bottom: 10px;
-    cursor:pointer;
 }
-.tel-btn{
+
+.tel-btn {
     width: 225px;
     height: 50px;
     background: white;
-    color:black;
+    color: black;
 }
-.banner-mockup{
+
+.banner-mockup {
     height: 400px;
     width: 800px;
     margin: 0 auto;
     background-size: cover;
     background-repeat: no-repeat;
 }
-.worker-area-mockup{
+
+.worker-area-mockup {
     height: 400px;
     width: 800px;
     margin: 0 auto;
 
 }
-.menu-area-mockup{
+
+.menu-area-mockup {
     height: 1500px;
     width: 800px;
     margin: 0 auto;
@@ -127,7 +147,8 @@ ul.nav > li > a:visited{
     background-size: cover;
     margin-top: 50px;
 }
-.event-block-mockup{
+
+.event-block-mockup {
     height: auto;
     width: 800px;
     margin: 0 auto;
@@ -135,23 +156,25 @@ ul.nav > li > a:visited{
     padding-bottom: 100px;
 }
 
-.banner-mockup-shadow{
+.banner-mockup-shadow {
     height: 400px;
     width: 800px;
     margin: 0 auto;
-    background: -moz-linear-gradient(left, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+    background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=1); /* IE6-9 */
     margin-top: -400px;
 
 }
-.navbar-landing{
+
+.navbar-landing {
     position: absolute;
     width: 100%;
     z-index: 9999;
 }
-.mockup-menu{
+
+.mockup-menu {
     display: inline-block;
     width: 50px;
     height: 8px;
@@ -159,7 +182,8 @@ ul.nav > li > a:visited{
     margin-left: 10px;
     margin-bottom: 1px;
 }
-.banner-menu-mockup{
+
+.banner-menu-mockup {
     list-style: none;
     border-right: 1px solid white;
     /* background-color: white; */
@@ -169,7 +193,8 @@ ul.nav > li > a:visited{
     margin-left: 340px;
     margin-top: 10px;
 }
-.mockup-btn{
+
+.mockup-btn {
 
     height: 31px;
     width: 120px;
@@ -177,7 +202,8 @@ ul.nav > li > a:visited{
     margin-left: -40px;
     margin-top: 10px;
 }
-.banner-menu-btns{
+
+.banner-menu-btns {
     list-style: none;
     width: 150px;
     height: 60px;
@@ -185,121 +211,140 @@ ul.nav > li > a:visited{
     right: 0;
     top: 0;
 }
-.mockup-btn-2{
+
+.mockup-btn-2 {
     height: 31px;
     width: 120px;
     background: white;
     margin-left: -40px;
     margin-top: 10px;
 }
-#logo{
+
+#logo {
     height: 60px;
     margin-top: 20px;
-    cursor: default;
 }
-#mockup-logo{
+
+#mockup-logo {
     height: 32px;
     position: absolute;
     top: 10px;
     left: 50px;
 }
-.worker-section-title{
+
+.worker-section-title {
     font-size: 62px;
     font-family: Play;
 }
-.worker-section-text{
+
+.worker-section-text {
     font-size: 16px;
     font-family: spaceMono;
     margin-top: 50px;
 }
-.menu-section-title{
+
+.menu-section-title {
     font-size: 62px;
     font-family: Play;
-    color:white;
+    color: white;
 }
-.menu-section-text{
+
+.menu-section-text {
     font-size: 16px;
     font-family: spaceMono;
     margin-top: 50px;
-    color:white;
+    color: white;
 }
-.section-mockup{
+
+.section-mockup {
     width: 50px;
     height: 5px;
     background: black;
     display: block;
     margin-left: 20px;
 }
-.worker-section-title-mockup{
+
+.worker-section-title-mockup {
     font-size: 38px;
     font-family: Play;
     margin-left: 20px;
 }
-.worker-section-text-mockup{
+
+.worker-section-text-mockup {
     font-size: 12px;
     font-family: spaceMono;
     margin-top: 30px;
     margin-right: 20px;
 }
-.menu-section-title-mockup{
+
+.menu-section-title-mockup {
     font-size: 38px;
     font-family: Play;
     margin-left: 20px;
-    color:white;
+    color: white;
 }
-.event-section-title-mockup{
+
+.event-section-title-mockup {
     font-size: 38px;
     font-family: Play;
     margin-left: 20px;
-    color:black;
+    color: black;
 }
-.menu-section-title-mockup.editable-click{
-    color:white !important;
+
+.menu-section-title-mockup.editable-click {
+    color: white !important;
 }
-.menu-section-text-mockup{
+
+.menu-section-text-mockup {
     font-size: 12px;
     font-family: spaceMono;
     margin-top: 30px;
     margin-right: 20px;
-    color:white;
+    color: white;
 }
-.menu-section-text-mockup.editable-click{
-    color:white !important;
+
+.menu-section-text-mockup.editable-click {
+    color: white !important;
 }
-.editable-buttons{
+
+.editable-buttons {
     position: absolute;
     top: 160px;
     left: 30px;
 }
+
 .editable-input.editable-has-buttons {
     width: 350px !important;
     height: 150px;
     margin-left: 20px;
 }
+
 .editable-click,
-a.editable-click{
+a.editable-click {
     text-decoration: none !important;
     color: black !important;
     border: none !important;
 }
-.add-new-worker-btn{
+
+.add-new-worker-btn {
     background-color: #63ada4;
-    color:white;
+    color: white;
     padding: 10px;
     width: 350px;
     margin: 0 auto;
     display: block;
     font-family: spaceMono;
-    border:none;
+    border: none;
 }
+
 .add-new-worker-btn:hover,
 .add-new-worker-btn:active,
-.add-new-worker-btn:focus{
-    outline:none;
+.add-new-worker-btn:focus {
+    outline: none;
     text-decoration: none;
 }
 
-.picture-holder{
+.picture-holder {
     height: 250px;
     width: 250px;
     border: 1px dashed #CCCCCC;
@@ -307,31 +352,33 @@ a.editable-click{
     background-size: cover;
     background-repeat: no-repeat;
 }
-.worker-img-holder{
+
+.worker-img-holder {
     height: 350px;
     background-size: cover;
     background-repeat: no-repeat;
 }
-.worker-name{
+
+.worker-name {
     font-family: spaceMono-Bold;
     margin-top: 60px;
-    cursor: default;
 }
-.worker-occupation{
+
+.worker-occupation {
     font-size: 14px;
     font-family: spaceMono;
     text-transform: uppercase;
     color: #CCCCCC;
     margin-top: -10px;
-    cursor: default;
 }
-.worker-info{
+
+.worker-info {
     font-family: spaceMono;
     margin-top: 40px;
     margin-bottom: 100px;
-    cursor: default;
 }
-.worker-img-mockup{
+
+.worker-img-mockup {
     background-image: url('img/mockup-worker.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -345,32 +392,37 @@ a.editable-click{
     -o-filter: blur(2px);
     -ms-filter: blur(2px);
 }
-.worker-name-mockup{
+
+.worker-name-mockup {
     height: 5px;
     width: 60px;
     background: black;
     margin-left: 20px;
     margin-top: 20px;
 }
-.worker-occupation-mockup{
+
+.worker-occupation-mockup {
     width: 45px;
     height: 4px;
     background-color: #CCCCCC;
     margin-left: 20px;
     margin-top: 10px;
 }
-.worker-info-mockup{
+
+.worker-info-mockup {
     width: 345px;
     margin-left: 20px;
     height: 4px;
     background: black;
     margin-top: 10px;
 }
-#fii-must{
+
+#fii-must {
     height: 50px;
     margin-top: 5px;
 }
-.submit-worker-btn{
+
+.submit-worker-btn {
     padding: 10px;
     font-family: spaceMono;
     color: white;
@@ -379,21 +431,27 @@ a.editable-click{
     width: 100%;
     margin-top: 20px;
 }
-label{
-    font-family:spaceMono;
-}
-input, textarea{
+
+label {
     font-family: spaceMono;
 }
-textarea{
+
+input, textarea {
+    font-family: spaceMono;
+}
+
+textarea {
     resize: none;
 }
-td{
+
+td {
     font-family: spaceMono;
 }
-th{
+
+th {
     font-family: spaceMono-Bold;
 }
+
 .edit-worker-btn > i:hover {
     background: #CCCCCC;
     height: 25px;
@@ -401,15 +459,17 @@ th{
     border-radius: 12px;
     padding: 6px;
     padding-left: 8px;
-    cursor:pointer;
+    cursor: pointer;
 
 }
-.edit-worker-btn > i{
+
+.edit-worker-btn > i {
     padding: 6px;
     padding-left: 8px;
     transition: 0.2s ease-in-out;
 }
-.menu-bg{
+
+.menu-bg {
     height: auto;
     background-image: url('img/sea.png');
     width: 100vw;
@@ -417,7 +477,8 @@ th{
     background-size: cover;
     padding-bottom: 100px;
 }
-.inputfile{
+
+.inputfile {
     width: 0.1px;
     height: 0.1px;
     opacity: 0;
@@ -425,7 +486,8 @@ th{
     position: absolute;
     z-index: -1;
 }
-.inputfile2{
+
+.inputfile2 {
     width: 0.1px;
     height: 0.1px;
     opacity: 0;
@@ -433,7 +495,8 @@ th{
     position: absolute;
     z-index: -1;
 }
-.inputfile + label{
+
+.inputfile + label {
     font-size: 28px;
     color: white;
     width: 50px;
@@ -445,7 +508,8 @@ th{
     padding-top: 5px;
     transition: 0.3s ease-in-out;
 }
-.inputfile2 + label{
+
+.inputfile2 + label {
     font-size: 28px;
     color: white;
     width: 50px;
@@ -457,23 +521,28 @@ th{
     padding-top: 5px;
     transition: 0.3s ease-in-out;
 }
+
 .inputfile:focus + label,
 .inputfile + label:hover {
     background-color: rgba(255, 255, 255, 0.3);
     transition: 0.3s ease-in-out;
 }
-.inputfile + label{
+
+.inputfile + label {
     cursor: pointer;
 }
+
 .inputfile2:focus + label,
 .inputfile2 + label:hover {
     background-color: rgba(255, 255, 255, 0.3);
     transition: 0.3s ease-in-out;
 }
-.inputfile2 + label{
+
+.inputfile2 + label {
     cursor: pointer;
 }
-.menu-holder{
+
+.menu-holder {
     width: 100%;
     height: auto;
     padding-bottom: 50px;
@@ -481,60 +550,64 @@ th{
     background: white;
     margin-top: 100px;
 }
-.menu-price{
+
+.menu-price {
     font-size: 18px;
     padding-left: -10px;
     margin-right: 20px;
-    cursor: default;
 }
-.menu-price-drink{
+
+.menu-price-drink {
     font-size: 11px;
     padding-left: -10px;
     margin-right: 20px;
-    cursor: default;
 }
-.menu-description{
+
+.menu-description {
     margin-left: 50px;
     margin-top: -15px;
     color: #757575;
     font-size: 12px;
-    cursor: default;
 }
-.menu-dish{
+
+.menu-dish {
     margin-left: 50px;
     font-family: spaceMono-Bold;
     font-size: 18px;
-    cursor: default;
 }
-.menu-drink{
+
+.menu-drink {
     margin-left: 50px;
     font-family: spaceMono-Bold;
     font-size: 10px;
     margin-top: -20px;
-    cursor:default;
 }
-.menu-drink-description{
+
+.menu-drink-description {
     font-size: 10px;
     margin-left: 50px;
     margin-top: -15px;
     color: #757575;
 }
-.menu-drink-price{
+
+.menu-drink-price {
     font-size: 12px;
     margin-top: 15px;
     font-family: spaceMono;
 }
-.menu-box-title{
+
+.menu-box-title {
     margin-left: 50px;
     font-family: spaceMono;
     font-size: 24px;
     margin-bottom: 30px;
-    cursor: default;
 }
-.menu-padding{
+
+.menu-padding {
     padding-top: 20px;
 }
-.menu-picture{
+
+.menu-picture {
     width: 100%;
     height: 350px;
     margin-top: 150px;
@@ -542,7 +615,8 @@ th{
     background-size: cover;
     background-position: center;
 }
-.menu-picture-second{
+
+.menu-picture-second {
     width: 100%;
     height: 350px;
     background-image: url('img/meat.png');
@@ -550,7 +624,8 @@ th{
     margin-top: 15px;
     background-position: center;
 }
-.main-course-menu-holder{
+
+.main-course-menu-holder {
     width: 100%;
     height: auto;
     padding-bottom: 50px;
@@ -558,7 +633,8 @@ th{
     background: white;
     margin-top: 15px;
 }
-.menu-drink-holder{
+
+.menu-drink-holder {
     width: 100%;
     height: auto;
     padding-bottom: 50px;
@@ -566,7 +642,8 @@ th{
     background: white;
     margin-top: 15px;
 }
-.dessert-menu-holder{
+
+.dessert-menu-holder {
     width: 100%;
     height: auto;
     padding-bottom: 50px;
@@ -574,11 +651,13 @@ th{
     background: white;
     margin-top: 15px;
 }
-.empty-menu{
+
+.empty-menu {
     font-family: spaceMono;
     margin-left: 50px;
 }
-.menu-picture-third{
+
+.menu-picture-third {
     width: 100%;
     height: 350px;
     background-image: url('img/mockup-worker.png');
@@ -586,7 +665,8 @@ th{
     margin-top: 15px;
     background-position: center;
 }
-.section-second-mockup{
+
+.section-second-mockup {
     width: 50px;
     height: 5px;
     background-color: white;
@@ -594,11 +674,13 @@ th{
     margin-left: 20px;
     margin-top: 40px;
 }
-.menu-mockup{
+
+.menu-mockup {
     background-color: white;
     height: 200px;
 }
-.menu-desc-mockup{
+
+.menu-desc-mockup {
     height: 2px;
     width: 100px;
     background-color: #CCCCCC;
@@ -606,48 +688,51 @@ th{
     margin-left: 25px;
     margin-bottom: 25px;
 }
-.menu-title-mockup{
+
+.menu-title-mockup {
     height: 5px;
     width: 200px;
     background-color: black;
     margin-left: 25px;
 }
-.menu-course-mockup{
+
+.menu-course-mockup {
     padding-top: 25px;
     padding-left: 25px;
     padding-bottom: 10px;
     font-family: spaceMono;
 }
-.drink-menu-tabs{
-    margin-left: 5px;
+
+.drink-menu-tabs {
+    margin-left: 10px;
     padding-bottom: 30px;
-    list-style:none;
-    padding-right: 10px;
+    list-style: none;
 }
-.drink-menu-tabs > li{
-    float:left;
+
+.drink-menu-tabs > li {
+    float: left;
     padding-right: 10px;
-    padding-left:10px;
     font-family: spaceMono;
     font-size: 10px;
     cursor: pointer;
     margin-bottom: 10px;
 }
-.tasting-menu-btn{
+
+.tasting-menu-btn {
     background: #efb248;
     border: none;
     padding: 15px;
     font-size: 14px;
     color: white;
     font-family: spaceMono;
-    width: auto;
-    display: inline-block;
+    width: 270px;
     position: absolute;
     right: 30px;
     margin-top: 60px;
     text-align: left;
 }
-.tasting-menu-btn-mockup{
+
+.tasting-menu-btn-mockup {
     background: #efb248;
     height: 40px;
     width: 200px;
@@ -655,7 +740,8 @@ th{
     right: 30px;
     top: 50px;
 }
-.booking-btn{
+
+.booking-btn {
     background: #63ada4;
     border: none;
     padding: 15px;
@@ -668,6 +754,7 @@ th{
     margin-top: 75px;
     text-align: left;
 }
+
 .events-headline {
     font-size: 62px;
     font-family: Play;
@@ -777,8 +864,9 @@ th{
     background-repeat: no-repeat;
     display: block;
     width: 100%;
+}
 
-.menu-pic-second-mockup{
+.menu-pic-second-mockup {
     width: 100%;
     height: 175px;
     background: white;
@@ -787,7 +875,8 @@ th{
     background-repeat: none;
     background-image: url('img/mockup-worker.png');
 }
-.menu-pic-third-mockup{
+
+.menu-pic-third-mockup {
     width: 100%;
     height: 175px;
     background: white;
@@ -796,7 +885,8 @@ th{
     background-repeat: none;
     background-image: url('img/mockup-worker.png');
 }
-.event-pic-mockup{
+
+.event-pic-mockup {
     width: 100%;
     height: 250px;
     background: grey;
@@ -805,7 +895,8 @@ th{
     background-repeat: none;
     background-image: url('img/mockup-worker.png');
 }
-.map-picture{
+
+.map-picture {
     width: 100%;
     height: 200px;
     background: white;
@@ -814,7 +905,8 @@ th{
     background-repeat: none;
     background-image: url('img/mockup-worker.png');
 }
-.map-mockup{
+
+.map-mockup {
     width: 100%;
     height: 200px;
     background: white;
@@ -824,7 +916,8 @@ th{
     background-image: url('img/map.png');
     filter: blur(2px);
 }
-.menu-pic-first-mockup{
+
+.menu-pic-first-mockup {
     width: 100%;
     height: 175px;
     background: white;
@@ -833,39 +926,46 @@ th{
     background-repeat: none;
     background-image: url('img/mockup-worker.png');
 }
-.mapPicture{
+
+.mapPicture {
     width: 100%;
     height: 400px;
     background-size: cover;
     background-repeat: none;
     background-image: url('img/mockup.png');
 }
-.contact-title{
+
+.contact-title {
     font-family: spaceMono;
     font-size: 14px;
     color: #757575;
 }
-.contact-title-mockup{
+
+.contact-title-mockup {
     font-family: spaceMono;
     font-size: 12px;
     color: #757575;
 }
-.contact-info{
+
+.contact-info {
     font-family: spaceMono;
     font-size: 16px;
 }
-.contact-info-email{
+
+.contact-info-email {
     font-family: spaceMono-Bold;
     font-size: 16px;
     color: #63ada4;
 }
-.feedback-title{
+
+.feedback-title {
     font-size: 14px;
     font-family: spaceMono;
     color: #757575;
     margin-bottom: 20px;
 }
-.feedback-form{
+
+.feedback-form {
     border: 1px solid #CCCCCC;
     background: white;
     width: 100%;
@@ -873,7 +973,8 @@ th{
     font-size: 14px;
 
 }
-.feedback-btn{
+
+.feedback-btn {
     width: 100%;
     border: none;
     background-color: #efb248;
@@ -883,19 +984,22 @@ th{
     font-family: spaceMono;
     margin-top: 20px;
 }
-.feedback-arrow{
+
+.feedback-arrow {
     position: absolute;
     right: 40px;
     top: 40px;
 }
 
-textarea.feedback-form{
+textarea.feedback-form {
     height: 100px;
 }
-textarea:focus, input:focus{
+
+textarea:focus, input:focus {
     outline: none;
 }
-.bron-modal{
+
+.bron-modal {
     background-image: url('img/sea.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -906,15 +1010,17 @@ textarea:focus, input:focus{
     top: 0;
     z-index: 9999999;
 }
-.overlay{
+
+.overlay {
     height: 100vw;
     width: 100%;
     display: block;
     top: 0;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     position: fixed;
 }
-.bron-close-btn{
+
+.bron-close-btn {
     color: white;
     font-size: 34px;
     position: absolute;
@@ -923,7 +1029,8 @@ textarea:focus, input:focus{
     cursor: pointer;
     margin-top: -7px;
 }
-.bron-modal-title{
+
+.bron-modal-title {
     font-family: Play;
     font-size: 65px;
     color: white;
@@ -931,7 +1038,8 @@ textarea:focus, input:focus{
     margin-left: 15px;
     margin-bottom: 10px;
 }
-.bron-back{
+
+.bron-back {
     margin-bottom: 55px;
     margin-left: 15px;
     color: white;
@@ -951,6 +1059,7 @@ textarea:focus, input:focus{
     border: none;
     text-align: left;
 }
+
 .dropdown-content {
     position: absolute;
     margin-top: 20px;
@@ -963,22 +1072,16 @@ textarea:focus, input:focus{
     padding: 5px;
     height: 200px;
     overflow-y: scroll;
-    visability: visible;
+    visibility: visible;
     opacity: 1;
-    display: block;
     transition: visibility 0s, opacity 0.5s linear;
 
 }
 
--/*.dropdown:hover .dropdown-content {
--    visibility: visible;
--    opacity: 1;
--}*/
-
-.dropdown-content:hover {
-    display: block;
-}
-
+/*.dropdown:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+}*/
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
@@ -986,26 +1089,29 @@ textarea:focus, input:focus{
     display: block;
 
 }
+
 .dropdown-content a:hover {
     cursor: pointer;
     background: #CCCCCC;
 }
-.bron-caret{
+
+.bron-caret {
     position: absolute;
     right: 30px;
     top: 25px;
 }
-.bron-date{
+
+.bron-date {
     width: 100%;
     padding: 21px;
     border: none;
-    cursor: default;
 }
 
-._720kb-datepicker-calendar-header:nth-child(odd){
-    background-color:white;
+._720kb-datepicker-calendar-header:nth-child(odd) {
+    background-color: white;
 }
-._720kb-datepicker-calendar{
+
+._720kb-datepicker-calendar {
     background: white !important;
     color: #333 !important;
     position: absolute !important;
@@ -1024,10 +1130,11 @@ textarea:focus, input:focus{
     -moz-border-radius: 3px;
     /* border-radius: 3px; */
     border-radius: 0px;
-    border-top: 1px solid rgba(0,0,0,0.1);
-    cursor: pointer;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 datepicker._720kb-datepicker-calendar-body {
+
     font-size: 13.5px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -1040,22 +1147,26 @@ datepicker._720kb-datepicker-calendar-body {
     position: relative;
     font-family: spaceMono;
 }
+
 ._720kb-datepicker-calendar-month {
     color: black;
     font-family: spaceMono;
 }
-._720kb-datepicker-calendar-month a{
+
+._720kb-datepicker-calendar-month a {
     color: black;
     font-family: spaceMono;
 }
-._720kb-datepicker-calendar-days-header{
+
+._720kb-datepicker-calendar-days-header {
     max-width: 100%;
     margin: 0 auto;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     font-family: spaceMono;
-    color:black;
+    color: black;
 }
-.event-title-mockup{
+
+.event-title-mockup {
     height: 10px;
     background: black;
     width: 100px;
@@ -1063,46 +1174,54 @@ datepicker._720kb-datepicker-calendar-body {
     margin-bottom: 5px;
     margin-top: 40px;
 }
-.event-date-mockup{
+
+.event-date-mockup {
     height: 3px;
     background: #757575;
     width: 50px;
     margin-left: 20px;
     margin-bottom: 20px;
 }
-.event-detail-mockup{
+
+.event-detail-mockup {
     height: 5px;
     background: black;
     width: 300px;
     margin-left: 20px;
     margin-top: 10px;
 }
-.copyright-text{
+
+.copyright-text {
     color: #cccccc;
     font-family: spaceMono;
     font-size: 11px;
 }
-.footer-menu{
+
+.footer-menu {
     list-style: none;
     margin-left: -40px;
     margin-top: 200px;
 }
-.footer-menu > li{
+
+.footer-menu > li {
     float: left;
     margin-right: 40px;
 }
-.lang{
+
+.lang {
     font-size: 12px;
     font-family: spaceMono-Bold;
 }
-.come-visit-mockup{
+
+.come-visit-mockup {
     height: 10px;
     width: 250px;
     background-color: black;
     margin-top: 65px;
     margin-left: 20px;
 }
-.booking-btn-mockup{
+
+.booking-btn-mockup {
     height: 40px;
     width: 200px;
     position: absolute;
@@ -1131,6 +1250,7 @@ datepicker._720kb-datepicker-calendar-body {
     cursor: pointer;
 
 }
+
 .langmenu-content-mobile {
     position: absolute;
     color: white;
@@ -1147,21 +1267,26 @@ datepicker._720kb-datepicker-calendar-body {
 .langmenu:hover .langmenu-content {
     display: block;
 }
-.lang-bar{
+
+.lang-bar {
     list-style: none;
 }
-.lang-bar > li{
+
+.lang-bar > li {
     float: left;
     margin-left: 10px;
     margin-top: 20px;
 }
-.green{
-    color: rgba(46, 204, 113,1.0);
+
+.green {
+    color: rgba(46, 204, 113, 1.0);
 }
-.red{
-    color: rgba(231, 76, 60,1.0);
+
+.red {
+    color: rgba(231, 76, 60, 1.0);
 }
-.bron-btn{
+
+.bron-btn {
     text-align: left;
     width: 100%;
     padding: 20px;
@@ -1172,66 +1297,47 @@ datepicker._720kb-datepicker-calendar-body {
     font-size: 14px;
     margin-top: 30px;
 }
-.bron-input{
+
+.bron-input {
     padding: 20px;
     width: 100%;
     border: none;
     font-size: 14px;
     color: black;
-}
-
-.bron-input_email{
-    padding: 20px;
-    width: 100%;
-    border: none;
-    font-size: 14px;
-    color: black;
-}
-
-.bron-input_email:valid{
-    background: hsla(100, 50%, 70%, 1);
-}
-
-.bron-input_email:invalid{
-    background: hsla(0, 50%, 80%, 1);
 }
 
 .feedback-btn: focus,
 .feedback-btn: active,
-.feedback-btn: visited{
-    outline:0 !important;
-}
-.newMargin{
-    margin-bottom: 20px !important;
-}
-.activeTab{
-    color:#63ada4;
-    text-decoration: underline;
-    cursor: default;
-    pointer-events: none;
+.feedback-btn: visited {
+    outline: 0 !important;
 }
 
-ul.drink-menu-tabs li:hover {
-    color: #d3d3d3;
+.newMargin {
+    margin-bottom: 20px !important;
+}
+
+.activeTab {
+    color: #63ada4;
+    text-decoration: underline;
 }
 
 .timeBtn {
     background: white;
     border: 1px solid black;
 }
-.subActive{
-    color:#efb248;
+
+.subActive {
+    color: #efb248;
     text-decoration: underline;
-    cursor: default;
-    pointer-events: none;
 }
 
-.landing-menu > li > a:hover{
+.landing-menu > li > a:hover {
     underline: none;
     text-decoration: none;
     cursor: pointer;
 }
-.book-table{
+
+.book-table {
     background-color: #63ada4;
     padding: 15px;
     padding-left: 20px;
@@ -1239,7 +1345,8 @@ ul.drink-menu-tabs li:hover {
     color: white;
     padding-right: 90px;
 }
-.mobile-view-booking-btn{
+
+.mobile-view-booking-btn {
     background-color: #63ada4;
     border: none;
     padding: 15px;
@@ -1250,18 +1357,21 @@ ul.drink-menu-tabs li:hover {
     right: 15px;
     position: absolute;
 }
+
 .mobile-view-booking-btn:active,
-.mobile-view-booking-btn:focus{
+.mobile-view-booking-btn:focus {
     outline: none;
     border: none;
 }
-.book-table:hover{
-    color:white;
-    underline:none;
+
+.book-table:hover {
+    color: white;
+    underline: none;
     text-decoration: none;
     cursor: pointer;
 }
-.book-table-white{
+
+.book-table-white {
     background-color: white;
     padding: 15px;
     padding-left: 20px;
@@ -1269,203 +1379,238 @@ ul.drink-menu-tabs li:hover {
     color: black;
     padding-right: 90px;
 }
-.booking-arrow{
+
+.booking-arrow {
     position: absolute;
     width: 15px;
     margin-left: 190px;
     margin-top: -28px;
 }
-.tasting-menu-arrow{
+
+.tasting-menu-arrow {
     width: 15px;
     margin-left: 70px;
     margin-top: -2px;
 }
-.contact-menu-arrow{
+
+.contact-menu-arrow {
     width: 15px;
     margin-left: 100px;
     margin-top: -2px;
 }
-.booking-modal-arrow{
+
+.booking-modal-arrow {
     width: 15px;
     position: absolute;
     right: 40px;
     margin-top: 3px;
 }
-.event-name-banner{
-    font-family:Play;
+
+.event-name-banner {
+    font-family: Play;
     font-size: 55px;
     color: white;
     max-width: 710px
 }
-.menu-container-padding{
+
+.menu-container-padding {
     padding-left: 0;
 }
-.drink-mobile-padding{
+
+.drink-mobile-padding {
     margin-top: -10px;
     list-style: none;
 }
-.bron-second-margin{
+
+.bron-second-margin {
     margin-top: 30px;
 }
-.feedback-form-margin{
+
+.feedback-form-margin {
     margin-top: 100px;
     margin-bottom: 100px;
 }
-@media screen and (max-width: 991px){
-    .navbar-landing{
+
+@media screen and (max-width: 1200px) {
+    .navbar-landing {
         display: none;
     }
-
-    .tasting-menu-btn{
-        margin-top: 30px;
-        width: inherit;
-    }
 }
-@media screen and (max-width: 768px){
-    .mapPicture{
+
+@media screen and (max-width: 768px) {
+    .mapPicture {
         background-size: contain !important;
         height: 250px;
     }
-    .worker-img-holder{
+
+    .worker-img-holder {
         background-size: contain !important;
     }
-    .worker-name{
+
+    .worker-name {
         margin-top: -50px;
-        cursor: default;
     }
+
     .footer-menu > li {
         width: 100%;
         text-align: center;
         margin-bottom: 10px;
     }
-    .feedback-title{
+
+    .feedback-title {
         margin-top: 40px;
     }
-    .footer-menu{
+
+    .footer-menu {
         margin-top: 40px;
     }
-    .mobile-margin-name-email{
+
+    .mobile-margin-name-email {
         margin-top: 20px;
     }
-    .feedback-form-margin{
+
+    .feedback-form-margin {
         margin-top: 25px;
         margin-bottom: 25px;
     }
-    .mobile-stretch{
+
+    .mobile-stretch {
         padding-left: 0;
         padding-right: 0;
     }
-    .contact-padding-mobile{
+
+    .contact-padding-mobile {
         margin-bottom: 40px;
     }
-    .booking-title{
+
+    .booking-title {
         font-size: 56px;
     }
-    .events-headline{
+
+    .events-headline {
         font-size: 56px;
     }
-    .menu-section-title{
+
+    .menu-section-title {
         font-size: 56px;
     }
-    .worker-section-title{
+
+    .worker-section-title {
         font-size: 56px;
     }
-    .menu-description{
+
+    .menu-description {
         font-size: 10px;
-        cursor: default;
     }
-    .menu-picture{
+
+    .menu-picture {
         margin-top: 15px;
-        cursor: default;
     }
-    .drink-mobile-padding{
+
+    .drink-mobile-padding {
         margin-top: 20px;
     }
-    .menu-dish{
+
+    .menu-dish {
         font-size: 14px;
     }
-    .menu-price{
+
+    .menu-price {
         font-size: 14px;
         margin-top: 12px;
     }
-    .menu-container-padding{
+
+    .menu-container-padding {
         padding-right: 0;
     }
-    .bron-modal{
+
+    .bron-modal {
         height: 100%;
     }
-    .event-name-banner{
+
+    .event-name-banner {
         font-size: 42px;
     }
-    .dropdown{
+
+    .dropdown {
         width: 95%;
     }
-    .bron-date{
+
+    .bron-date {
         width: 95%;
-        cursor: pointer;
     }
-    .bron-btn{
+
+    .bron-btn {
         width: 95%;
         margin-top: 20px;
     }
-    .bron-rus-title{
+
+    .bron-rus-title {
         font-size: 30px !important;
     }
-    .booking-modal-arrow{
+
+    .booking-modal-arrow {
         right: 70px;
     }
-    .bron-modal-title{
+
+    .bron-modal-title {
         font-family: Play;
         color: white;
         margin-top: 0px;
         margin-left: 15px;
         margin-bottom: 0px;
     }
-    .add-info-btn{
+
+    .add-info-btn {
         margin-top: 5px !important;
     }
 
-    ._720kb-datepicker-calendar._720kb-datepicker-open, ._720kb-datepicker-calendar._720kb-datepicker-forced-to-open{
+    ._720kb-datepicker-calendar._720kb-datepicker-open, ._720kb-datepicker-calendar._720kb-datepicker-forced-to-open {
         width: 95% !important;
         top: -190px;
     }
-    .drink-menu-tabs{
+
+    .drink-menu-tabs {
         padding-bottom: 30px;
     }
-    .tasting-menu-btn{
+
+    .tasting-menu-btn {
         margin-top: 30px;
         width: inherit;
         position: static;
     }
-    .booking-btn{
+
+    .booking-btn {
         position: static;
         margin-top: 5px;
         width: inherit;
     }
-    .bron-input{
+
+    .bron-input {
         width: 95%;
     }
 
-    .bron-input_email{
-        width: 95%;
-    }
-    .booking-modal-arrow-mobile-second{
+    .booking-modal-arrow-mobile-second {
         margin-top: -5px;
         right: 40px;
     }
-    .bron-modal-title{
+
+    .bron-modal-title {
         font-size: 35px;
     }
-    .bron-second-margin{
+
+    .bron-second-margin {
         margin-top: 0px;
     }
 }
-.caret{
+
+.caret {
     left: 90%;
     position: absolute;
     margin-top: 10px;
 }
-.dropdown-menu{
+
+.dropdown-menu {
     position: absolute;
     font-size: 14px;
     font-family: spaceMono;
@@ -1483,26 +1628,28 @@ ul.drink-menu-tabs li:hover {
     border-right: 1px solid white;
     border-bottom: 1px solid white;
 
-    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,0.175);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     height: 200px;
     overflow-y: scroll;
 }
+
 .dropdown:active,
 .dropdown:focus {
     outline: none;
 }
-.error-bron{
+
+.error-bron {
     border: 2px solid #a94442;
-    cursor: pointer;
 }
-.nonerror-bron{
-    border:none;
-    cursor:pointer;
+
+.nonerror-bron {
+    border: none;
 }
-.burger-menu{
+
+.burger-menu {
     position: absolute;
     right: 10px;
     background: none;
@@ -1511,12 +1658,14 @@ ul.drink-menu-tabs li:hover {
     font-size: 32px;
     top: 20px;
 }
+
 .burger-menu:hover,
 .burger-menu:focus,
-.burger-menu:active{
+.burger-menu:active {
     outline: none;
     text-decoration: none;
 }
+
 .border-box {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -1546,11 +1695,13 @@ menu > div {
     -o-transition: transform ease 250ms;
     transition: transform ease 250ms;
 }
+
 menu > div.left {
     background: black;
     left: -100vw;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
+
 menu > div.show.left {
     transform: translate3d(100vw, 0, 0);
     -ms-transform: translate3d(100vw, 0, 0);
@@ -1566,10 +1717,12 @@ menu > div.show.right {
     -o-transform: translate3d(-100vw, 0, 0);
     -moz-transform: translate3d(-100vw, 0, 0);
 }
+
 menu > div > menu-item {
     display: block;
     margin-top: 20px;
 }
+
 menu > div > menu-item > div {
     float: left;
     width: 100%;
@@ -1580,16 +1733,19 @@ menu > div > menu-item > div {
     -moz-box-sizing: border-box;
     color: white;
 }
+
 menu > div > menu-item > div:hover {
     color: #F0F0F0;
 }
+
 menu > div > menu-item > div > span {
     float: left;
     color: white;
     font-family: spaceMono;
     font-size: 32px;
 }
-.bron-btn-modal{
+
+.bron-btn-modal {
     position: absolute;
     top: 20px;
     color: white;
@@ -1600,8 +1756,8 @@ menu > div > menu-item > div > span {
     padding-left: 25px;
     padding-right: 25px;
     font-family: spaceMono;
-    cursor: pointer;
 }
+
 .nav_button {
     width: 32px;
     height: 18px;
@@ -1620,6 +1776,7 @@ menu > div > menu-item > div > span {
     -webkit-transition: .6s ease-in-out;
     transition: .6s ease-in-out;
 }
+
 .nav_button #burger span {
     display: block;
     position: absolute;
@@ -1638,35 +1795,43 @@ menu > div > menu-item > div > span {
 .nav_button #burger span:nth-child(1) {
     top: 0;
 }
+
 .nav_button #burger span:nth-child(2), .nav_button #burger span:nth-child(3) {
     top: 8px;
 }
+
 .nav_button #burger span:nth-child(4) {
     top: 16px;
 }
+
 .nav_button #burger.active-sandwich span:nth-child(1) {
     top: 18px;
     width: 0%;
     left: 50%;
 }
+
 .nav_button #burger.active-sandwich span:nth-child(2) {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
 .nav_button #burger.active-sandwich span:nth-child(3) {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
+
 .nav_button #burger.active-sandwich span:nth-child(4) {
     top: 18px;
     width: 0%;
     left: 50%;
 }
-.sideNavNumber{
+
+.sideNavNumber {
     font-family: spaceMono;
     margin-top: 10px;
 }
-.sidenav-phone-number{
+
+.sidenav-phone-number {
     background: white;
     width: 250px;
     margin: 0 auto;
@@ -1676,28 +1841,30 @@ menu > div > menu-item > div > span {
     left: 50%;
     margin-left: -125px;
 }
-.newsletter{
+
+.newsletter {
     margin-top: 30px;
-    color: white;
-    cursor: default;
 }
+
 .error-message {
     font-family: spaceMono;
-    color:#a94442
+    color: #a94442
 }
+
 .bron-btn:active,
 .bron-btn:focus,
-.bron-btn:selected{
+.bron-btn:selected {
     outline: none;
 }
-.add-info-btn{
+
+.add-info-btn {
     font-family: spaceMono;
     color: white;
     margin-left: 15px;
     margin-top: 25px;
-    cursor: pointer;
 }
-.hamburger-mobile{
+
+.hamburger-mobile {
     background-color: white;
     color: black;
     font-family: spaceMono;
@@ -1706,14 +1873,16 @@ menu > div > menu-item > div > span {
     padding-right: 30px;
     margin-top: 30px;
 }
-.back-btn{
+
+.back-btn {
     color: white;
     font-family: spaceMono;
     font-size: 16px;
-    margin-left: 16px;
+    margin-left: 40px;
     cursor: pointer;
 }
-.langmenu-mobile{
+
+.langmenu-mobile {
     position: absolute;
     display: inline-block;
     color: white;
@@ -1723,98 +1892,118 @@ menu > div > menu-item > div > span {
     z-index: 1;
 }
 
+}
+
 @media screen and (min-width: 320px) and (max-width: 768px) and (orientation: landscape) {
-    .bron-btn{
+    .bron-btn {
         padding: 10px;
     }
-    .bron-date{
-        padding: 10px;
-        cursor: default;
-    }
-    .dropdown{
+
+    .bron-date {
         padding: 10px;
     }
-    .bron-caret{
+
+    .dropdown {
+        padding: 10px;
+    }
+
+    .bron-caret {
         top: 15px;
     }
-    .dropdown-content{
+
+    .dropdown-content {
         margin-top: 10px;
         height: 150px;
     }
-    ._720kb-datepicker-calendar._720kb-datepicker-open, ._720kb-datepicker-calendar._720kb-datepicker-forced-to-open{
+
+    ._720kb-datepicker-calendar._720kb-datepicker-open, ._720kb-datepicker-calendar._720kb-datepicker-forced-to-open {
         width: 95% !important;
         top: -150px;
         height: 360px;
     }
-    .bron-input{
+
+    .bron-input {
         padding: 10px;
     }
-    .bron-input_email{
-        padding: 10px;
-    }
-    .bron-modal-title-second{
+
+    .bron-modal-title-second {
         display: none;
     }
-    .add-info-btn{
+
+    .add-info-btn {
         font-size: 12px;
-        cursor: pointer;
     }
+
     .booking-modal-arrow-mobile-second {
         margin-top: 2px;
         right: 60px;
     }
-    .bron-close-btn{
+
+    .bron-close-btn {
         margin-top: -20px;
         /* right: 10px; */
         margin-right: -20px;
         z-index: 999999999999;
     }
-    .bron-modal-title{
-        display:none;
-    }
-    .back-btn{
+
+    .bron-modal-title {
         display: none;
     }
-    .fa.fa-arrow-left{
+
+    .back-btn {
         display: none;
     }
-    .btn-second{
+
+    .fa.fa-arrow-left {
+        display: none;
+    }
+
+    .btn-second {
         margin-top: 10px;
     }
-    .newsletter{
+
+    .newsletter {
         margin-top: 10px;
     }
-    .error-message{
+
+    .error-message {
         display: none;
     }
+
     menu > div > menu-item > div {
         padding: 7px 15px;
     }
-    menu > div > menu-item{
-        margin-top:-10px;
+
+    menu > div > menu-item {
+        margin-top: -10px;
     }
+
     menu > div > menu-item > div > span {
         font-size: 14px;
     }
 }
-.activeDesign{
+
+.activeDesign {
     color: #63ada4;
 }
-datepicker.backend-date > input{
+
+datepicker.backend-date > input {
     width: 90%;
     margin-left: 15px;
     padding: 10px;
 }
-.dropdown-back{
+
+.dropdown-back {
     height: 40px;
     width: 90%;
     margin-left: 15px;
-    border: 1px solid rgba(0,0,0,0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
     padding-top: 8px;
     padding-left: 15px;
     margin-top: 10px;
 }
-.dropdown-content-back{
+
+.dropdown-content-back {
     position: absolute;
     margin-top: 5px;
     background-color: white;
@@ -1832,6 +2021,7 @@ datepicker.backend-date > input{
     width: 90%;
     margin-left: 15px;
 }
+
 .dropdown-content-back a {
     color: black;
     padding: 12px 16px;
@@ -1839,6 +2029,7 @@ datepicker.backend-date > input{
     display: block;
 
 }
+
 .dropdown-content-back a:hover {
     cursor: pointer;
     background: #CCCCCC;
