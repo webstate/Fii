@@ -1106,22 +1106,6 @@ datepicker._720kb-datepicker-calendar-body {
     color: black;
 }
 
-.bron-input_email{
-    padding: 20px;
-    width: 100%;
-    border: none;
-    font-size: 14px;
-    color: black;
-}
-
-.bron-input_email:valid{
-    background: hsla(100, 50%, 70%, 1);
-}
-
-.bron-input_email:invalid{
-    background: hsla(0, 50%, 80%, 1);
-}
-
 .feedback-btn: focus,
 .feedback-btn: active,
 .feedback-btn: visited{
@@ -1372,9 +1356,6 @@ ul.drink-menu-tabs li:hover {
         width: 95%;
     }
 
-    .bron-input_email{
-        width: 95%;
-    }
     .booking-modal-arrow-mobile-second{
         margin-top: -5px;
         right: 40px;
@@ -1675,9 +1656,7 @@ menu > div > menu-item > div > span {
     .bron-input{
         padding: 10px;
     }
-    .bron-input_email{
-        padding: 10px;
-    }
+
     .bron-modal-title-second{
         display: none;
     }

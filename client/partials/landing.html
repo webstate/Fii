@@ -1782,10 +1782,14 @@
                         </div>
                         <div class="container">
                             <div class="col-md-12">
-                                <p class="error-message" ng-if="nameEstError || emailEstError || phoneEstError ">Kõik väljad peavad olema täidetud</p>
-                                <p class="error-message" ng-if="nameEngError || emailEngError || phoneEngError ">All fields have to be filled.</p>
-                                <p class="error-message" style="font-family:Roboto;" ng-if="nameRusError || emailRusError || phoneRusError ">Все поля должны быть выбраны</p>
-                                <p class="error-message" ng-if="nameFinError || emailFinError || phoneFinError ">Kaikki kentät on lisättävä</p>
+                                <p class="error-message" ng-if="emailEstError">Palun sisesta korrektne email</p>
+                                <p class="error-message" ng-if="nameEstError || phoneEstError || emailEstError">Kõik väljad peavad olema täidetud</p>
+                                <p class="error-message" ng-if="emailEngError">Please insert correct email</p>
+                                <p class="error-message" ng-if="nameEngError|| phoneEngError || emailEngError">All fields have to be filled.</p>
+                                <p class="error-message" style="font-family:Roboto;" ng-if="emailRusError">Введите действующий адрес электронной почты</p>
+                                <p class="error-message" style="font-family:Roboto;" ng-if="nameRusError || phoneRusError || emailRusError">Все поля должны быть выбраны</p>
+                                <p class="error-message" ng-if="emailFinError">Anna kelvollinen sähköposti</p>
+                                <p class="error-message" ng-if="nameFinError || phoneFinError || emailFinError">Kaikki kentät on lisättävä</p>
                             </div>
                             <div class="col-md-4">
                                 <label style="color:white" ng-if="$root.lang ==='en'">Your name</label>
@@ -1800,13 +1804,13 @@
                             </div>
                             <div class="col-md-4">
                                 <label style="color:white" ng-if="$root.lang ==='en'">Email address</label>
-                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[emailEngError===true]" ng-if="$root.lang ==='en'" ng-model="email.text" maxlength="40" required type="email" class="bron-input_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="E-mail" ng-model="$root.emailEng"/>
+                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[emailEngError===true]" ng-if="$root.lang ==='en'" type="email" maxlength="40" class="bron-input" ng-pattern="emailFormatEng" placeholder="E-mail" ng-model="$root.emailEng"/>
                                 <label style="color:white" ng-if="$root.lang ==='ee'">Emaili aadress</label>
-                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[emailEstError===true]" ng-if="$root.lang ==='ee'" type="email" maxlength="40" required class="bron-input_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email" ng-model="$root.emailEst"/>
+                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[emailEstError===true]" ng-if="$root.lang ==='ee'" type="email" maxlength="40"  class="bron-input" ng-pattern="emailFormatEst" placeholder="Email" ng-model="$root.emailEst"/>
                                 <label style="color:white" ng-if="$root.lang ==='fi'">Sähköposti</label>
-                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[emailFinError===true]" ng-if="$root.lang ==='fi'" type="email" maxlength="40" required class="bron-input_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Sähköposti" ng-model="$root.emailFin"/>
+                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[emailFinError===true]" ng-if="$root.lang ==='fi'" type="email" maxlength="40"  class="bron-input" ng-pattern="emailFormatFin" placeholder="Sähköposti" ng-model="$root.emailFin"/>
                                 <label style="color:white; font-family:Roboto;" ng-if="$root.lang ==='ru'">Электронная почта</label>
-                                <input style="font-family:Roboto;" ng-class="{true:'error-bron', false:'nonerror-bron'}[emailRusError===true]" ng-if="$root.lang ==='ru'" maxlength="40" required type="email" class="bron-input_email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Электронная почта" ng-model="$root.emailRus"/>
+                                <input style="font-family:Roboto;" ng-class="{true:'error-bron', false:'nonerror-bron'}[emailRusError===true]" ng-if="$root.lang ==='ru'" maxlength="40" type="email" class="bron-input"  ng-pattern="emailFormatRus" placeholder="Электронная почта" ng-model="$root.emailRus"/>
                             </div>
                             <div class="col-md-4">
                                 <label style="color:white" ng-if="$root.lang ==='en'">Phone number</label>

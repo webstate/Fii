@@ -411,13 +411,15 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.phoneEstError = false;
 
 
-        if(typeof($rootScope.nameEst) === 'undefined'){
+        $scope.emailFormatEst = /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
+
+        if(typeof($rootScope.nameEst) === 'undefined'){ // if name is empty then error
             $scope.nameEstError = true;
         }
-        if(typeof($rootScope.emailEst) === 'undefined'){
+        if(typeof($rootScope.emailEst) === 'undefined'){  // if email is empty then error
             $scope.emailEstError = true;
         }
-        if(typeof($rootScope.phoneEst) === 'undefined'){
+        if(typeof($rootScope.phoneEst) === 'undefined'){ // if phone is empty then error
             $scope.phoneEstError = true;
         }
         if(typeof($scope.addInfo) === 'undefined'){
@@ -446,6 +448,8 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.nameEngError = false;
         $scope.emailEngError = false;
         $scope.phoneEngError = false;
+
+        $scope.emailFormatEng = /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
 
         if(typeof($rootScope.nameEng) === 'undefined'){
             console.log("nime pole");
@@ -480,6 +484,8 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.emailRusError = false;
         $scope.phoneRusError = false;
 
+        $scope.emailFormatRus = /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
+
         if(typeof($rootScope.nameRus) === 'undefined'){
             console.log("nime pole");
             $scope.nameRusError = true;
@@ -512,6 +518,8 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.nameFinError = false;
         $scope.emailFinError = false;
         $scope.phoneFinError = false;
+
+        $scope.emailFormatFin = /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
 
         if(typeof($rootScope.nameFin) === 'undefined'){
             console.log("nime pole");
