@@ -162,6 +162,7 @@
                                         <img class="booking-arrow" src="css/img/arrow.png" />
                                     </div>
                                 </li>
+
                                 <li>
                                     <div class="tel-btn" style="cursor:pointer;"><p href="tel:+372 5885 5200" class="landing-nav-btn">+372 5885 5200</p><img class="booking-arrow" src="css/img/phone.png" /></div>
                                 </li>
@@ -1667,12 +1668,12 @@
                         </div>
                         <div class="col-md-4">
                             <label style="color:white;">Kuupäev?</label>
-                            <!--<datepicker date-format="d MMMM, yyyy">
+                            <datepicker date-format="d MMMM, yyyy">
                                 <input ng-class="{true: 'error-bron', false:'nonerror-bron'}[dateEstError===true]" readonly="true" class="bron-date" ng-model="$root.dateEst" type="text" placeholder="Vali kuupäev"/>
-                            </datepicker>-->
-                            <datepicker ng-if="$root.lang ==='en'" date-format="d MMMM, yyyy">
-                                <input class="bron-date" ng-model="date" type="text" placeholder="Pick a date"/>
                             </datepicker>
+                            <!--<datepicker ng-if="$root.lang ==='en'" date-format="d MMMM, yyyy">
+                                <input class="bron-date" ng-model="date" type="text" placeholder="Pick a date"/>
+                            </datepicker>-->
                         </div>
                         <div class="col-md-4">
                             <label  style="color:white;">Kellaaeg?</label>
